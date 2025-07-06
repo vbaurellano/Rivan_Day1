@@ -1,0 +1,62 @@
+******
+SSH Public Key Authentication
+
+1. Setup SSH.
+@Cisco
+conf t
+ ip domain name security.sec
+ crypto key generate rsa modulus 2048
+ ip ssh version 2
+ line vty 0 14
+  login local
+  transport input all
+  end
+
+
+2. Create key.
+@SecureCRT
+	Tools > Create Public Key
+	
+	Key type: RSA
+	Passphrase: 
+	Key Length: 2048
+	Format: Standard or OpenSSH (new)
+	
+	
+@Cisco
+conf t
+ crypto key generate rsa modulus 2048 exportable label sec
+ crypto key export rsa sec pem terminal 3des C1sc0123
+ end
+
+Grab The public and private key and assign them to their own respective file:
+
+  Public Key: sec.pub
+  Private Key: sec.priv
+
+
+@Linux
+ssh-keygen -t rsa -b 2048 -f mine
+fold -b -w 72 /home/ubuntu/.ssh/id_rsa.pub
+
+
+3. Create a User with public key-chain.
+@Cisco
+conf t
+ username aerin privilege 15
+ ip ssh pubkey-chain
+  username aerin
+   key-string
+    <PASTE PUB KEY>
+	exit
+   end
+
+
+4. Disable Password authentication.
+
+@Cisco
+conf t
+ ip ssh server algorithm authentication publickey
+ no ip ssh server algorithm authentication password
+ no ip ssh server algorithm authentication keyboard
+ end
