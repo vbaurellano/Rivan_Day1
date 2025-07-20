@@ -1,0 +1,41 @@
+__________
+**********
+Welcome to Rivan
+
+"There's no better teacher than experience"
+
+
+__________
+**********
+Build your own network
+
+Hierarchical Network Design
+1. What is the most important part of a network? The Core
+
+Most common kinds of network architectures.
+ - 2-tier                 Cisco Collapsed Campus Core
+ - 3-tier                 Enterprise Network Design
+ - Spine-leaf             Data Center Fabric
+
+CORE Layer (CoreTAAS & CoreBABA) - High Speed and Availability
+  "A Network Engineer MUST avoid a single point of failure.
+   Always have a backup."     
+   
+   ex. Etherchannel
+
+  - FlexStack (Master Switch)      Cisco 6500 Series
+  - VSS (Single logical switch)    NXOS 9k
+
+
+2. Wired and wireless network (Controller & Auto AP).
+3. Security IP cameras
+4. Voice Gateway (Cisco Unified Call Manager)
+5. Router
+
+Jobs of a Switch
+1. Power over Ethernet
+2. SVi switch virtual interface
+3. dhcp server
+4. vlan creation, vlan lipat
+5. mac reservation
+
