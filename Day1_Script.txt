@@ -562,3 +562,24 @@ conf t
     username #$3AT#32 password #$3AT#32
     codec g711ulaw
 	end
+
+************** Modify Analog Phone Features **************
+
+!@cucm
+conf t
+ voice-port 0/0/0
+  signal loopstart
+  caller-id enable
+  station-id name ANALOG1
+  cptone PH  / US
+ exit
+ dial-peer voice 1 pots
+  destination-pattern #$3AT#00
+   port 0/0/0
+   end
+ csim start #$3AT#00
+
+!@cucm
+conf t
+ class-map voip
+  match ip dscp  ?
