@@ -84,12 +84,20 @@ Network security infrastructure
  - Surveillance          IP Cameras (CAM6 & CAM8)
 
 
+Enterprise Communication
+4. 
 
-4. Voice Gateway (Cisco Unified Call Manager)
+Unified Communications and Collaboration.
+  https://www.cisco.com/c/en/us/products/unified-communications/index.html
 
-VOIP
+  - VOIP (ePhone)
+  - POTS (Analog)
 
-5. Router
+
+Wide Area Network
+5. 
+
+
 
 Jobs of a Switch
 1. Power over Ethernet
