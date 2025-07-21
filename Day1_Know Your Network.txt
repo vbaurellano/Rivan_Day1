@@ -1,7 +1,9 @@
- __________
+
+Your monitor number = #$34T#
+
+__________
 **********
 Welcome to Rivan
-
 "There's no better teacher than experience"
 
 Prove that you are doing.
@@ -9,6 +11,15 @@ Prove that you are doing.
  - Create a Postman account: https://www.postman.com/
 
 Import the repositories.
+ - Fork
+
+Create your own folder on the desktop
+
+@cmd
+cd Users/Administrator/Desktop
+mkdir _name-#$34T#
+cd _name-#$34T#
+dir
 
 
 __________
