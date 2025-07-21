@@ -1,8 +1,14 @@
-__________
+ __________
 **********
 Welcome to Rivan
 
 "There's no better teacher than experience"
+
+Prove that you are doing.
+ - Create a Github account: https://github.com/
+ - Create a Postman account: https://www.postman.com/
+
+Import the repositories.
 
 
 __________
@@ -19,17 +25,24 @@ Most common kinds of network architectures.
 
 CORE Layer (CoreTAAS & CoreBABA) - High Speed and Availability
   "A Network Engineer MUST avoid a single point of failure.
-   Always have a backup."     
+   Always have a backup."
    
    ex. Etherchannel
 
   - FlexStack (Master Switch)      Cisco 6500 Series
   - VSS (Single logical switch)    NXOS 9k
+  - SSO (Stateful Switchover)
+  - NSF (Non-stop Forwarding)
 
 
 2. Wired and wireless network (Controller & Auto AP).
+
+
 3. Security IP cameras
 4. Voice Gateway (Cisco Unified Call Manager)
+
+VOIP
+
 5. Router
 
 Jobs of a Switch
