@@ -6,12 +6,28 @@ __________
 Welcome to Rivan
 "There's no better teacher than experience"
 
+
+__________
+**********
+Approach to Network Programmability
+"A new era for Cisco Certifications"
+
+Cisco Certified Network Automation
+
+- Python, Ruby, TCL 
+- JSON, YAML
+- REST APIs
+- Ansible, Terraform, Chef, Puppet, etc.
+- Collaboration Platforms (GitHub)
+
 Prove that you are doing.
  - Create a Github account: https://github.com/
  - Create a Postman account: https://www.postman.com/
 
 Import the repositories.
- - Fork
+ - 
+ - 
+
 
 Create your own folder on the desktop
 
@@ -48,8 +64,16 @@ CORE Layer (CoreTAAS & CoreBABA) - High Speed and Availability
 
 2. Wired and wireless network (Controller & Auto AP).
 
+Wifi standards | IEEE (Institute of Electrical and Electronics Engineers)
+  https://standards.ieee.org/beyond-standards/the-evolution-of-wi-fi-technology-and-standards/
+
+  - WiFi 6     IEEE 802.11ax
+  - WiFi 7     IEEE P802.11be
+
 
 3. Security IP cameras
+
+
 4. Voice Gateway (Cisco Unified Call Manager)
 
 VOIP
