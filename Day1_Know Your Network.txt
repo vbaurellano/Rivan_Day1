@@ -14,6 +14,7 @@ Approach to Network Programmability
 
 Cisco Certified Network Automation
 
+- Powershell, Bash
 - Python, Ruby, TCL 
 - JSON, YAML
 - REST APIs
@@ -62,7 +63,10 @@ CORE Layer (CoreTAAS & CoreBABA) - High Speed and Availability
   - NSF (Non-stop Forwarding)
 
 
-2. Wired and wireless network (Controller & Auto AP).
+Wired and wireless network.
+2. 
+
+Wireless Controller & Autonomous AP
 
 Wifi standards | IEEE (Institute of Electrical and Electronics Engineers)
   https://standards.ieee.org/beyond-standards/the-evolution-of-wi-fi-technology-and-standards/
@@ -71,7 +75,14 @@ Wifi standards | IEEE (Institute of Electrical and Electronics Engineers)
   - WiFi 7     IEEE P802.11be
 
 
-3. Security IP cameras
+Implement security solutions.
+3. What is more valuable than gold? Data
+
+Security Camera
+
+Network security infrastructure
+ - Firewall, UTM, IDS
+ - Security Policies     Windows Local Security Policy
 
 
 4. Voice Gateway (Cisco Unified Call Manager)
