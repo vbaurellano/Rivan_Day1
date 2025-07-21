@@ -78,11 +78,11 @@ Wifi standards | IEEE (Institute of Electrical and Electronics Engineers)
 Implement security solutions.
 3. What is more valuable than gold? Data
 
-Security Camera
-
 Network security infrastructure
- - Firewall, UTM, IDS
+ - NGFW, UTM, IDS
  - Security Policies     Windows Local Security Policy
+ - Surveillance          IP Cameras (CAM6 & CAM8)
+
 
 
 4. Voice Gateway (Cisco Unified Call Manager)
