@@ -1,0 +1,1972 @@
+
+Your monitor number = #$34T#
+
+__________
+**********
+Welcome to Rivan
+"There's no better teacher than experience"
+
+
+
+__________
+**********
+Approach to Network Programmability
+"A new era for Cisco Certifications"
+
+Cisco Certified Network Automation
+
+- Powershell, Bash
+- Python, Ruby, TCL
+- JSON, YAML
+- REST APIs
+- Ansible, Terraform, Chef, Puppet, etc.
+- Collaboration Platforms (GitHub)
+
+Prove that you are doing.
+ - Create a Github account: https://github.com/
+ - Create a Postman account: https://www.postman.com/
+
+Import the repositories.
+ - 
+ - 
+
+
+Create your own folder on the desktop
+
+@cmd
+cd Users/Administrator/Desktop
+mkdir _name-#$34T#
+cd _name-#$34T#
+dir
+
+
+__________
+**********
+Build your own network. 
+
+KNOW YOUR NETWORK - Network Topology
+
+Hierarchical Network Design
+1. What is the most important part of a network? The Core
+
+Most common kinds of network architectures.
+ - 2-tier                 Cisco Collapsed Campus Core
+ - 3-tier                 Enterprise Network Design
+ - Spine-leaf             Data Center Fabric
+
+CORE Layer (CoreTAAS & CoreBABA) - High Speed and Availability
+  "A Network Engineer MUST avoid a single point of failure.
+   Always have a backup."
+   
+   ex. Etherchannel
+
+  - FlexStack (Master Switch)      Cisco 6500 Series
+  
+  - VSS (Single logical switch)    NXOS 9k
+  - SSO (Stateful Switchover)
+  - NSF (Non-stop Forwarding)
+
+
+
+Wired and wireless network.
+2. How many devices do you have right now that can connect to the internet?
+  "A network must be Flexible. Reliable. AVAILABLE."
+ 
+PLDT AP vs Wireless Controller & Aut AP
+
+Wifi Mesh
+ - Wired Backhaul
+ - Wireless Backhaul
+ - Satellite Mode
+ 
+Wifi standards | IEEE (Institute of Electrical and Electronics Engineers)
+  https://standards.ieee.org/beyond-standards/the-evolution-of-wi-fi-technology-and-standards/
+
+  - WiFi 6     IEEE 802.11ax
+  - WiFi 7     IEEE P802.11be
+
+
+
+Implement security solutions.
+3. What is more valuable than gold? Data
+
+Network security infrastructure
+ - NGFW, UTM, IDS
+ - Security Policies     Windows Local Security Policy
+ - Surveillance          IP Cameras (CAM6 & CAM8)
+
+Made in US vs Made in China
+
+
+
+Enterprise Communication
+4. How often are meetings conducted in your work place?
+
+Unified Communications and Collaboration.
+  https://www.cisco.com/c/en/us/products/unified-communications/index.html
+
+  - VOIP (ePhone)
+  - POTS (Analog)
+
+
+
+Internet Connectivity
+5. Hve you experienced LOS? Fiber break maybe?
+  https://www.ccnaacademy.com/2018/09/ieee-ethernet-standards_16.html
+  
+  Ethernet
+  FastEthernet
+  GigEthernet
+  TenGigEthernet
+  
+  - SFP (Small Form-factor Pluggable)
+ 
+IEEE Ethernet standards
+
+
+
+__________
+**********
+Configure the Network
+
+1. How can you tell if a device is expensive? It has a Console Port.
+
+Serial Cable
+  - VGA, USB
+  - Ugreen
+
+
+
+Master the Command Line Interface (CLI)
+2. How to know if someone has 1 year experience?
+
+@CoreTAAS
+(yes/no?)         setup/inutil mode 
+
+   |
+   |              CTRL + C
+   v
+
+Switch>           user/friendzone mode
+                  No show, No touch
+   |
+   |              enable
+   v
+
+Switch#           privilege/cubao mode
+                  All show, No touch     show run, show start, copy run start
+   |
+   |              configure terminal  
+   v
+
+Switch(config)#   global/pasig mode
+                  All touch, No show
+				  
+				  do
+				  All touch, All show
+
+
+2.1. Right command, Right place.
+
+!@Switch
+conf t
+ int fa0/1
+  exit
+ int g0/1
+  exit
+ line cons 0
+  exit
+ router eigrp day1
+  a ipv4 u a 100
+   net 10.0.0.0
+   net 20.0.0.0
+   exit
+  exit
+ exit
+!
+!
+conf t
+ int fa0/1
+  shutdown
+  no shutdown
+  end
+
+
+Exercise 01: Navigate through the CLI as fast as you can.
+
+!@Switch
+conf t
+ int fa0/1
+  shut
+  end
+conf t
+ int fa0/1
+  no shut
+  end
+
+
+2.2. View and remove configurations.
+
+!@Switch
+show run
+
+Find the 'router eigrp day1' line
+
+Erase the configurations.
+
+!@Switch
+conf t
+ router eigrp day1
+  a ipv4 u a 100
+   no network 10.0.0.0
+   end
+
+!@Switch
+conf t
+ no router eigrp day1
+ end
+
+
+Configure CoreTAAS
+3. Initial configurations
+
+First 5 - H.E.S.No
+
+!@CoreTAAS
+conf t
+ Hostname CoreTAAS-#$34T#
+ Enable secret pass
+ Service password-encryption
+ No logging console
+ No ip domain lookup
+ end
+
+
+3.1 Protect Console & Remote Access
+
+!@CoreTAAS
+conf t
+ line cons 0
+  password pass
+  login
+  exec-timeout 0 0
+ line vty 0 14
+  password pass
+  login
+  exec-timeout 0 0
+  end
+
+
+3.2 Create SVI (Switch Virtual Interface)
+
+!@CoreTAAS
+conf t
+ int vlan 1
+  ip add 10.#$34T#.1.2 255.255.255.0
+  description DEFAULT-VLAN
+  end
+
+Verify: How to check IP addresses? SIIB - show ip interface brief
+
+!@CoreTAAS
+show ip int brief
+
+
+By default, 
+  Switchports = On 
+  SVIs = off
+
+
+Exercise 02: Turn on VLAN 1
+
+!@CoreTAAS
+conf t
+ int vlan 1
+  no shut
+  end
+show ip int br
+
+
+Exercise 03: Add the other SVIs
+
+Task:
+ 1. CoreTAAS must have the following SVIs
+   - VLAN 1
+     IP address: 10.#$34T#.1.2
+	 Description: DEFAULT-VLAN
+	 Status: UP
+	 
+   - VLAN 10
+     IP address: 10.#$34T#.10.2
+	 Description: WIFI-VLAN
+	 Status: UP
+
+   - VLAN 50
+     IP address: 10.#$34T#.50.2
+	 Description: CCTV-VLAN
+	 Status: UP
+
+   - VLAN 100
+     IP address: 10.#$34T#.100.2
+	 Description: VOICE-VLAN
+	 Status: UP
+
+
+!@CoreTAAS
+conf t
+ int vlan 1
+  ip add 10.#$34T#.1.2 255.255.255.0
+  description DEFAULT-VLAN
+  no shut
+  exit
+ int vlan __
+  ip add __.__.__.__ 255.255.255.0
+  __
+  exit
+ int vlan __
+  ip add __.__.__.__ 255.255.255.0
+  __
+  exit
+ int vlan __
+  ip add __.__.__.__ 255.255.255.0
+  __
+  exit
+ int vlan __
+  ip add __.__.__.__ 255.255.255.0
+  __
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+__________
+**********
+Full Script
+
+!@CoreTaas
+conf t
+ hostname CoreTAAS-#$34T#
+ enable secret pass
+ service password-encryption
+ no logging console
+ no ip domain-lookup
+ line cons 0
+  password pass
+  login
+  exec-timeout 0 0
+ line vty 0 14
+  password pass
+  login
+  exec-timeout 0 0
+ int vlan 1
+  no shut
+  ip add 10.#$34T#.1.2 255.255.255.0
+  desc DEFAULT-VLAN
+ int vlan 10
+  no shut
+  ip add 10.#$34T#.10.2 255.255.255.0
+  desc WIFI-VLAN
+ int vlan 50
+  no shut
+  ip add 10.#$34T#.50.2 255.255.255.0
+  desc CCTV-VLAN
+ int vlan 100
+  no shut
+  ip add 10.#$34T#.100.2 255.255.255.0
+  desc VOICE-VLAN
+ end
+
+
+
+Configure CoreBABA
+4. Know the jobs of a Layer 3 Switch
+
+4.1. 1ST JOB OF A SWITCH - POE (Power over Ethernet)
+Are there switches that don't support POE? Yes, buy one from lazada.
+
+IEEE Standards
+ - 802.3af (PoE)      15.4W
+ - 802.3at (PoE+)     25.5W
+ - 802.3bt (PoE++)    71.3W
+
+Which device consumes the most power? show power inline
+
+!@CoreBABA
+show power inline
+
+
+4.2. 2ND JOB OF A SWITCH - SVI (Switch Virtual Interface)
+
+!@CoreBABA
+conf t
+ hostname coreBaba-#$34T#
+ enable secret pass
+ service password-encryption
+ no logging console
+ no ip domain-lookup
+ line cons 0
+  password pass
+  login
+  exec-timeout 0 0
+ line vty 0 14
+  password pass
+  login
+  exec-timeout 0 0
+ int gi 0/1
+  no shut
+  no switchport
+  ip add 10.#$34T#.#$34T#.4 255.255.255.0
+ int vlan 1
+  no shut
+  ip add 10.#$34T#.1.4 255.255.255.0
+  desc DEFAULT-VLAN
+ int vlan 10
+  no shut
+  ip add 10.#$34T#.10.4 255.255.255.0
+  desc WIFI-VLAN
+ int vlan 50
+  no shut
+  ip add 10.#$34T#.50.4 255.255.255.0
+  desc CCTV-VLAN
+ int vlan 100
+  no shut
+  ip add 10.#$34T#.100.4 255.255.255.0
+  desc VOICE-VLAN
+ end
+
+
+Verify Connectivity: 
+
+!@cmd
+ping 10.#$34T#.1.4
+
+
+
+4.3. 3RD JOB OF A SWITCH - DHCP (Dynamic Host Configuration Protocol) / BOOTPS & BOOTPC
+
+In a network, which device should be a DHCP Server? It depends.
+
+SOHO - Router
+
+Enterprise Network
+  Medium - Firewall
+  Large - CoreSwitch
+
+
+Can Windows be a DHCP Server? Yes, Server Manager.
+
+
+
+!@CoreBABA
+conf t
+ ip dhcp excluded-address 10.#$34T#.1.1 10.#$34T#.1.100
+ ip dhcp excluded-address 10.#$34T#.10.1 10.#$34T#.10.100
+ ip dhcp excluded-address 10.#$34T#.50.1 10.#$34T#.50.100
+ ip dhcp pool POOLDATA
+  network 10.#$34T#.1.0 255.255.255.0
+  default-router 10.#$34T#.1.4
+  domain-name MGMTDATA.COM
+  dns-server 10.#$34T#.1.10
+ ip dhcp pool POOLWIFI
+  network 10.#$34T#.10.0 255.255.255.0
+  default-router 10.#$34T#.10.4
+  domain-name WIFIDATA.COM
+  dns-server 10.#$34T#.1.10
+ ip dhcp pool POOLCCTV
+  network 10.#$34T#.50.0 255.255.255.0
+  default-router 10.#$34T#.50.4
+  domain-name CCTVDATA.COM
+  dns-server 10.#$34T#.1.10
+  exit
+
+DHCP Options
+  List of DHCP Options
+  https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml
+                            
+							Option
+                            
+  - Address Subnet Mask =   1
+  - defaulte-route =        3
+  - dns-server =            6
+  - domain-name =           15
+  - TFTP Server =           150
+  - client-identifier =     61
+  - lease =                 51
+
+
+Exercise 04: Configure CoreBABA as a DHCP server for IP Cameras.
+
+Task:
+ 1. CoreBABA must act as a DHCP Server for devices in VLAN 100 with the following settings:
+   - The first 100 IPs must be reserved.
+   - The DHCP pool name must be 'POOLVOICE'
+   - The default gateway must be CoreBABA.
+   - The domain name must be 'VOICEDATA.COM'
+   - The DNS Server must be your Windows Server.
+   - Set CUCM as the TFTP server for DHCP clients.
+   - Set a lease time of 5 days.
+   
+!@CoreBABA
+conf t
+ ip dhcp excluded-address __.__.__.__  __.__.__.__
+ ip dhcp pool ______
+  network 10.#$34T#.50.0 255.255.255.0
+  default-______  ______
+  ______  ______
+  ______  
+  option ___  ip 10.#$34T#.__.__
+  lease 5 0 0
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+__________
+**********
+Answers
+
+!@CoreBABA
+conf t
+ ip dhcp excluded-address 10.#$34T#.100.1 10.#$34T#.100.100
+ ip dhcp pool POOLVOICE
+  network 10.#$34T#.100.0 255.255.255.0
+  default-router 10.#$34T#.100.4
+  domain-name VOICEDATA.COM
+  dns-server 10.#$34T#.1.10
+  option 150 ip 10.#$34T#.100.8
+  lease 5 0 0
+  end
+
+
+
+4.4. 4th JOB OF A SWITCH - VLAN Creation & VLAN Management
+Ports must be placed in the correct VLANs.
+
+How to check what ports belong to what VLAN? SVB - show vlan brief
+
+!@CoreBABA
+show vlan brief
+
+
+Just because there's an SVI doesn't mean there's a VLAN.
+
+!@CoreBABA
+conf t
+ vlan 1
+  name MGMTVLAN
+ vlan 10
+  name WIFIVLAN
+ vlan 100
+  name VOICEVLAN
+  end
+
+
+Place Switchports in their correct VLAN.
+
+!@CoreBABA
+conf t
+ int fa 0/2
+  switchport mode access
+  switchport access vlan 10
+ int fa 0/4
+  switchport mode access
+  switchport access vlan 10
+ int fa 0/3
+  switchport mode access
+  switchport access vlan 100
+ int fa 0/5
+  switchport mode access
+  switchport voice vlan 100
+  switchport access vlan 1
+  mls qos trust device cisco-phone
+ int fa 0/7
+  switchport mode access
+  switchport voice vlan 100
+  switchport access vlan 1
+  mls qos trust device cisco-phone
+ end
+
+
+Exercise 05: Place Cameras to their correct VLANs based on the topology.
+
+Task:
+ 1. Create VLAN 50 and name it 'CCTVLAN'
+ 2. Place IP cameras to their correct VLAN.
+
+!@CoreBABA
+conf t
+ vlan ____
+  ____  ____
+  exit
+ int ____
+  ____  ____  access
+  ____  access ____  ____
+  exit
+ int ____
+  ____  ____  access
+  ____  access ____  ____
+  end
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********
+Answers
+
+!@CoreBABA
+conf t
+ vlan 50
+  name CCTVVLAN
+  exit
+ int fa0/6
+  switchport mode access
+  switchport access vlan 50
+  exit
+ int fa0/8
+  switchport mode access
+  switchport access vlan 50
+  end
+
+
+
+4.5. 5th JOB OF A SWITCH - MAC Learning & MAC Reservation
+What does it mean to say Layer 2 in networking?
+
+How to view the MAC addresses learned by the Switch? SMAC - show mac address-table
+
+!@CoreBABA
+show mac address-table
+
+
+Camera fa0/6 MAC = #camera6macadd#
+Camera fa0/8 MAC = #camera8macadd#
+
+
+Assign a specific IP address to a device.
+
+!@CoreBABA
+conf t
+ ip routing
+ ip dhcp pool CAMERA6
+  host 10.#$34T#.50.6 255.255.255.0
+  client-identifier #camera6macadd#
+ ip dhcp pool CAMERA8
+  host 10.#$34T#.50.8 255.255.255.0
+  client-identifier #camera8macadd#
+ end
+ 
+ 
+Verify DHCP: 
+
+!@CoreBABA
+show ip dhcp bindings    !SIDB
+
+
+4.6. Ensure Availability through redundancy and loadbalance
+
+!@coreBaba, coreTaas
+conf t
+ int range fa0/10-12
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  channel-group 1 mode active
+  channel-protocol lacp
+  end
+
+
+
+
+
+
+
+
+Review the jobs of a switch:
+ 1. 
+ 2. 
+ 3. 
+ 4. 
+ 5. 
+
+
+
+
+
+**********
+Full Script
+
+!@coreBaba
+conf t
+ hostname coreBaba-#$34T#
+ enable secret pass
+ service password-encryption
+ no logging console
+ no ip domain-lookup
+ line cons 0
+  password pass
+  login
+  exec-timeout 0 0
+ line vty 0 14
+  password pass
+  login
+  exec-timeout 0 0
+ int gi 0/1
+  no shut
+  no switchport
+  ip add 10.#$34T#.#$34T#.4 255.255.255.0
+ int vlan 1
+  no shut
+  ip add 10.#$34T#.1.4 255.255.255.0
+  desc VLANMGMTDATA
+ int vlan 10
+  no shut
+  ip add 10.#$34T#.10.4 255.255.255.0
+  desc VLANMGMTWIFI
+ int vlan 50
+  no shut
+  ip add 10.#$34T#.50.4 255.255.255.0
+  desc VLANMGMTCCTV
+ int vlan 100
+  no shut
+  ip add 10.#$34T#.100.4 255.255.255.0
+  desc VLANMGMTVOICE
+ end
+
+!@dhcp
+conf t
+ ip dhcp excluded-add 10.#$34T#.1.1 10.#$34T#.1.100
+ ip dhcp excluded-add 10.#$34T#.10.1 10.#$34T#.10.100
+ ip dhcp excluded-add 10.#$34T#.50.1 10.#$34T#.50.100
+ ip dhcp excluded-add 10.#$34T#.100.1 10.#$34T#.100.100
+ ip dhcp pool POOLDATA
+  network 10.#$34T#.1.0 255.255.255.0
+  default-router 10.#$34T#.1.4
+  domain-name MGMTDATA.COM
+  dns-server 10.#$34T#.1.10
+  exit
+ ip dhcp pool POOLWIFI
+  network 10.#$34T#.10.0 255.255.255.0
+  default-router 10.#$34T#.10.4
+  domain-name WIFIDATA.COM
+  dns-server 10.#$34T#.1.10
+  exit
+ ip dhcp pool POOLCCTV
+  network 10.#$34T#.50.0 255.255.255.0
+  default-router 10.#$34T#.50.4
+  domain-name CCTVDATA.COM
+  dns-server 10.#$34T#.1.10
+  exit
+ ip dhcp pool POOLVOICE
+  network 10.#$34T#.100.0 255.255.255.0
+  default-router 10.#$34T#.100.4
+  domain-name VOICEDATA.COM
+  dns-server 10.#$34T#.1.10
+  option 150 ip 10.#$34T#.100.8
+  exit
+
+!@switchport
+conf t
+ vlan 1
+  name MGMTVLAN
+ vlan 10
+  name WIFIVLAN
+ vlan 50
+  name CCTVVLAN
+ vlan 100
+  name VOICEVLAN
+ int fa 0/2
+  switchport mode access
+  switchport access vlan 10
+ int fa 0/4
+  switchport mode access
+  switchport access vlan 10
+ int fa 0/6
+  switchport mode access
+  switchport access vlan 50
+ int fa 0/8
+  switchport mode access
+  switchport access vlan 50
+ int fa 0/3
+  switchport mode access
+  switchport access vlan 100
+ int fa 0/5
+  switchport mode access
+  switchport voice vlan 100
+  switchport access vlan 1
+  mls qos trust device cisco-phone
+ int fa 0/7
+  switchport mode access
+  switchport voice vlan 100
+  switchport access vlan 1
+  mls qos trust device cisco-phone
+ end
+
+!@camera
+conf t
+ ip routing
+ ip dhcp pool CAMERA6
+  host 10.#$34T#.50.6 255.255.255.0
+  client-identifier #camera6macadd#
+ ip dhcp pool CAMERA8
+  host 10.#$34T#.50.8 255.255.255.0
+  client-identifier #camera8macadd#
+ end
+
+
+
+4.6. Remote Access
+Access the CoreSwitches without the serial cable.
+
+@cmd
+ping 10.#$34T#.1.2               CoreTAAS
+ping 10.#$34T#.1.4               CoreBABA
+
+
+When a device is pingable you can scan it.
+@cmd
+nmap -v 10.#$34T#.1.2
+nmap -v 10.#$34T#.1.4
+
+Is port 23 open?
+
+Enter port 23 via SecureCRT
+
+
+
+Configure CUCM
+5. Setup a mini call center
+
+!@CUCM
+conf t
+ hostname CUCM-#$34T#
+ enable secret pass
+ service password-encryption
+ no logging console
+ no ip domain-lookup
+ line cons 0
+  password pass
+  login
+  exec-timeout 0 0
+ line vty 0 14
+  password pass
+  login
+  exec-timeout 0 0
+ int fa 0/0
+  no shut
+  ip add 10.#$34T#.100.8 255.255.255.0
+ end
+ 
+ 
+
+5.1. 1ST JOB OF A CALL MANAGER - Analog Phones
+Why do companies still use Analog phones? Mobile vs Analog
+
+!@CUCM
+conf t
+ dial-peer voice 1 pots
+  destination-pattern #$34T#00
+  port 0/0/0
+ dial-peer voice 2 pots
+  destination-pattern #$34T#01
+  port 0/0/1
+ dial-peer voice 3 pots
+  destination-pattern #$34T#02
+  port 0/0/2
+ dial-peer voice 4 pots
+  destination-pattern #$34T#03
+  port 0/0/3
+ end
+ 
+Verify Functionality:
+
+!@CUCM
+show dial-peer voice summary     !SDVS
+csim start #$34T#00
+
+Modify the tone of the phone.
+
+!@CUCM
+conf t
+ voice-port 0/0/0
+  cptone dutch
+  end
+  
+
+
+5.2. 2ND JOB OF A CALL MANAGER - IP Phones - Cisco Skinny Client Control Protocol (SCCP)
+What kind of phones do enterprise use?
+
+!@CUCM
+conf t
+ no telephony-service
+ telephony-service
+  no auto assign
+  no auto-reg-ephone
+  max-ephones 5
+  max-dn 20
+  ip source-address 10.#$34T#.100.8 port 2000
+  end
+
+Why 10.#$34T#.100.8? TFTP
+
+
+Ephone 1 MAC: #ephone1macadd#
+Ephone 2 MAC: #ephone1macadd#
+
+!@CUCM
+conf t
+ ephone-dn 1
+  number #$34T#11
+ ephone-dn 2
+  number #$34T#22
+ ephone-dn 3
+  number #$34T#33
+ ephone-dn 4
+  number #$34T#44
+ ephone-dn 5
+  number #$34T#55
+ ephone-dn 6
+  number #$34T#66
+ ephone-dn 7
+  number #$34T#77
+ ephone-dn 8
+  number #$34T#88
+ ephone-dn 9
+  number #$34T#99
+ ephone 1
+  mac-address #ephone1macadd#
+  type 8945
+  button 1:1 2:2 3:3 4:4
+ ephone 2
+  mac-address #ephone2macadd#
+  type 8945
+  button 1:5 2:6 3:7 4:8
+  end
+
+
+
+Still no numbers? Because IP Phones need to generate configuration files. MANDATORY
+
+!@CUCM
+conf t
+ telephony-service
+  create cnf-files
+ !
+ ephone 1
+  restart
+ ephone 2
+  restart
+  end
+
+Depending on the ephone, 'create cnf-files' will need to be pasted twice.
+
+
+
+5.3. 3RD JOB OF A CALL MANAGER - Video Calls
+
+!@CUCM
+conf t
+ ephone 1
+  video
+  voice service voip
+  h323
+  call start slow
+ ephone 2
+  video
+  voice service voip
+  h323
+  call start slow
+end
+
+
+
+5.4. 4TH JOB OF A CALL MANAGER - Allow Incoming & Outgoing Calls
+
+!@CUCM
+conf t
+ voice service voip
+ ip address trusted list
+  ipv4 0.0.0.0 0.0.0.0
+ end
+
+!@CUCM
+conf t
+ dial-peer voice 11 Voip
+  destination-pattern 11..
+  session target ipv4:10.11.100.8
+  codec g711ULAW
+ dial-peer voice 12 Voip
+  destination-pattern 12..
+  session target ipv4:10.12.100.8
+  codec g711ULAW
+ dial-peer voice 21 Voip
+  destination-pattern 21..
+  session target ipv4:10.21.100.8
+  codec g711ULAW
+ dial-peer voice 22 Voip
+  destination-pattern 22..
+  session target ipv4:10.22.100.8
+  codec g711ULAW
+ dial-peer voice 31 Voip
+  destination-pattern 31..
+  session target ipv4:10.31.100.8
+  codec g711ULAW
+ dial-peer voice 32 Voip
+  destination-pattern 32..
+  session target ipv4:10.32.100.8
+  codec g711ULAW
+ dial-peer voice 41 Voip
+  destination-pattern 41..
+  session target ipv4:10.41.100.8
+  codec g711ULAW
+ dial-peer voice 42 Voip
+  destination-pattern 42..
+  session target ipv4:10.42.100.8
+  codec g711ULAW
+ dial-peer voice 51 Voip
+  destination-pattern 51..
+  session target ipv4:10.51.100.8
+  codec g711ULAW
+ dial-peer voice 52 Voip
+  destination-pattern 52..
+  session target ipv4:10.52.100.8
+  codec g711ULAW
+ dial-peer voice 61 Voip
+  destination-pattern 61..
+  session target ipv4:10.61.100.8
+  codec g711ULAW
+ dial-peer voice 62 Voip
+  destination-pattern 62..
+  session target ipv4:10.62.100.8
+  codec g711ULAW
+ dial-peer voice 71 Voip
+  destination-pattern 71..
+  session target ipv4:10.71.100.8
+  codec g711ULAW
+ dial-peer voice 72 Voip
+  destination-pattern 72..
+  session target ipv4:10.72.100.8
+  codec g711ULAW
+ dial-peer voice 81 Voip
+  destination-pattern 81..
+  session target ipv4:10.81.100.8
+  codec g711ULAW
+ dial-peer voice 82 Voip
+  destination-pattern 82..
+  session target ipv4:10.82.100.8
+  codec g711ULAW
+ end
+
+
+
+5.5. 5TH JOB OF A CALL MANAGER - Interactive Voice Response System (IVRS)
+How do large call centers handle numerous calls?
+
+!@CUCM
+config t
+ dial-peer voice 69 voip
+  service rivanaa out-bound
+  destination-pattern #$34T#69
+  session target ipv4:10.#$34T#.100.8
+  incoming called-number #$34T#69
+  dtmf-relay h245-alphanumeric
+  codec g711ulaw
+  no vad
+ !
+ telephony-service
+  moh "flash:/en_bacd_music_on_hold.au"
+ !
+ application
+  service rivanaa flash:app-b-acd-aa-3.0.0.2.tcl
+   paramspace english index 1        
+   param number-of-hunt-grps 2
+   param dial-by-extension-option 8
+   param handoff-string rivanaa
+   param welcome-prompt flash:en_bacd_welcome.au
+   paramspace english language en
+   param call-retry-timer 15
+   param service-name rivanqueue
+   paramspace english location flash:
+   param second-greeting-time 60
+   param max-time-vm-retry 2
+   param voice-mail 1234
+   param max-time-call-retry 700
+   param aa-pilot #$34T#69
+  service rivanqueue flash:app-b-acd-3.0.0.2.tcl
+   param queue-len 15
+   param aa-hunt1 #$34T#00
+   param aa-hunt2 #$34T#01
+   param aa-hunt3 #$34T#22
+   param aa-hunt4 #$34T#66
+   param queue-manager-debugs 1
+   param number-of-hunt-grps 4
+   end
+
+
+Fix IVRS
+
+!@CUCM
+config t
+ application
+  no service callqueue flash:app-b-acd-2.1.2.2.tcl
+  no service rivanaa flash:app-b-acd-aa-2.1.2.2.tcl
+  end
+
+
+
+
+
+
+Review the jobs of a call manager:
+ 1. 
+ 2. 
+ 3. 
+ 4. 
+ 5. 
+  
+
+
+**********
+Full Script
+
+!@CUCM
+conf t
+ hostname CUCM-#$34T#
+ enable secret pass
+ service password-encryption
+ no logging console
+ no ip domain-lookup
+ line cons 0
+  password pass
+  login
+  exec-timeout 0 0
+ line vty 0 14
+  password pass
+  login
+  exec-timeout 0 0
+ int fa 0/0
+  no shut
+  ip add 10.#$34T#.100.8 255.255.255.0
+ end
+
+!@alog & ephone
+conf t
+ dial-peer voice 1 pots
+  destination-pattern #$34T#00
+  port 0/0/0
+ dial-peer voice 2 pots
+  destination-pattern #$34T#01
+  port 0/0/1
+ dial-peer voice 3 pots
+  destination-pattern #$34T#02
+  port 0/0/2
+ dial-peer voice 4 pots
+  destination-pattern #$34T#03
+  port 0/0/3
+ end
+
+conf t
+ no telephony-service
+ telephony-service
+  no auto assign
+  no auto-reg-ephone
+  max-ephones 5
+  max-dn 20
+  ip source-address 10.#$34T#.100.8 port 2000
+  create cnf-files
+ ephone-dn 1
+  number #$34T#11
+ ephone-dn 2
+  number #$34T#22
+ ephone-dn 3
+  number #$34T#33
+ ephone-dn 4
+  number #$34T#44
+ ephone-dn 5
+  number #$34T#55
+ ephone-dn 6
+  number #$34T#66
+ ephone-dn 7
+  number #$34T#77
+ ephone-dn 8
+  number #$34T#88
+ ephone-dn 9
+  number #$34T#99
+ ephone 1
+  mac-address #ephone1macadd#
+  type 8945
+  button 1:1 2:2 3:3 4:4
+  restart
+ ephone 2
+  mac-address #ephone2macadd#
+  type 8945
+  button 1:5 2:6 3:7 4:8
+  restart
+ end
+
+!@video call
+conf t
+ ephone 1
+  video
+  voice service voip
+  h323
+  call start slow
+ ephone 2
+  video
+  voice service voip
+  h323
+  call start slow
+end
+
+!@incoming and outgoing
+conf t
+ voice service voip
+ ip address trusted list
+ ipv4 0.0.0.0 0.0.0.0
+ end
+
+conf t
+ dial-peer voice 11 Voip
+  destination-pattern 11..
+  session target ipv4:10.11.100.8
+  codec g711ULAW
+ dial-peer voice 12 Voip
+  destination-pattern 12..
+  session target ipv4:10.12.100.8
+  codec g711ULAW
+ dial-peer voice 21 Voip
+  destination-pattern 21..
+  session target ipv4:10.21.100.8
+  codec g711ULAW
+ dial-peer voice 22 Voip
+  destination-pattern 22..
+  session target ipv4:10.22.100.8
+  codec g711ULAW
+ dial-peer voice 31 Voip
+  destination-pattern 31..
+  session target ipv4:10.31.100.8
+  codec g711ULAW
+ dial-peer voice 32 Voip
+  destination-pattern 32..
+  session target ipv4:10.32.100.8
+  codec g711ULAW
+ dial-peer voice 41 Voip
+  destination-pattern 41..
+  session target ipv4:10.41.100.8
+  codec g711ULAW
+ dial-peer voice 42 Voip
+  destination-pattern 42..
+  session target ipv4:10.42.100.8
+  codec g711ULAW
+ dial-peer voice 51 Voip
+  destination-pattern 51..
+  session target ipv4:10.51.100.8
+  codec g711ULAW
+ dial-peer voice 52 Voip
+  destination-pattern 52..
+  session target ipv4:10.52.100.8
+  codec g711ULAW
+ dial-peer voice 61 Voip
+  destination-pattern 61..
+  session target ipv4:10.61.100.8
+  codec g711ULAW
+ dial-peer voice 62 Voip
+  destination-pattern 62..
+  session target ipv4:10.62.100.8
+  codec g711ULAW
+ dial-peer voice 71 Voip
+  destination-pattern 71..
+  session target ipv4:10.71.100.8
+  codec g711ULAW
+ dial-peer voice 72 Voip
+  destination-pattern 72..
+  session target ipv4:10.72.100.8
+  codec g711ULAW
+ dial-peer voice 81 Voip
+  destination-pattern 81..
+  session target ipv4:10.81.100.8
+  codec g711ULAW
+ dial-peer voice 82 Voip
+  destination-pattern 82..
+  session target ipv4:10.82.100.8
+  codec g711ULAW
+ end
+ 
+!@IVRS
+config t
+ dial-peer voice 69 voip
+  service rivanaa out-bound
+  destination-pattern #$34T#69
+  session target ipv4:10.#$34T#.100.8
+  incoming called-number #$34T#69
+  dtmf-relay h245-alphanumeric
+  codec g711ulaw
+  no vad
+ !
+ telephony-service
+  moh "flash:/en_bacd_music_on_hold.au"
+ !
+ application
+  service rivanaa flash:app-b-acd-aa-3.0.0.2.tcl
+   paramspace english index 1        
+   param number-of-hunt-grps 2
+   param dial-by-extension-option 8
+   param handoff-string rivanaa
+   param welcome-prompt flash:en_bacd_welcome.au
+   paramspace english language en
+   param call-retry-timer 15
+   param service-name rivanqueue
+   paramspace english location flash:
+   param second-greeting-time 60
+   param max-time-vm-retry 2
+   param voice-mail 1234
+   param max-time-call-retry 700
+   param aa-pilot #$34T#69
+  service rivanqueue flash:app-b-acd-3.0.0.2.tcl
+   param queue-len 15
+   param aa-hunt1 #$34T#00
+   param aa-hunt2 #$34T#01
+   param aa-hunt3 #$34T#22
+   param aa-hunt4 #$34T#66
+   param queue-manager-debugs 1
+   param number-of-hunt-grps 4
+   end
+
+
+
+
+5.6. Remote Access | JUMPSERVER
+Exercies 06: Attempt to establish a telnet session with the call manager
+
+Is the device pingable?
+@cmd
+10.#$34T#.100.8
+
+
+
+Configure EDGE
+6. Establish connectivity to your enterprise.
+How do you gain access to the internet?
+
+Exercise 07: Review of First 5 (HESNo)
+
+Task:
+ 1. Set the hostname to EDGE-#$34T#
+ 2. Protect access to the global configuration mode using a password that is hashed with md5 encryption. 
+    The password must be 'pass'
+ 3. Make sure any plain text passwords are encrypted in the configuration file.
+ 4. The device must not be allowed to send logs on the console.
+ 5. The device must not assume non-cisco commands are domain names.
+ 
+!@EDGE
+conf t
+ ____  ____
+ enable  ____  ____
+ service  ____
+ no ____  ____  ____
+ no ip ____  ____
+ end
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********
+Answers
+
+!@EDGE
+conf t
+ hostname EDGE-#$34T#
+ enable secret pass
+ service password-encryption
+ no logging cons
+ no ip domain lookup
+ end
+ 
+ 
+
+Exercise 08: Review of Protecting the console and terminal.
+
+Task:
+Protect Console
+ 1. Set a password on the console.
+    The password must be 'pass'
+ 2. When connecting to the console, the device must require only a password.
+ 3. If a user is inactive for 30 minutes and 30 seconds, the session must end.
+
+Protect Remote Access
+ 1. Set a password on the first 15 virtual teletype lines.
+    The password must be 'pass'
+ 2. When connecting to the console, the device must require only a password.
+ 3. If a user is inactive for 12 hours, the session must end.
+
+!@EDGE
+conf t
+ line ____  __
+  ____  ____
+  ____
+  ____  __  __
+  exit
+ line ____  __
+  ____  ____
+  ____
+  ____  __  __
+  end
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********
+Answers
+
+!@EDGE
+conf t
+ line cons 0
+  password pass
+  login
+  exec-timeout 30 30
+  exit
+ line vty 0 14
+  password pass
+  login
+  exec-timeout 720 0
+  end
+
+
+
+6.1. What is the maximum distance of a UTP cable? 100m? 
+  - LAN                  Local Area Network
+  - WAN                  Wide Area Network
+
+PLDT Home vs PLDT Enterprise
+  - MAN                  Metropolitan Area Network
+                         PLDT Enterprise Metro Ethernet
+Transport technologies:
+  - Leased Line
+  - SDWAN
+  - MPLS VPLS            Pseudowire, L3 & L2
+  - VPN                  EVPN
+
+Why PLDT? 
+  Submarine Cable Map
+
+Why NOT PLDT?
+  Cabling
+  Service Reliability
+  https://www.pldthome.com/termsandconditions
+
+
+How to know if you are connected to PLDT? SCN - show cdp neighbor
+
+!@EDGE
+show cdp neighbor
+
+
+6.2. Configure routing protocols
+What are the jobs of a router?
+ 1. 
+ 2. 
+ 3. 
+ 4. 
+ 5. 
+
+
+!@EDGE
+conf t
+ ip routing
+ ip route 10.11.0.0 255.255.0.0 200.0.0.11 254
+ ip route 10.12.0.0 255.255.0.0 200.0.0.12 254
+ ip route 10.21.0.0 255.255.0.0 200.0.0.21 254
+ ip route 10.22.0.0 255.255.0.0 200.0.0.22 254
+ ip route 10.31.0.0 255.255.0.0 200.0.0.31 254
+ ip route 10.32.0.0 255.255.0.0 200.0.0.32 254
+ ip route 10.41.0.0 255.255.0.0 200.0.0.41 254
+ ip route 10.42.0.0 255.255.0.0 200.0.0.42 254
+ ip route 10.51.0.0 255.255.0.0 200.0.0.51 254
+ ip route 10.52.0.0 255.255.0.0 200.0.0.52 254
+ ip route 10.61.0.0 255.255.0.0 200.0.0.61 254
+ ip route 10.62.0.0 255.255.0.0 200.0.0.62 254
+ ip route 10.71.0.0 255.255.0.0 200.0.0.71 254
+ ip route 10.72.0.0 255.255.0.0 200.0.0.72 254
+ ip route 10.81.0.0 255.255.0.0 200.0.0.81 254
+ ip route 10.82.0.0 255.255.0.0 200.0.0.82 254
+ ip route 10.91.0.0 255.255.0.0 200.0.0.81 254
+ ip route 10.92.0.0 255.255.0.0 200.0.0.82 254
+ ip route 10.#$34T#.0.0 255.255.0.0 10.#$34T#.#$34T#.4 254
+ end
+
+!@CUCM
+conf t
+ ip routing
+ ip route 0.0.0.0 0.0.0.0 10.#$34T#.100.4 254
+ end
+
+!@CoreBABA
+conf t
+ ip route 0.0.0.0 0.0.0.0 10.#$34T#.#$34T#.1 254
+ end
+
+
+Verify: How can you check the list of routes?  SIR - show ip route
+
+!@CoreBABA, CUCM, EDGE
+show ip route
+
+
+How do you configure routes on windows?
+
+!@cmd
+route add 10.0.0.0 mask 255.0.0.0 10.#$34T#.1.4
+route add 200.0.0.0 mask 255.255.255.0 10.#$34T#.1.4
+
+
+
+6.3. Configure OSPF routing
+At what capacity do you want your devices to run?
+
+!@edge
+conf t
+router ospf 1
+router-id #$34T#.0.0.1
+network 200.0.0.0 0.0.0.255 area 0
+network 10.#$34T#.#$34T#.0 0.0.0.255 area 0
+network #$34T#.0.0.1 0.0.0.0 area 0
+int gi 0/0/0
+ip ospf network point-to-point
+end
+
+@coreBaba
+conf t
+router ospf 1
+router-id 10.#$34T#.#$34T#.4
+network 10.#$34T#.0.0 0.0.255.255 area 0
+int gi0/1
+ip ospf network point-to-point
+
+@cucm
+conf t
+router ospf 1
+router-id 10.#$34T#.100.8
+network 10.#$34T#.100.0 0.0.0.255 area 0
+end
+
+
+Verify: How to check if OSPF is working? SIP - show ip protocols, SION - show ip ospf neighbor, SIRO - show ip route ospf
+
+
+6.4. Now that routing is in place, there's no need to jump to access CUCM.
+
+Ping
+!@cmd
+ping 10.#$34T#.1.2                 CoreTAAS
+ping 10.#$34T#.1.4                 CoreBABA
+ping 10.#$34T#.100.8               CUCM
+ping 10.#$34T#.#$34T#.1            EDGE
+
+Scan
+!@cmd
+nmap -v 10.#$34T#.1.2 
+nmap -v 10.#$34T#.1.4
+nmap -v 10.#$34T#.100.8
+nmap -v 10.#$34T#.#$34T#.1
+
+Telnet via SecureCRT
+
+
+
+
+
+
+
+
+
+
+
+
+
+__________
+**********
+REVIEW
+
+Must know show commands.
+SS = 
+SR = 
+CRS = 
+SIIB =
+SVB =
+SIDB =
+SMAC = 
+SDVS =
+SIP =
+SIR =
+SION =
+
+
+First 5 commands:
+H.
+E.
+S.
+No.
+No.
+
+
+Commands to protect console, in order:
+
+!@Cisco
+config t
+
+
+
+
+
+
+
+Commands to protect remote access, in order:
+
+!@Cisco
+config t
+
+
+
+
+
+
+
+Commands to configure DHCP, in order:
+
+!@Cisco
+config t
+ ip dhcp excluded-address 10.0.1.1 10.0.0.100
+ __ ____ ____ mypool
+  ____ 10.0.1.0 255.255.255.0
+  ____ 10.0.1.1
+  ____ mypool.com
+  ____ 10.0.1.10
+
+
+What are the jobs of a switch?
+ 1.
+ 2.
+ 3.
+ 4.
+ 5.
+
+
+What are the jobs of a call manager/voice gateway?
+ 1.
+ 2.
+ 3.
+ 4.
+ 5.
+ 
+ 
+What are the jobs of a router?
+ 1.
+ 2.
+ 3.
+ 4.
+ 5.
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********
+7. Domain Name System
+"Connect to websites through IP addresses alone"
+
+@cmd
+ping google.com         ___.___.___.___
+ping cisco.com     
+ping rivanit.com   
+
+
+
+Set up your own DNS Server.
+ - Create a Zone File for ccna#$34T#.com
+   Forward & Reverse
+
+ - DNS Records
+
+@cmd
+ping ns.google.com      ___.___.___.___
+ping www
+ping imap
+ping pop
+ping smtp
+
+
+Exercise 02: Configure DNS records for devices:
+  CoreBABA,   cb
+  CoreTaas,   ct
+  CUCM,       cm
+  EDGE,       ed
+  AP,         ap
+  WLC,        wc
+  Cam6,       c6
+  Cam8,       c8
+  Ephone1,    e1
+  Ephone2,    e2
+
+
+Configure a webserver for ccna#$34T#.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#########################################################################
+### Powershell Script to install DNS & IIS (Windows Web Server)
+
+Install-WindowsFeature -name dns -includeManagementTools
+﻿Install-WindowsFeature -name Web-Server -includeManagementTools
+
+
+#########################################################################
+### Powershell Script for DNS Zones & Records
+
+add-DnsServerPrimaryZone -Name "ccna#$34T#.com" -ZoneFile "ccna#$34T#.com.dns"
+
+﻿add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ns -ipv4address 10.#$34T#.1.7
+add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name www -hostname ns.ccna#$34T#.com
+add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name imap -hostname ns.ccna#$34T#.com
+add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name pop -hostname ns.ccna#$34T#.com
+add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name smtp -hostname ns.ccna#$34T#.com
+
+add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name cb -ipv4address 10.#$34T#.1.4
+add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ct -ipv4address 10.#$34T#.1.2
+add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name cm -ipv4address 10.#$34T#.100.8
+add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ed -ipv4address 10.#$34T#.#$34T#.1
+add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name e1 -ipv4address 10.#$34T#.100.101
+add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name e2 -ipv4address 10.#$34T#.100.102
+add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name c6 -ipv4address 10.#$34T#.50.6
+add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name c8 -ipv4address 10.#$34T#.50.8
+add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ap -ipv4address 10.#$34T#.10.3
+
+
+#########################################################################
+### Powershell Script for Website configuration
+
+New-Website -name "ccna#$34T#.com" -hostheader "www.ccna#$34T#.com" -physicalpath "d:\webs\officebiz"
+
+
+
+Exercise 03: Configure DNS and Web for bpiph#$34T#.com
+
+  - The zone file must contain records for Web, eMail, CUCM,EDGE, ePhone1 and ePhone2.
+  - Assign the bpi html as its own main page.
+
+
+
+Internet Assigned Numbers Authority
+Authoritative DNS Root Servers 
+
+What happens when a dns server does not know how to map a domain name?
+
+
+@cmd
+nslookup -type=NS com. a.root-servers.net
+nslookup -type=NS rivanit.com d.gtld-servers.net
+nslookup -type=NS rivanit.com ns1.dns-parking.com
+
+
+Root Servers
+  > TLD
+    > SLD
+	  > DNS RECORDS
+
+DNS Forwarders
+Recursive
+
+
+
+Lookup nemsu.edu.ph
+
+@cmd
+nslookup -type=NS
+
+
+
+Configure Forwarders
+
+#########################################################################
+### Powershell Script for DNS Forwarders
+
+! You do not forward things yourself
+
+Remove-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10, 10.31.1.10, 10.32.1.10, 10.41.1.10, 10.42.1.10,10.51.1.10, 10.52.1.10, 10.61.1.10, 10.62.1.10, 10.71.1.10, 10.72.1.10, 10.81.1.10, 10.82.1.10 -PassThru
+Add-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10, 10.31.1.10, 10.32.1.10, 10.41.1.10, 10.42.1.10,10.51.1.10, 10.52.1.10, 10.61.1.10, 10.62.1.10, 10.71.1.10, 10.72.1.10, 10.81.1.10, 10.82.1.10 -PassThru
+
+
+
+
+
+Verify:
+
+@Cisco
+conf t
+ ip domain lookup
+ ip name-server 10.#$34T#.1.10
+ end
+ping ns.ccna#$34T#.com
+
+
+
+__________
+**********
+8. File Transfer
+
+Upload configurations to FTP Server. (CoreTaas, CoreBaba, CUCM, EDGE)
+
+@Cisco
+copy run ftp://ccna#$34T#.com
+
+
+How to copy the current IOS of a Cisco Switch
+
+@Cisco
+archive upload-sw ftp://ccna#$34T#.com
+
+
+
+__________
+**********
+9. Mail Exchanger
+
+Create an MX record on the Zone file.
+	Install .NET Framework 3.5 Features
+
+
+Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
+
+  User1: ac
+  Pass: C1sc0123
+  
+  User: Support
+  Pass: C1sc0123
