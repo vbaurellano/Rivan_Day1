@@ -1,4 +1,4 @@
-![Day 1 Topology](https://github.com/user-attachments/assets/da3cadb8-78ca-4338-9d8b-6f72691c87b7)
+<img width="1400" height="850" alt="Day1-Sim-100" src="https://github.com/user-attachments/assets/a10e0881-3db2-40b7-a92e-50d9f0534247" />
 
 
 ![Day1 Cheat Sheet](https://github.com/user-attachments/assets/b2b2255f-46c3-490f-8b46-abae008ef536)
