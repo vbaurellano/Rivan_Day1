@@ -1,2 +1,5 @@
-Getting Started
+![Day 1 Topology](https://github.com/user-attachments/assets/da3cadb8-78ca-4338-9d8b-6f72691c87b7)
+![Day1 Cheat Sheet](https://github.com/user-attachments/assets/b2b2255f-46c3-490f-8b46-abae008ef536)
 ![CORE_3560](https://github.com/user-attachments/assets/e0ad6b8c-87af-4552-8034-41ffc1eba99b)
+![CUCM_1800_](https://github.com/user-attachments/assets/678cd62e-6f85-4aff-a4fc-a805d9dbd210)
+![EDGE_4321_](https://github.com/user-attachments/assets/04958354-bb66-4e97-9397-900cf8582808)
