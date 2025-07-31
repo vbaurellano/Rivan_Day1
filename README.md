@@ -1,7 +1,7 @@
-<img width="1400" height="850" alt="Day1-Sim-100" src="https://github.com/user-attachments/assets/a10e0881-3db2-40b7-a92e-50d9f0534247" />
+<img width="1400" height="850" alt="Day1-100" src="https://github.com/user-attachments/assets/b4cd5398-c4f0-4694-bba7-8e5c12117eb3" />
 
 
-![Day1 Cheat Sheet](https://github.com/user-attachments/assets/b2b2255f-46c3-490f-8b46-abae008ef536)
+<img width="1400" height="850" alt="Day1-Modes-100" src="https://github.com/user-attachments/assets/77811e35-cd01-4b96-85ea-cbfe7e887829" />
 
 
 ![CORE_3560](https://github.com/user-attachments/assets/e0ad6b8c-87af-4552-8034-41ffc1eba99b)
