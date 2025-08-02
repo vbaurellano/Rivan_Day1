@@ -1,4 +1,4 @@
-![DAY_1](https://github.com/user-attachments/assets/b4cd5398-c4f0-4694-bba7-8e5c12117eb3)
+![DAY_1](https://github.com/user-attachments/assets/1206aff2-67aa-4546-b645-2b07bd89ed28)
 
 ![CISCO_CLI](https://github.com/user-attachments/assets/77811e35-cd01-4b96-85ea-cbfe7e887829)
 
