@@ -1383,7 +1383,7 @@ conf t
 ---
 &nbsp;
 
-## 5. Interactive Voice Response System (IVRS)
+## ⚙️ 5. Interactive Voice Response System (IVRS)
 *How do large call centers handle numerous calls?*
 
 ~~~
@@ -1444,22 +1444,30 @@ config t
   end
 ~~~
 
+<br>
+<br>
 
-
-
+---
+&nbsp;
 
 Review the jobs of a call manager:
- 1. 
- 2. 
- 3. 
- 4. 
- 5. 
+ 1. &nbsp;
+ 2. &nbsp;
+ 3. &nbsp;
+ 4. &nbsp;
+ 5. &nbsp;
   
+<br>
+<br>
 
+---
+&nbsp;
 
-**********
-Full Script
+### Full Script
 
+<details>
+
+~~~
 !@CUCM
 conf t
  hostname CUCM-#$34T#
@@ -1662,25 +1670,40 @@ config t
    param queue-manager-debugs 1
    param number-of-hunt-grps 4
    end
+~~~
 
+</details>
 
+<br>
+<br>
 
+---
+&nbsp;
 
-5.6. Remote Access | JUMPSERVER
+## Remote Access | [JUMPSERVER](https://www.jumpserver.com/)
 Exercies 06: Attempt to establish a telnet session with the call manager
 
+<br>
+
 Is the device pingable?
+
+~~~
 @cmd
 10.#$34T#.100.8
+~~~
 
+<br>
+<br>
 
+---
+&nbsp;
 
-Configure EDGE
-6. Establish connectivity to your enterprise.
-How do you gain access to the internet?
+## 🔧 Configure EDGE
+### ⚙️ Establish connectivity to your enterprise.
 
-Exercise 07: Review of First 5 (HESNo)
+*How do you gain access to the internet?*
 
+### 🎯 Exercise 07: Review of First 5 (HESNo)
 Task:
  1. Set the hostname to EDGE-#$34T#
  2. Protect access to the global configuration mode using a password that is hashed with md5 encryption. 
@@ -1688,7 +1711,10 @@ Task:
  3. Make sure any plain text passwords are encrypted in the configuration file.
  4. The device must not be allowed to send logs on the console.
  5. The device must not assume non-cisco commands are domain names.
- 
+
+<br>
+
+~~~
 !@EDGE
 conf t
  ____  ____
@@ -1697,34 +1723,19 @@ conf t
  no ____  ____  ____
  no ip ____  ____
  end
-
+~~~
  
- 
+<br>
+<br>
 
+---
+&nbsp;
 
+### ANSWERS
 
+<details>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**********
-Answers
-
+~~~
 !@EDGE
 conf t
  hostname EDGE-#$34T#
@@ -1733,10 +1744,11 @@ conf t
  no logging cons
  no ip domain lookup
  end
- 
- 
+~~~
 
-Exercise 08: Review of Protecting the console and terminal.
+</details>
+
+### 🎯 Exercise 08: Review of Protecting the console and terminal.
 
 Task:
 Protect Console
@@ -1745,12 +1757,17 @@ Protect Console
  2. When connecting to the console, the device must require only a password.
  3. If a user is inactive for 30 minutes and 30 seconds, the session must end.
 
+<br>
+
 Protect Remote Access
  1. Set a password on the first 15 virtual teletype lines.
     The password must be 'pass'
  2. When connecting to the console, the device must require only a password.
  3. If a user is inactive for 12 hours, the session must end.
 
+<br>
+
+~~~
 !@EDGE
 conf t
  line ____  __
@@ -1763,34 +1780,19 @@ conf t
   ____
   ____  __  __
   end
+~~~
 
- 
- 
+<br>
+<br>
 
+---
+&nbsp;
 
+## ANSWERS
 
+<details>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**********
-Answers
-
+~~~
 !@EDGE
 conf t
  line cons 0
@@ -1803,7 +1805,15 @@ conf t
   login
   exec-timeout 720 0
   end
+~~~
 
+</details>
+
+<br>
+<br>
+
+---
+&nbsp;
 
 
 6.1. What is the maximum distance of a UTP cable? 100m? 
