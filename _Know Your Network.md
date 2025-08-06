@@ -242,8 +242,8 @@ conf t
 <br>
 
 
-## 🔧 __Configure CoreTAAS__
-### 1. Initial configurations
+## 🔧 Configure CoreTAAS
+### ⚙️ 1. Initial configurations
 
 __First 5 - H.E.S.No__
 
@@ -262,7 +262,7 @@ conf t
 ---
 &nbsp;
 
-### 2. Protect Console & Remote Access
+### ⚙️ 2. Protect Console & Remote Access
 ~~~
 !@CoreTAAS
 conf t
@@ -281,7 +281,7 @@ conf t
 ---
 &nbsp;
 
-### 3. Create SVI (Switch Virtual Interface)
+### ⚙️ 3. Create SVI (Switch Virtual Interface)
 ~~~
 !@CoreTAAS
 conf t
@@ -378,8 +378,7 @@ conf t
 
 ### ANSWER
 <details>
-  <summmary>
-	  
+	
 ~~~
 !@CoreTaas
 conf t
@@ -414,8 +413,6 @@ conf t
   desc VOICE-VLAN
  end
 ~~~
-
-  </summmary>
 </details>
 <br>
 <br>
@@ -426,7 +423,7 @@ conf t
 ## 🔧 Configure CoreBABA
 Know the jobs of a Layer 3 Switch
 
-### 1. __POE__
+### ⚙️ 1. __POE__
 *Are there switches that don't support POE? __Yes__. Buy one from [Temu](https://www.temu.com)*
 
 > [!NOTE]
@@ -454,7 +451,7 @@ show power inline
 ---
 &nbsp;
 
-### 2. SVI (Switch Virtual Interface)
+### ⚙️ 2. SVI (Switch Virtual Interface)
 
 ~~~
 !@CoreBABA
@@ -511,7 +508,7 @@ ping 10.#$34T#.1.4
 ---
 &nbsp;
 
-### 3. DHCP / BOOTPS & BOOTPC
+### ⚙️ 3. DHCP / BOOTPS & BOOTPC
 *In a network, which device should be a DHCP Server? __It depends.__*
 
 | Network     | DHCP Device |
@@ -603,7 +600,6 @@ conf t
 
 ### ANSWER
 <details>
-<summmary>
 
 ~~~
 !@CoreBABA
@@ -619,7 +615,6 @@ conf t
   end
 ~~~
 
-</summary>
 </details>
 <br>
 <br>
@@ -655,6 +650,11 @@ conf t
   end
 ~~~
 
+
+&nbsp;
+---
+&nbsp;
+
 Place Switchports in their correct VLAN.
 
 ~~~
@@ -681,13 +681,19 @@ conf t
   mls qos trust device cisco-phone
  end
 ~~~
+<br>
+<br>
 
-Exercise 05: Place Cameras to their correct VLANs based on the topology.
+---
+&nbsp;
+
+### 🎯 Exercise 05: Place Cameras to their correct VLANs based on the topology.
 
 Task:
  1. Create VLAN 50 and name it 'CCTVLAN'
  2. Place IP cameras to their correct VLAN.
 
+~~~
 !@CoreBABA
 conf t
  vlan ____
@@ -701,34 +707,16 @@ conf t
   ____  ____  access
   ____  access ____  ____
   end
+~~~
+
+&nbsp;
+---
+&nbsp;
  
- 
- 
+### ANSWERS
+<details>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**********
-Answers
-
+~~~
 !@CoreBABA
 conf t
  vlan 50
@@ -742,24 +730,41 @@ conf t
   switchport mode access
   switchport access vlan 50
   end
+~~~
 
+</details>
+<br>
+<br>
 
+---
+&nbsp;
 
-4.5. 5th JOB OF A SWITCH - MAC Learning & MAC Reservation
-What does it mean to say Layer 2 in networking?
+## 5. MAC Learning & MAC Reservation
+*What does it mean to say Layer 2 in networking?*
 
-How to view the MAC addresses learned by the Switch? SMAC - show mac address-table
+How to view the MAC addresses learned by the Switch? __SMAC - `show mac address-table`__
 
+~~~
 !@CoreBABA
 show mac address-table
+~~~
 
+&nbsp;
+---
+&nbsp;
 
-Camera fa0/6 MAC = #camera6macadd#
-Camera fa0/8 MAC = #camera8macadd#
+| Camera         | MAC Address      |
+| ---            | ---              |
+| Camera fa0/6   | #camera6macadd#  |
+| Camera fa0/8   | #camera8macadd#  |
 
+&nbsp;
+---
+&nbsp;
 
 Assign a specific IP address to a device.
 
+~~~
 !@CoreBABA
 conf t
  ip routing
@@ -770,16 +775,27 @@ conf t
   host 10.#$34T#.50.8 255.255.255.0
   client-identifier #camera8macadd#
  end
- 
- 
-Verify DHCP: 
+~~~
 
+&nbsp;
+---|
+&nbsp;
+
+Verify DHCP: __SIDB - `show ip dhcp bindings`__
+
+~~~
 !@CoreBABA
-show ip dhcp bindings    !SIDB
+show ip dhcp bindings
+~~~
+<br>
+<br>
 
+---
+&nbsp;
 
-4.6. Ensure Availability through redundancy and loadbalance
+Ensure Availability through redundancy and loadbalance
 
+~~~
 !@coreBaba, coreTaas
 conf t
  int range fa0/10-12
@@ -788,13 +804,11 @@ conf t
   channel-group 1 mode active
   channel-protocol lacp
   end
+~~~
 
-
-
-
-
-
-
+&nbsp;
+---
+&nbsp;
 
 Review the jobs of a switch:
  1. 
