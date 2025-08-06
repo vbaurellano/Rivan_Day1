@@ -2033,25 +2033,18 @@ nmap -v 10.#$34T#.#$34T#.1
 ~~~
 
 <br>
+
 Telnet via SecureCRT
 
+<br>
+<br>
 
+---
+&nbsp;
 
+# 🎯 REVIEW
 
-
-
-
-
-
-
-
-
-
-__________
-**********
-REVIEW
-
-Must know show commands.
+Must know show commands:
 SS = 
 SR = 
 CRS = 
@@ -2064,6 +2057,9 @@ SIP =
 SIR =
 SION =
 
+&nbsp;
+---
+&nbsp;
 
 First 5 commands:
 H.
@@ -2072,31 +2068,35 @@ S.
 No.
 No.
 
+&nbsp;
+---
+&nbsp;
 
 Commands to protect console, in order:
 
+~~~
 !@Cisco
 config t
+~~~
 
-
-
-
-
-
+&nbsp;
+---
+&nbsp;
 
 Commands to protect remote access, in order:
 
+~~~
 !@Cisco
 config t
+~~~
 
-
-
-
-
-
+&nbsp;
+---
+&nbsp;
 
 Commands to configure DHCP, in order:
 
+~~~
 !@Cisco
 config t
  ip dhcp excluded-address 10.0.1.1 10.0.0.100
@@ -2105,30 +2105,40 @@ config t
   ____ 10.0.1.1
   ____ mypool.com
   ____ 10.0.1.10
+~~~
 
+&nbsp;
+---
+&nbsp;
 
 What are the jobs of a switch?
- 1.
- 2.
- 3.
- 4.
- 5.
+ 1. &nbsp;
+ 2. &nbsp;
+ 3. &nbsp;
+ 4. &nbsp;
+ 5. &nbsp;
 
+&nbsp;
+---
+&nbsp;
 
 What are the jobs of a call manager/voice gateway?
- 1.
- 2.
- 3.
- 4.
- 5.
- 
+ 1. &nbsp;
+ 2. &nbsp;
+ 3. &nbsp;
+ 4. &nbsp;
+ 5. &nbsp;
+
+&nbsp;
+---
+&nbsp;
  
 What are the jobs of a router?
- 1.
- 2.
- 3.
- 4.
- 5.
+ 1. &nbsp;
+ 2. &nbsp;
+ 3. &nbsp;
+ 4. &nbsp;
+ 5. &nbsp;
  
  
  
