@@ -1083,9 +1083,10 @@ Enter port 23 via __SecureCRT__
 &nbsp;
 
 
-Configure CUCM
-5. Setup a mini call center
+## 🔧 Configure CUCM
+### 📠 Setup a mini call center
 
+~~~
 !@CUCM
 conf t
  hostname CUCM-#$34T#
@@ -1105,12 +1106,23 @@ conf t
   no shut
   ip add 10.#$34T#.100.8 255.255.255.0
  end
- 
- 
+~~~
 
-5.1. 1ST JOB OF A CALL MANAGER - Analog Phones
-Why do companies still use Analog phones? Mobile vs Analog
 
+<br>
+<br>
+
+---
+&nbsp;
+
+### Know the jobs of a Layer 3 Switch
+
+## ⚙️ 1. Analog Phones
+*Why do companies still use Analog phones? Mobile vs Analog*
+
+<br>
+
+~~~
 !@CUCM
 conf t
  dial-peer voice 1 pots
@@ -1126,26 +1138,44 @@ conf t
   destination-pattern #$34T#03
   port 0/0/3
  end
- 
+~~~
+
+<br>
+
 Verify Functionality:
 
+~~~
 !@CUCM
 show dial-peer voice summary     !SDVS
 csim start #$34T#00
+~~~
+
+&nbsp;
+---
+&nbsp;
 
 Modify the tone of the phone.
 
+~~~
 !@CUCM
 conf t
  voice-port 0/0/0
   cptone dutch
   end
-  
+~~~
 
+<br>
+<br>
 
-5.2. 2ND JOB OF A CALL MANAGER - IP Phones - Cisco Skinny Client Control Protocol (SCCP)
-What kind of phones do enterprise use?
+---
+&nbsp;
 
+## ⚙️ 2. IP Phones - Cisco Skinny Client Control Protocol (SCCP)
+*What kind of phones do enterprise use?*
+
+<br>
+
+~~~
 !@CUCM
 conf t
  no telephony-service
@@ -1156,13 +1186,24 @@ conf t
   max-dn 20
   ip source-address 10.#$34T#.100.8 port 2000
   end
+~~~
 
-Why 10.#$34T#.100.8? TFTP
+<br>
 
+*Why 10.#$34T#.100.8? __TFTP__*
+
+&nbsp;
+---
+&nbsp;
 
 Ephone 1 MAC: #ephone1macadd#
 Ephone 2 MAC: #ephone1macadd#
 
+&nbsp;
+---
+&nbsp;
+
+~~~
 !@CUCM
 conf t
  ephone-dn 1
@@ -1192,11 +1233,14 @@ conf t
   type 8945
   button 1:5 2:6 3:7 4:8
   end
+~~~
 
+<br>
 
+> [!TIP]
+> Still no numbers? Because IP Phones need to generate configuration files. MANDATORY
 
-Still no numbers? Because IP Phones need to generate configuration files. MANDATORY
-
+~~~
 !@CUCM
 conf t
  telephony-service
@@ -1207,13 +1251,20 @@ conf t
  ephone 2
   restart
   end
+~~~
 
-Depending on the ephone, 'create cnf-files' will need to be pasted twice.
+> [!NOTE]
+> Depending on the ephone, `create cnf-files` will need to be pasted twice.
 
+<br>
+<br>
 
+---
+&nbsp;
 
-5.3. 3RD JOB OF A CALL MANAGER - Video Calls
+## ⚙️ 3. Video Calls
 
+~~~
 !@CUCM
 conf t
  ephone 1
@@ -1227,18 +1278,28 @@ conf t
   h323
   call start slow
 end
+~~~
 
+<br>
+<br>
 
+---
+&nbsp;
 
-5.4. 4TH JOB OF A CALL MANAGER - Allow Incoming & Outgoing Calls
+## ⚙️ 4. Allow Incoming & Outgoing Calls
 
+~~~
 !@CUCM
 conf t
  voice service voip
  ip address trusted list
   ipv4 0.0.0.0 0.0.0.0
  end
+~~~
 
+<br>
+
+~~~
 !@CUCM
 conf t
  dial-peer voice 11 Voip
@@ -1305,13 +1366,27 @@ conf t
   destination-pattern 82..
   session target ipv4:10.82.100.8
   codec g711ULAW
+ dial-peer voice 91 Voip
+  destination-pattern 91..
+  session target ipv4:10.91.100.8
+  codec g711ULAW
+ dial-peer voice 92 Voip
+  destination-pattern 92..
+  session target ipv4:10.92.100.8
+  codec g711ULAW
  end
+~~~
 
+<br>
+<br>
 
+---
+&nbsp;
 
-5.5. 5TH JOB OF A CALL MANAGER - Interactive Voice Response System (IVRS)
-How do large call centers handle numerous calls?
+## 5. Interactive Voice Response System (IVRS)
+*How do large call centers handle numerous calls?*
 
+~~~
 !@CUCM
 config t
  dial-peer voice 69 voip
@@ -1351,17 +1426,23 @@ config t
    param queue-manager-debugs 1
    param number-of-hunt-grps 4
    end
+~~~
 
+<br>
 
-Fix IVRS
+> [!WARNING]
+Configurations for IVRS cannot be overwritten. In case of wrong configurations, paste the commands below to the call manager then repaste the correct IVRS configurations.
 
+<br>
+
+~~~
 !@CUCM
 config t
  application
   no service callqueue flash:app-b-acd-2.1.2.2.tcl
   no service rivanaa flash:app-b-acd-aa-2.1.2.2.tcl
   end
-
+~~~
 
 
 
