@@ -2,7 +2,7 @@
 <!-- Your monitor number = #$34T# -->
 
 
-# Welcome to Rivan
+# 👋 Welcome to Rivan
 *"There's no better teacher than experience"*
 
 
@@ -162,7 +162,7 @@ Serial Cable
   - VGA, USB
   - Ugreen
 
-## Master the Command Line Interface (CLI)
+## ⌨️ Master the Command Line Interface (CLI)
 *How to know if someone has less than 1 year experience?*
 
 <img width="1400" height="850" alt="Day1-Modes-100" src="https://github.com/user-attachments/assets/2647c258-2a03-449f-b5bb-323a822f16eb" />
@@ -172,7 +172,6 @@ Serial Cable
 ---
 &nbsp;
 
-## *Right command, Right place.*
 ~~~
 !@Switch
 conf t
@@ -201,7 +200,7 @@ conf t
 <br>
 
 
-## EXERCISE 01: Navigate through the CLI as fast as you can.
+### 🎯 Exercise 01: Navigate through the CLI as fast as you can.
 ~~~
 !@Switch
 conf t
@@ -243,7 +242,7 @@ conf t
 <br>
 
 
-## Configure CoreTAAS
+## 🔧 Configure CoreTAAS
 ### 1. Initial configurations
 
 __First 5 - H.E.S.No__
@@ -307,7 +306,7 @@ By default,
 ---
 &nbsp;
 
-## EXERCISE 02: Turn on VLAN 1
+### 🎯 Exercise 02: Turn on VLAN 1
 
 ~~~
 !@CoreTAAS
@@ -323,7 +322,7 @@ show ip int br
 ---
 &nbsp;
 
-## EXERCISE 03: Add the other SVIs
+### 🎯 Exercise 03: Add the other SVIs
 
 Task:
  1. CoreTAAS must have the following SVIs
@@ -424,7 +423,7 @@ conf t
 ---
 &nbsp;
 
-## Configure CoreBABA
+## 🔧 Configure CoreBABA
 Know the jobs of a Layer 3 Switch
 
 ### 1. 1ST JOB OF A SWITCH - POE (Power over Ethernet)
