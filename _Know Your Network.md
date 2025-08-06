@@ -25,7 +25,7 @@ Cisco Certified Network Automation
 ---
 &nbsp;
 
-## 📋 Prove that you are doing.
+## 📋 Prove what you are doing.
  - Create a Github account: https://github.com/
  - Create a Postman account: https://www.postman.com/
 
@@ -1465,7 +1465,7 @@ Review the jobs of a call manager:
 ---
 &nbsp;
 
-### 📃 ull Script
+### 📃 Full Script
 
 <details>
 
