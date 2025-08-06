@@ -1,12 +1,13 @@
 
 <!-- Your monitor number = #$34T# -->
- 
- 
+
+
 # Welcome to Rivan
-> *"There's no better teacher than experience"*
+*"There's no better teacher than experience"*
+
 
 &nbsp;
-### 💡 Approach to Network Programmability
+## 💡 Approach to Network Programmability
 *"A new era for Cisco Certifications"*
 
 Cisco Certified Network Automation
@@ -17,18 +18,26 @@ Cisco Certified Network Automation
 - REST APIs
 - Ansible, Terraform, Chef, Puppet, etc.
 - Collaboration Platforms (GitHub)
+<br>
+<br>
 
+---
 &nbsp;
-### 📋 Prove that you are doing.
+
+## 📋 Prove that you are doing.
  - Create a Github account: https://github.com/
  - Create a Postman account: https://www.postman.com/
 
 Import the repositories.
  - &nbsp;
  - &nbsp;
+<br>
+<br>
 
+---
 &nbsp;
-### 📂 Create your own folder in the desktop
+
+## 📂 Create your own folder in the desktop
 ~~~
 @cmd
 cd Users/Administrator/Desktop
@@ -36,14 +45,21 @@ mkdir _name-#$34T#
 cd _name-#$34T#
 dir
 ~~~
+<br>
+<br>
 
-&nbsp;
-# 💻 Build your own network. 
-> *"Know your network"*
 
+# 💻 Build your network. 
+
+<img width="1169" height="827" alt="Day1-100v1" src="https://github.com/user-attachments/assets/8bfefc96-abb1-4675-9c73-60f73ec90fab" />
+<br>
+<br>
+
+---
 &nbsp;
-### Hierarchical Network Design
-> *1. What is the most important part of a network? __The Core__*
+
+## 🧱 Hierarchical Network Design
+  *What is the most important part of a network? __The Core__*
 
 Most common kinds of network architectures.
  - 2-tier                 __Cisco Collapsed Campus Core__
@@ -63,109 +79,101 @@ Examples:
   | VSS (Single logical switch)  | NXOS 9k                  |
   | SSO (Stateful Switchover)
   | NSF (Non-stop Forwarding)
+<br>
+<br>
+
+---
+&nbsp;
+
+## 🔌 Wired and wireless network.
+*How many devices do you have right now that can connect to the internet?*
+
+> [!NOTE]
+> A network must be Flexible. Reliable. __AVAILABLE__.
 
 
-
-Wired and wireless network.
-2. How many devices do you have right now that can connect to the internet?
-  "A network must be Flexible. Reliable. AVAILABLE."
- 
-PLDT AP vs Wireless Controller & Aut AP
+PLDT AP vs Wireless Controller & Autonomous AP
 
 Wifi Mesh
  - Wired Backhaul
  - Wireless Backhaul
- - Satellite Mode
  
-Wifi standards | IEEE (Institute of Electrical and Electronics Engineers)
-  https://standards.ieee.org/beyond-standards/the-evolution-of-wi-fi-technology-and-standards/
+Wifi standards | [IEEE (Institute of Electrical and Electronics Engineers)](https://standards.ieee.org/beyond-standards/the-evolution-of-wi-fi-technology-and-standards/)
 
   - WiFi 6     IEEE 802.11ax
   - WiFi 7     IEEE P802.11be
+<br>
+<br>
 
+---
+&nbsp;
 
-
-Implement security solutions.
-3. What is more valuable than gold? Data
+## 🔍 Implement security solutions.
+*What is more valuable than gold? __Data__*
 
 Network security infrastructure
  - NGFW, UTM, IDS
- - Security Policies     Windows Local Security Policy
- - Surveillance          IP Cameras (CAM6 & CAM8)
+ - Security Policies
+     - Windows Local Security Policy
+ - Surveillance
+     - IP Cameras (__CAM6__ & __CAM8__)
 
 Made in US vs Made in China
+<br>
+<br>
 
+---
+&nbsp;
 
+## 📠 Enterprise Communication
+*How often are meetings conducted in your work place?*
 
-Enterprise Communication
-4. How often are meetings conducted in your work place?
+[Unified Communications and Collaboration.](https://www.cisco.com/c/en/us/products/unified-communications/index.html)
+  - POTS (__Analog__)
+  - VOIP (__ePhone__)
+<br>
+<br>
 
-Unified Communications and Collaboration.
-  https://www.cisco.com/c/en/us/products/unified-communications/index.html
+---
+&nbsp;
 
-  - VOIP (ePhone)
-  - POTS (Analog)
+## 🌐 Internet Connectivity
+*When to use UTP and Fibre Optic*
 
+[IEEE Ethernet Standards](https://www.ccnaacademy.com/2018/09/ieee-ethernet-standards_16.html)
 
+  | Name            | Speed | IEEE  |
+  | ---             |  ---  |  ---  |
+  | Ethernet        |       |       |
+  | FastEthernet    |       |       |
+  | GigEthernet     |       |       |
+  | TenGigEthernet  |       |       |
 
-Internet Connectivity
-5. Hve you experienced LOS? Fiber break maybe?
-  https://www.ccnaacademy.com/2018/09/ieee-ethernet-standards_16.html
-  
-  Ethernet
-  FastEthernet
-  GigEthernet
-  TenGigEthernet
-  
+  - RJ45 Jack
   - SFP (Small Form-factor Pluggable)
- 
-IEEE Ethernet standards
+<br>
+<br>
 
 
-
-__________
-**********
-Configure the Network
-
-1. How can you tell if a device is expensive? It has a Console Port.
+# 🔧 Configure the Network
+*How can you tell if a device is expensive? It has a __Console Port__*
 
 Serial Cable
   - VGA, USB
   - Ugreen
 
+## Master the Command Line Interface (CLI)
+*How to know if someone has less than 1 year experience?*
 
+<img width="1400" height="850" alt="Day1-Modes-100" src="https://github.com/user-attachments/assets/2647c258-2a03-449f-b5bb-323a822f16eb" />
+<br>
+<br>
 
-Master the Command Line Interface (CLI)
-2. How to know if someone has 1 year experience?
+---
+&nbsp;
 
-@CoreTAAS
-(yes/no?)         setup/inutil mode 
-
-   |
-   |              CTRL + C
-   v
-
-Switch>           user/friendzone mode
-                  No show, No touch
-   |
-   |              enable
-   v
-
-Switch#           privilege/cubao mode
-                  All show, No touch     show run, show start, copy run start
-   |
-   |              configure terminal  
-   v
-
-Switch(config)#   global/pasig mode
-                  All touch, No show
-				  
-				  do
-				  All touch, All show
-
-
-2.1. Right command, Right place.
-
+## *Right command, Right place.*
+~~~
 !@Switch
 conf t
  int fa0/1
@@ -188,10 +196,13 @@ conf t
   shutdown
   no shutdown
   end
+~~~
+<br>
+<br>
 
 
-Exercise 01: Navigate through the CLI as fast as you can.
-
+## EXERCISE 01: Navigate through the CLI as fast as you can.
+~~~
 !@Switch
 conf t
  int fa0/1
@@ -201,35 +212,43 @@ conf t
  int fa0/1
   no shut
   end
+~~~
+<br>
+<br>
 
 
-2.2. View and remove configurations.
-
+### View then remove the configurations.
+Use the '__show run__' command.
+~~~
 !@Switch
 show run
+~~~
 
-Find the 'router eigrp day1' line
-
-Erase the configurations.
-
+Then, erase the configurations.
+~~~
 !@Switch
 conf t
  router eigrp day1
   a ipv4 u a 100
    no network 10.0.0.0
    end
-
-!@Switch
+   !
+!or
+!
 conf t
  no router eigrp day1
  end
+~~~
+<br>
+<br>
 
 
-Configure CoreTAAS
-3. Initial configurations
+## Configure CoreTAAS
+### 1. Initial configurations
 
-First 5 - H.E.S.No
+__First 5 - H.E.S.No__
 
+~~~
 !@CoreTAAS
 conf t
  Hostname CoreTAAS-#$34T#
@@ -238,10 +257,14 @@ conf t
  No logging console
  No ip domain lookup
  end
+~~~
 
+&nbsp;
+---
+&nbsp;
 
-3.1 Protect Console & Remote Access
-
+### 2. Protect Console & Remote Access
+~~~
 !@CoreTAAS
 conf t
  line cons 0
@@ -253,63 +276,78 @@ conf t
   login
   exec-timeout 0 0
   end
+~~~
 
+&nbsp;
+---
+&nbsp;
 
-3.2 Create SVI (Switch Virtual Interface)
-
+### 3. Create SVI (Switch Virtual Interface)
+~~~
 !@CoreTAAS
 conf t
  int vlan 1
   ip add 10.#$34T#.1.2 255.255.255.0
   description DEFAULT-VLAN
   end
+~~~
 
-Verify: How to check IP addresses? SIIB - show ip interface brief
-
+Verify: How to check IP addresses? __SIIB - show ip interface brief__
+~~~
 !@CoreTAAS
 show ip int brief
-
+~~~
 
 By default, 
   Switchports = On 
   SVIs = off
+<br>
+<br>
 
+---
+&nbsp;
 
-Exercise 02: Turn on VLAN 1
+## EXERCISE 02: Turn on VLAN 1
 
+~~~
 !@CoreTAAS
 conf t
  int vlan 1
   no shut
   end
 show ip int br
+~~~
+<br>
+<br>
 
+---
+&nbsp;
 
-Exercise 03: Add the other SVIs
+## EXERCISE 03: Add the other SVIs
 
 Task:
  1. CoreTAAS must have the following SVIs
    - VLAN 1
-     IP address: 10.#$34T#.1.2
-	 Description: DEFAULT-VLAN
-	 Status: UP
+       - IP address: 10.#$34T#.1.2
+       - Description: DEFAULT-VLAN
+       - Status: UP
 	 
    - VLAN 10
-     IP address: 10.#$34T#.10.2
-	 Description: WIFI-VLAN
-	 Status: UP
+     - IP address: 10.#$34T#.10.2
+     - Description: WIFI-VLAN
+     - Status: UP
 
    - VLAN 50
-     IP address: 10.#$34T#.50.2
-	 Description: CCTV-VLAN
-	 Status: UP
+     - IP address: 10.#$34T#.50.2
+     - Description: CCTV-VLAN
+     - Status: UP
 
    - VLAN 100
-     IP address: 10.#$34T#.100.2
-	 Description: VOICE-VLAN
-	 Status: UP
+     - IP address: 10.#$34T#.100.2
+     - Description: VOICE-VLAN
+     - Status: UP
 
-
+~~~
 !@CoreTAAS
 conf t
  int vlan 1
@@ -333,29 +371,17 @@ conf t
   ip add __.__.__.__ 255.255.255.0
   __
   end
+~~~
 
+&nbsp;
+---
+&nbsp;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-__________
-**********
-Full Script
-
+### ANSWER
+<details>
+  <summmary>
+	  
+~~~
 !@CoreTaas
 conf t
  hostname CoreTAAS-#$34T#
@@ -388,28 +414,42 @@ conf t
   ip add 10.#$34T#.100.2 255.255.255.0
   desc VOICE-VLAN
  end
+~~~
 
+  </summmary>
+</details>
+<br>
+<br>
 
+---
+&nbsp;
 
-Configure CoreBABA
-4. Know the jobs of a Layer 3 Switch
+## Configure CoreBABA
+Know the jobs of a Layer 3 Switch
 
-4.1. 1ST JOB OF A SWITCH - POE (Power over Ethernet)
+### 1. 1ST JOB OF A SWITCH - POE (Power over Ethernet)
 Are there switches that don't support POE? Yes, buy one from lazada.
 
-IEEE Standards
- - 802.3af (PoE)      15.4W
- - 802.3at (PoE+)     25.5W
- - 802.3bt (PoE++)    71.3W
+| IEEE Standards  | Power Output |
+| ---             |     ---      |
+| 802.3af (PoE)   |     15.4W    |
+| 802.3at (PoE+)  |     25.5W    |
+| 802.3bt (PoE++) |     71.3W    |
 
-Which device consumes the most power? show power inline
+Which device consumes the most power? __SPI - show power inline__
 
+~~~
 !@CoreBABA
 show power inline
+~~~
+<br>
+<br>
 
+---
+&nbsp;
+### 2. 2ND JOB OF A SWITCH - SVI (Switch Virtual Interface)
 
-4.2. 2ND JOB OF A SWITCH - SVI (Switch Virtual Interface)
-
+~~~
 !@CoreBABA
 conf t
  hostname coreBaba-#$34T#
@@ -446,14 +486,19 @@ conf t
   ip add 10.#$34T#.100.4 255.255.255.0
   desc VOICE-VLAN
  end
-
+~~~
 
 Verify Connectivity: 
 
+~~~
 !@cmd
 ping 10.#$34T#.1.4
+~~~
+<br>
+<br>
 
-
+---
+&nbsp;
 
 4.3. 3RD JOB OF A SWITCH - DHCP (Dynamic Host Configuration Protocol) / BOOTPS & BOOTPC
 
