@@ -1708,7 +1708,7 @@ Is the device pingable?
 ---
 &nbsp;
 
-*What is the maximum distance of a UTP cable? 100m? *
+*What is the maximum distance of a UTP cable? 100m?*
 
 Network Scopes
   - 🏠 LAN                  Local Area Network
