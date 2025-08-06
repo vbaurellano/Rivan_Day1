@@ -1238,7 +1238,9 @@ conf t
 <br>
 
 > [!TIP]
-> Still no numbers? Because IP Phones need to generate configuration files. MANDATORY
+> Still no numbers? Because IP Phones need to generate configuration files. __MANDATORY__
+
+<br>
 
 ~~~
 !@CUCM
@@ -1254,7 +1256,7 @@ conf t
 ~~~
 
 > [!NOTE]
-> Depending on the ephone, `create cnf-files` will need to be pasted twice.
+> Depending on the ephone, __`create cnf-files`__ will need to be pasted twice.
 
 <br>
 <br>
@@ -1463,7 +1465,7 @@ Review the jobs of a call manager:
 ---
 &nbsp;
 
-### Full Script
+### 📃 ull Script
 
 <details>
 
@@ -1797,6 +1799,13 @@ conf t
 
 </details>
 
+<br>
+<br>
+
+&nbsp;
+---
+&nbsp;
+
 ### 🎯 Exercise 08: Review of Protecting the console and terminal.
 
 Task:
@@ -2000,10 +2009,10 @@ end
 ---
 &nbsp;
 
-*Verify: How to check if OSPF is working?
-  __SIP - `show ip protocols`__
-  __SION - `show ip ospf neighbor`__
-  __SIRO - `show ip route ospf`__*
+*Verify: How to check if OSPF is working? <br>
+  __SIP - `show ip protocols`__ <br>
+  __SION - `show ip ospf neighbor`__ <br>
+  __SIRO - `show ip route ospf`__* <br>
 
 &nbsp;
 ---
@@ -2045,17 +2054,17 @@ Telnet via SecureCRT
 # 🎯 REVIEW
 
 Must know show commands:
-SS = 
-SR = 
-CRS = 
-SIIB =
-SVB =
-SIDB =
-SMAC = 
-SDVS =
-SIP =
-SIR =
-SION =
+SS = &nbsp;
+SR = &nbsp;
+CRS = &nbsp;
+SIIB = &nbsp;
+SVB = &nbsp;
+SIDB = &nbsp;
+SMAC =  &nbsp;
+SDVS = &nbsp;
+SIP = &nbsp;
+SIR = &nbsp;
+SION = &nbsp;
 
 &nbsp;
 ---
