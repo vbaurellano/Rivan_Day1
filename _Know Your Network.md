@@ -18,6 +18,7 @@ Cisco Certified Network Automation
 - REST APIs
 - Ansible, Terraform, Chef, Puppet, etc.
 - Collaboration Platforms (GitHub)
+
 <br>
 <br>
 
@@ -31,6 +32,7 @@ Cisco Certified Network Automation
 Import the repositories.
  - &nbsp;
  - &nbsp;
+
 <br>
 <br>
 
@@ -45,6 +47,7 @@ mkdir _name-#$34T#
 cd _name-#$34T#
 dir
 ~~~
+
 <br>
 <br>
 
@@ -52,6 +55,7 @@ dir
 # 💻 Build your network. 
 
 <img width="1169" height="827" alt="Day1-100v1" src="https://github.com/user-attachments/assets/8bfefc96-abb1-4675-9c73-60f73ec90fab" />
+
 <br>
 <br>
 
@@ -79,6 +83,7 @@ Examples:
   | VSS (Single logical switch)  | NXOS 9k                  |
   | SSO (Stateful Switchover)
   | NSF (Non-stop Forwarding)
+
 <br>
 <br>
 
@@ -102,6 +107,7 @@ Wifi standards | [IEEE (Institute of Electrical and Electronics Engineers)](http
 
   - WiFi 6     IEEE 802.11ax
   - WiFi 7     IEEE P802.11be
+
 <br>
 <br>
 
@@ -118,7 +124,8 @@ Network security infrastructure
  - Surveillance
      - IP Cameras (__CAM6__ & __CAM8__)
 
-Made in US vs Made in China
+Made in US 🇺🇸 vs Made in China 🇨🇳
+
 <br>
 <br>
 
@@ -131,6 +138,7 @@ Made in US vs Made in China
 [Unified Communications and Collaboration.](https://www.cisco.com/c/en/us/products/unified-communications/index.html)
   - POTS (__Analog__)
   - VOIP (__ePhone__)
+
 <br>
 <br>
 
@@ -151,6 +159,7 @@ Made in US vs Made in China
 
   - RJ45 Jack
   - SFP (Small Form-factor Pluggable)
+
 <br>
 <br>
 
@@ -166,6 +175,7 @@ Serial Cable
 *How to know if someone has less than 1 year experience?*
 
 <img width="1400" height="850" alt="Day1-Modes-100" src="https://github.com/user-attachments/assets/2647c258-2a03-449f-b5bb-323a822f16eb" />
+
 <br>
 <br>
 
@@ -196,6 +206,7 @@ conf t
   no shutdown
   end
 ~~~
+
 <br>
 <br>
 
@@ -212,6 +223,7 @@ conf t
   no shut
   end
 ~~~
+
 <br>
 <br>
 
@@ -238,6 +250,7 @@ conf t
  no router eigrp day1
  end
 ~~~
+
 <br>
 <br>
 
@@ -300,6 +313,7 @@ show ip int brief
 By default, 
   Switchports = On 
   SVIs = off
+  
 <br>
 <br>
 
@@ -316,6 +330,7 @@ conf t
   end
 show ip int br
 ~~~
+
 <br>
 <br>
 
@@ -410,7 +425,7 @@ conf t
 ---
 &nbsp;
 
-### Full Script
+### 📃 Full Script
 <details>
 
 ~~~
@@ -448,6 +463,7 @@ conf t
  end
 ~~~
 </details>
+
 <br>
 <br>
 
@@ -479,6 +495,7 @@ Which device consumes the most power? __SPI - `show power inline`__
 !@CoreBABA
 show power inline
 ~~~
+
 <br>
 <br>
 
@@ -536,6 +553,7 @@ Verify Connectivity:
 !@cmd
 ping 10.#$34T#.1.4
 ~~~
+
 <br>
 <br>
 
@@ -596,6 +614,7 @@ conf t
 | Lease Time          |     51      |
 | Client Identifier   |     61      |
 | TFTP Server         |    150      |
+
 <br>
 <br>
 
@@ -650,6 +669,7 @@ conf t
 ~~~
 
 </details>
+
 <br>
 <br>
 
@@ -715,6 +735,7 @@ conf t
   mls qos trust device cisco-phone
  end
 ~~~
+
 <br>
 <br>
 
@@ -767,6 +788,7 @@ conf t
 ~~~
 
 </details>
+
 <br>
 <br>
 
@@ -821,6 +843,7 @@ Verify DHCP: __SIDB - `show ip dhcp bindings`__
 !@CoreBABA
 show ip dhcp bindings
 ~~~
+
 <br>
 <br>
 
@@ -857,7 +880,7 @@ Review the jobs of a switch:
 ---
 &nbsp;
 
-### Full Script
+### 📃 Full Script
 <details>
 
 ~~~
@@ -981,23 +1004,40 @@ conf t
 
 </details>
 
-4.6. ⚙️ Remote Access
-Access the CoreSwitches without the serial cable.
+<br>
+<br>
 
+---
+&nbsp;
+
+### ☁️ Remote Access
+Access the CoreSwitches without the console cable.
+~~~
 @cmd
-ping 10.#$34T#.1.2               CoreTAAS
-ping 10.#$34T#.1.4               CoreBABA
+ping 10.#$34T#.1.2
+ping 10.#$34T#.1.4
+~~~
 
+&nbsp;
+---
+&nbsp;
 
 When a device is pingable you can scan it.
+~~~
 @cmd
 nmap -v 10.#$34T#.1.2
 nmap -v 10.#$34T#.1.4
+~~~
 
 Is port 23 open?
 
-Enter port 23 via SecureCRT
+Enter port 23 via __SecureCRT__
 
+<br>
+<br>
+
+---
+&nbsp;
 
 
 Configure CUCM
