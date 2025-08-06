@@ -1680,8 +1680,8 @@ config t
 ---
 &nbsp;
 
-## Remote Access | [JUMPSERVER](https://www.jumpserver.com/)
-Exercies 06: Attempt to establish a telnet session with the call manager
+## ☁️ Remote Access | [JUMPSERVER](https://www.jumpserver.com/)
+### 🎯 Exercies 06: Attempt to establish a telnet session with the call manager
 
 <br>
 
@@ -1699,9 +1699,58 @@ Is the device pingable?
 &nbsp;
 
 ## 🔧 Configure EDGE
-### ⚙️ Establish connectivity to your enterprise.
-
+### 🏨 Establish connectivity to your enterprise.
 *How do you gain access to the internet?*
+
+&nbsp;
+---
+&nbsp;
+
+*What is the maximum distance of a UTP cable? 100m? *
+
+Network Scopes
+  - 🏠 LAN                  Local Area Network
+  - 🌎 WAN                  Wide Area Network
+
+<br>
+
+PLDT Home vs PLDT Enterprise
+  - 🌃 MAN                  Metropolitan Area Network
+                         PLDT Enterprise Metro Ethernet
+
+<br>
+
+Transport technologies
+  - Leased Line
+  - SDWAN
+  - MPLS VPLS            (Pseudowire, L3 & L2)
+  - VPN                  (EVPN)
+
+<br>
+
+*Why PLDT?*
+  __Submarine Cable Map__
+
+*Why NOT PLDT?*
+  - Cabling
+  - [Service Reliability](https://www.pldthome.com/termsandconditions)
+
+&nbsp;
+---
+&nbsp;
+
+*How to know if you are connected to PLDT? __SCN - `show cdp neighbor`__*
+
+~~~
+!@EDGE
+show cdp neighbor
+~~~
+
+<br>
+<br>
+
+---
+&nbsp;
 
 ### 🎯 Exercise 07: Review of First 5 (HESNo)
 Task:
@@ -1816,43 +1865,25 @@ conf t
 &nbsp;
 
 
-6.1. What is the maximum distance of a UTP cable? 100m? 
-  - LAN                  Local Area Network
-  - WAN                  Wide Area Network
-
-PLDT Home vs PLDT Enterprise
-  - MAN                  Metropolitan Area Network
-                         PLDT Enterprise Metro Ethernet
-Transport technologies:
-  - Leased Line
-  - SDWAN
-  - MPLS VPLS            Pseudowire, L3 & L2
-  - VPN                  EVPN
-
-Why PLDT? 
-  Submarine Cable Map
-
-Why NOT PLDT?
-  Cabling
-  Service Reliability
-  https://www.pldthome.com/termsandconditions
 
 
-How to know if you are connected to PLDT? SCN - show cdp neighbor
-
-!@EDGE
-show cdp neighbor
-
-
-6.2. Configure routing protocols
+### ⚙️ Configure routing protocols
 What are the jobs of a router?
- 1. 
- 2. 
- 3. 
- 4. 
- 5. 
+ 1. &nbsp;
+ 2. &nbsp;
+ 3. &nbsp;
+ 4. &nbsp;
+ 5. &nbsp;
+ 6. &nbsp;
 
+<br>
+<br>
 
+---
+&nbsp;
+
+### ⚙️ 1. Static Routing
+~~~
 !@EDGE
 conf t
  ip routing
@@ -1876,36 +1907,60 @@ conf t
  ip route 10.92.0.0 255.255.0.0 200.0.0.82 254
  ip route 10.#$34T#.0.0 255.255.0.0 10.#$34T#.#$34T#.4 254
  end
+~~~
 
+<br>
+
+~~~
 !@CUCM
 conf t
  ip routing
  ip route 0.0.0.0 0.0.0.0 10.#$34T#.100.4 254
  end
+~~~
 
+<br>
+
+~~~
 !@CoreBABA
 conf t
  ip route 0.0.0.0 0.0.0.0 10.#$34T#.#$34T#.1 254
  end
+~~~
 
+&nbsp;
+---
+&nbsp;
 
-Verify: How can you check the list of routes?  SIR - show ip route
+Verify: *How can you check the list of routes?  __SIR - `show ip route`__*
 
+~~~
 !@CoreBABA, CUCM, EDGE
 show ip route
+~~~
 
+&nbsp;
+---
+&nbsp;
 
-How do you configure routes on windows?
+*How do you configure routes on windows?*
 
+~~~
 !@cmd
 route add 10.0.0.0 mask 255.0.0.0 10.#$34T#.1.4
 route add 200.0.0.0 mask 255.255.255.0 10.#$34T#.1.4
+~~~
 
+<br>
+<br>
 
+---
+&nbsp;
 
-6.3. Configure OSPF routing
-At what capacity do you want your devices to run?
+### ⚙️ 2. OSPF ROUTING
+*At what capacity do you want your devices to run?*
 
+~~~
 !@edge
 conf t
 router ospf 1
@@ -1916,7 +1971,11 @@ network #$34T#.0.0.1 0.0.0.0 area 0
 int gi 0/0/0
 ip ospf network point-to-point
 end
+~~~
 
+<br>
+
+~~~
 @coreBaba
 conf t
 router ospf 1
@@ -1924,34 +1983,56 @@ router-id 10.#$34T#.#$34T#.4
 network 10.#$34T#.0.0 0.0.255.255 area 0
 int gi0/1
 ip ospf network point-to-point
+~~~
 
+<br>
+
+~~~
 @cucm
 conf t
 router ospf 1
 router-id 10.#$34T#.100.8
 network 10.#$34T#.100.0 0.0.0.255 area 0
 end
+~~~
 
+&nbsp;
+---
+&nbsp;
 
-Verify: How to check if OSPF is working? SIP - show ip protocols, SION - show ip ospf neighbor, SIRO - show ip route ospf
+*Verify: How to check if OSPF is working?
+  __SIP - `show ip protocols`__
+  __SION - `show ip ospf neighbor`__
+  __SIRO - `show ip route ospf`__*
 
+&nbsp;
+---
+&nbsp;
 
-6.4. Now that routing is in place, there's no need to jump to access CUCM.
-
+### Now that routing is in place, there's no need to jump to access CUCM.
 Ping
+
+~~~
 !@cmd
 ping 10.#$34T#.1.2                 CoreTAAS
 ping 10.#$34T#.1.4                 CoreBABA
 ping 10.#$34T#.100.8               CUCM
 ping 10.#$34T#.#$34T#.1            EDGE
+~~~
+
+<br>
 
 Scan
+
+~~~
 !@cmd
 nmap -v 10.#$34T#.1.2 
 nmap -v 10.#$34T#.1.4
 nmap -v 10.#$34T#.100.8
 nmap -v 10.#$34T#.#$34T#.1
+~~~
 
+<br>
 Telnet via SecureCRT
 
 
