@@ -217,7 +217,7 @@ conf t
 
 
 ### View then remove the configurations.
-Use the '__show run__' command.
+Use the __`show run`__ command.
 ~~~
 !@Switch
 show run
@@ -291,7 +291,7 @@ conf t
   end
 ~~~
 
-Verify: How to check IP addresses? __SIIB - show ip interface brief__
+Verify: How to check IP addresses? __SIIB - `show ip interface brief`__
 ~~~
 !@CoreTAAS
 show ip int brief
@@ -426,8 +426,11 @@ conf t
 ## 🔧 Configure CoreBABA
 Know the jobs of a Layer 3 Switch
 
-### 1. 1ST JOB OF A SWITCH - POE (Power over Ethernet)
-Are there switches that don't support POE? Yes, buy one from lazada.
+### 1. __POE__
+*Are there switches that don't support POE? __Yes__. Buy one from [Temu](https://www.temu.com)*
+
+> [!NOTE]
+> If you need PoE functionality on a non-PoE switch, use a PoE injector.
 
 | IEEE Standards  | Power Output |
 | ---             |     ---      |
@@ -435,7 +438,11 @@ Are there switches that don't support POE? Yes, buy one from lazada.
 | 802.3at (PoE+)  |     25.5W    |
 | 802.3bt (PoE++) |     71.3W    |
 
-Which device consumes the most power? __SPI - show power inline__
+&nbsp;
+---
+&nbsp;
+
+Which device consumes the most power? __SPI - `show power inline`__
 
 ~~~
 !@CoreBABA
@@ -446,7 +453,8 @@ show power inline
 
 ---
 &nbsp;
-### 2. 2ND JOB OF A SWITCH - SVI (Switch Virtual Interface)
+
+### 2. SVI (Switch Virtual Interface)
 
 ~~~
 !@CoreBABA
@@ -487,6 +495,10 @@ conf t
  end
 ~~~
 
+&nbsp;
+---
+&nbsp;
+
 Verify Connectivity: 
 
 ~~~
@@ -499,21 +511,22 @@ ping 10.#$34T#.1.4
 ---
 &nbsp;
 
-4.3. 3RD JOB OF A SWITCH - DHCP (Dynamic Host Configuration Protocol) / BOOTPS & BOOTPC
+### 3. DHCP / BOOTPS & BOOTPC
+*In a network, which device should be a DHCP Server? __It depends.__*
 
-In a network, which device should be a DHCP Server? It depends.
-
-SOHO - Router
-
-Enterprise Network
-  Medium - Firewall
-  Large - CoreSwitch
+| Network     | DHCP Device |
+| :---:       |     ---     |
+| SOHO        | Router      |
+|             |             |
+| Enterprise                |
+| Medium Biz  | Firewall    |
+| Large Biz   | Core Switch |
 
 
 Can Windows be a DHCP Server? Yes, Server Manager.
 
 
-
+~~~
 !@CoreBABA
 conf t
  ip dhcp excluded-address 10.#$34T#.1.1 10.#$34T#.1.100
@@ -535,34 +548,42 @@ conf t
   domain-name CCTVDATA.COM
   dns-server 10.#$34T#.1.10
   exit
+~~~
 
-DHCP Options
-  List of DHCP Options
-  https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml
+&nbsp;
+---
+&nbsp;
+
+[DHCP Options](https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml)
                             
-							Option
-                            
-  - Address Subnet Mask =   1
-  - defaulte-route =        3
-  - dns-server =            6
-  - domain-name =           15
-  - TFTP Server =           150
-  - client-identifier =     61
-  - lease =                 51
+| Option              |    Value    |
+| ---                 |    :---:    |
+| Address Subnet Mask |      1      |
+| Default Gateway     |      3      |
+| DNS Server          |      6      |
+| Domain Name         |     15      |
+| Lease Time          |     51      |
+| Client Identifier   |     61      |
+| TFTP Server         |    150      |
+<br>
+<br>
 
+---
+&nbsp;
 
-Exercise 04: Configure CoreBABA as a DHCP server for IP Cameras.
+### 🎯 Exercise 04: Configure CoreBABA as a DHCP server for IP Cameras.
 
 Task:
- 1. CoreBABA must act as a DHCP Server for devices in VLAN 100 with the following settings:
-   - The first 100 IPs must be reserved.
-   - The DHCP pool name must be 'POOLVOICE'
-   - The default gateway must be CoreBABA.
-   - The domain name must be 'VOICEDATA.COM'
-   - The DNS Server must be your Windows Server.
-   - Set CUCM as the TFTP server for DHCP clients.
-   - Set a lease time of 5 days.
-   
+1. CoreBABA must act as a DHCP Server for devices in VLAN 100 with the following settings
+    - The first 100 IPs must be reserved.
+    - The DHCP pool name must be 'POOLVOICE'
+    - The default gateway must be CoreBABA.
+    - The domain name must be 'VOICEDATA.COM'
+    - The DNS Server must be your Windows Server.
+    - Set CUCM as the TFTP server for DHCP clients.
+    - Set a lease time of 5 days.
+
+~~~
 !@CoreBABA
 conf t
  ip dhcp excluded-address __.__.__.__  __.__.__.__
@@ -574,29 +595,17 @@ conf t
   option ___  ip 10.#$34T#.__.__
   lease 5 0 0
   end
+~~~
 
+&nbsp;
+---
+&nbsp;
 
+### ANSWER
+<details>
+<summmary>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-__________
-**********
-Answers
-
+~~~
 !@CoreBABA
 conf t
  ip dhcp excluded-address 10.#$34T#.100.1 10.#$34T#.100.100
@@ -608,20 +617,33 @@ conf t
   option 150 ip 10.#$34T#.100.8
   lease 5 0 0
   end
+~~~
 
+</summary>
+</details>
+<br>
+<br>
 
+---
+&nbsp;
 
-4.4. 4th JOB OF A SWITCH - VLAN Creation & VLAN Management
-Ports must be placed in the correct VLANs.
+### 4. VLAN Creation & VLAN Management
+*Ports must be placed in the correct VLANs.*
 
-How to check what ports belong to what VLAN? SVB - show vlan brief
+*How to check what ports belong to what VLAN? __SVB - `show vlan brief`__*
 
+~~~
 !@CoreBABA
 show vlan brief
+~~~
 
+&nbsp;
+---
+&nbsp;
 
 Just because there's an SVI doesn't mean there's a VLAN.
 
+~~~
 !@CoreBABA
 conf t
  vlan 1
@@ -631,10 +653,11 @@ conf t
  vlan 100
   name VOICEVLAN
   end
-
+~~~
 
 Place Switchports in their correct VLAN.
 
+~~~
 !@CoreBABA
 conf t
  int fa 0/2
@@ -657,7 +680,7 @@ conf t
   switchport access vlan 1
   mls qos trust device cisco-phone
  end
-
+~~~
 
 Exercise 05: Place Cameras to their correct VLANs based on the topology.
 
