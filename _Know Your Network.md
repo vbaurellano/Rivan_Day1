@@ -1,17 +1,13 @@
 
-Your monitor number = #$34T#
+<!-- Your monitor number = #$34T# -->
+ 
+ 
+# Welcome to Rivan
+> *"There's no better teacher than experience"*
 
-__________
-**********
-Welcome to Rivan
-"There's no better teacher than experience"
-
-
-
-__________
-**********
-Approach to Network Programmability
-"A new era for Cisco Certifications"
+&nbsp;
+### 💡 Approach to Network Programmability
+*"A new era for Cisco Certifications"*
 
 Cisco Certified Network Automation
 
@@ -22,49 +18,51 @@ Cisco Certified Network Automation
 - Ansible, Terraform, Chef, Puppet, etc.
 - Collaboration Platforms (GitHub)
 
-Prove that you are doing.
+&nbsp;
+### 📋 Prove that you are doing.
  - Create a Github account: https://github.com/
  - Create a Postman account: https://www.postman.com/
 
 Import the repositories.
- - 
- - 
+ - &nbsp;
+ - &nbsp;
 
-
-Create your own folder on the desktop
-
+&nbsp;
+### 📂 Create your own folder in the desktop
+~~~
 @cmd
 cd Users/Administrator/Desktop
 mkdir _name-#$34T#
 cd _name-#$34T#
 dir
+~~~
 
+&nbsp;
+# 💻 Build your own network. 
+> *"Know your network"*
 
-__________
-**********
-Build your own network. 
-
-KNOW YOUR NETWORK - Network Topology
-
-Hierarchical Network Design
-1. What is the most important part of a network? The Core
+&nbsp;
+### Hierarchical Network Design
+> *1. What is the most important part of a network? __The Core__*
 
 Most common kinds of network architectures.
- - 2-tier                 Cisco Collapsed Campus Core
- - 3-tier                 Enterprise Network Design
- - Spine-leaf             Data Center Fabric
+ - 2-tier                 __Cisco Collapsed Campus Core__
+ - 3-tier                 __Enterprise Network Design__
+ - Spine-leaf             __Data Center Fabric__
 
-CORE Layer (CoreTAAS & CoreBABA) - High Speed and Availability
-  "A Network Engineer MUST avoid a single point of failure.
-   Always have a backup."
-   
-   ex. Etherchannel
+CORE Layer (__CoreTAAS__ & __CoreBABA__) - High Speed and Availability
+  > [!NOTE]
+  >*"A Network Engineer MUST avoid a single point of failure.
+   __Always have a backup.__"*
 
-  - FlexStack (Master Switch)      Cisco 6500 Series
-  
-  - VSS (Single logical switch)    NXOS 9k
-  - SSO (Stateful Switchover)
-  - NSF (Non-stop Forwarding)
+Examples:
+  | __Protocol__                 | __Supported Devices__    |
+  | ---                          | ---                      |
+  | Etherchannel                 | Cisco Catalyst           |
+  | FlexStack (Master Switch)    | Cisco 2960 & 6500 Series |
+  | VSS (Single logical switch)  | NXOS 9k                  |
+  | SSO (Stateful Switchover)
+  | NSF (Non-stop Forwarding)
 
 
 
