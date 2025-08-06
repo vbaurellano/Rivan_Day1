@@ -242,7 +242,7 @@ conf t
 <br>
 
 
-## 🔧 Configure CoreTAAS
+## 🔧 __Configure CoreTAAS__
 ### 1. Initial configurations
 
 __First 5 - H.E.S.No__
