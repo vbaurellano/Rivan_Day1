@@ -380,17 +380,17 @@ Task:
        - IP address: 10.#$34T#.1.2
        - Description: DEFAULT-VLAN
        - Status: UP
-<br>
+
    - VLAN 10
      - IP address: 10.#$34T#.10.2
      - Description: WIFI-VLAN
      - Status: UP
-<br>
+
    - VLAN 50
      - IP address: 10.#$34T#.50.2
      - Description: CCTV-VLAN
      - Status: UP
-<br>
+
    - VLAN 100
      - IP address: 10.#$34T#.100.2
      - Description: VOICE-VLAN
