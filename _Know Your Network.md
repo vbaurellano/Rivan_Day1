@@ -65,15 +65,21 @@ dir
 ## 🧱 Hierarchical Network Design
   *What is the most important part of a network? __The Core__*
 
+<br>
+
 Most common kinds of network architectures.
  - 2-tier                 __Cisco Collapsed Campus Core__
  - 3-tier                 __Enterprise Network Design__
  - Spine-leaf             __Data Center Fabric__
 
+<br>
+
 CORE Layer (__CoreTAAS__ & __CoreBABA__) - High Speed and Availability
   > [!NOTE]
   >*"A Network Engineer MUST avoid a single point of failure.
    __Always have a backup.__"*
+
+<br>
 
 Examples:
   | __Protocol__                 | __Supported Devices__    |
@@ -93,16 +99,23 @@ Examples:
 ## 🔌 Wired and wireless network.
 *How many devices do you have right now that can connect to the internet?*
 
+<br>
+
 > [!NOTE]
 > A network must be Flexible. Reliable. __AVAILABLE__.
 
+<br>
 
-PLDT AP vs Wireless Controller & Autonomous AP
+### 📶 PLDT AP vs Wireless Controller & Autonomous AP
+
+<br>
 
 Wifi Mesh
  - Wired Backhaul
  - Wireless Backhaul
- 
+
+<br>
+
 Wifi standards | [IEEE (Institute of Electrical and Electronics Engineers)](https://standards.ieee.org/beyond-standards/the-evolution-of-wi-fi-technology-and-standards/)
 
   - WiFi 6     IEEE 802.11ax
@@ -117,12 +130,16 @@ Wifi standards | [IEEE (Institute of Electrical and Electronics Engineers)](http
 ## 🔍 Implement security solutions.
 *What is more valuable than gold? __Data__*
 
+<br>
+
 Network security infrastructure
  - NGFW, UTM, IDS
  - Security Policies
      - Windows Local Security Policy
  - Surveillance
      - IP Cameras (__CAM6__ & __CAM8__)
+
+<br>
 
 Made in US 🇺🇸 vs Made in China 🇨🇳
 
@@ -135,7 +152,9 @@ Made in US 🇺🇸 vs Made in China 🇨🇳
 ## 📠 Enterprise Communication
 *How often are meetings conducted in your work place?*
 
-[Unified Communications and Collaboration.](https://www.cisco.com/c/en/us/products/unified-communications/index.html)
+<br>
+
+Cisco Unified Call Manager | [Unified Communications and Collaboration.](https://www.cisco.com/c/en/us/products/unified-communications/index.html)
   - POTS (__Analog__)
   - VOIP (__ePhone__)
 
@@ -148,6 +167,8 @@ Made in US 🇺🇸 vs Made in China 🇨🇳
 ## 🌐 Internet Connectivity
 *When to use UTP and Fibre Optic*
 
+<br>
+
 [IEEE Ethernet Standards](https://www.ccnaacademy.com/2018/09/ieee-ethernet-standards_16.html)
 
   | Name            | Speed | IEEE  |
@@ -156,6 +177,8 @@ Made in US 🇺🇸 vs Made in China 🇨🇳
   | FastEthernet    |       |       |
   | GigEthernet     |       |       |
   | TenGigEthernet  |       |       |
+
+<br>
 
   - RJ45 Jack
   - SFP (Small Form-factor Pluggable)
@@ -167,12 +190,18 @@ Made in US 🇺🇸 vs Made in China 🇨🇳
 # 🔧 Configure the Network
 *How can you tell if a device is expensive? It has a __Console Port__*
 
+<br>
+
 Serial Cable
   - VGA, USB
   - Ugreen
 
+<br>
+
 ## ⌨️ Master the Command Line Interface (CLI)
 *How to know if someone has less than 1 year experience?*
+
+<br>
 
 <img width="1400" height="850" alt="Day1-Modes-100" src="https://github.com/user-attachments/assets/2647c258-2a03-449f-b5bb-323a822f16eb" />
 
@@ -234,6 +263,8 @@ Use the __`show run`__ command.
 !@Switch
 show run
 ~~~
+
+<br>
 
 Then, erase the configurations.
 ~~~
@@ -304,11 +335,15 @@ conf t
   end
 ~~~
 
+<br>
+
 Verify: How to check IP addresses? __SIIB - `show ip interface brief`__
 ~~~
 !@CoreTAAS
 show ip int brief
 ~~~
+
+<br>
 
 By default, 
   Switchports = On 
@@ -345,21 +380,23 @@ Task:
        - IP address: 10.#$34T#.1.2
        - Description: DEFAULT-VLAN
        - Status: UP
-	 
+<br>
    - VLAN 10
      - IP address: 10.#$34T#.10.2
      - Description: WIFI-VLAN
      - Status: UP
-
+<br>
    - VLAN 50
      - IP address: 10.#$34T#.50.2
      - Description: CCTV-VLAN
      - Status: UP
-
+<br>
    - VLAN 100
      - IP address: 10.#$34T#.100.2
      - Description: VOICE-VLAN
      - Status: UP
+
+<br>
 
 ~~~
 !@CoreTAAS
@@ -475,9 +512,10 @@ Know the jobs of a Layer 3 Switch
 
 ### ⚙️ 1. __POE__
 *Are there switches that don't support POE? __Yes__. Buy one from [Temu](https://www.temu.com)*
-
 > [!NOTE]
 > If you need PoE functionality on a non-PoE switch, use a PoE injector.
+
+<br>
 
 | IEEE Standards  | Power Output |
 | ---             |     ---      |
@@ -571,9 +609,9 @@ ping 10.#$34T#.1.4
 | Medium Biz  | Firewall    |
 | Large Biz   | Core Switch |
 
+<br>
 
 Can Windows be a DHCP Server? Yes, Server Manager.
-
 
 ~~~
 !@CoreBABA
@@ -603,6 +641,7 @@ conf t
 ---
 &nbsp;
 
+DHCP (Dynamic Host Configuration Protocol)
 [DHCP Options](https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml)
                             
 | Option              |    Value    |
@@ -678,6 +717,8 @@ conf t
 
 ### ⚙️ 4. VLAN Creation & VLAN Management
 *Ports must be placed in the correct VLANs.*
+
+<br>
 
 *How to check what ports belong to what VLAN? __SVB - `show vlan brief`__*
 
@@ -797,6 +838,8 @@ conf t
 
 ## ⚙️ 5. MAC Learning & MAC Reservation
 *What does it mean to say Layer 2 in networking?*
+
+<br>
 
 How to view the MAC addresses learned by the Switch? __SMAC - `show mac address-table`__
 
