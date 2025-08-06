@@ -356,19 +356,23 @@ conf t
   exit
  int vlan __
   ip add __.__.__.__ 255.255.255.0
-  __
+  __  __
+  __  __
   exit
  int vlan __
   ip add __.__.__.__ 255.255.255.0
-  __
+  __  __
+  __  __
   exit
  int vlan __
   ip add __.__.__.__ 255.255.255.0
-  __
+  __  __
+  __  __
   exit
  int vlan __
   ip add __.__.__.__ 255.255.255.0
-  __
+  __  __
+  __  __
   end
 ~~~
 
@@ -379,6 +383,36 @@ conf t
 ### ANSWER
 <details>
 	
+~~~
+!@CoreTaas
+conf t
+ int vlan 1
+  ip add 10.#$34T#.1.2 255.255.255.0
+  description DEFAULT-VLAN
+  no shut
+ int vlan 10
+  ip add 10.#$34T#.10.2 255.255.255.0
+  description WIFI-VLAN
+  no shut
+ int vlan 50
+  ip add 10.#$34T#.50.2 255.255.255.0
+  description CCTV-VLAN
+  no shut
+ int vlan 100
+  ip add 10.#$34T#.100.2 255.255.255.0
+  description VOICE-VLAN
+  no shut
+ end
+~~~
+</details>
+
+&nbsp;
+---
+&nbsp;
+
+### Full Script
+<details>
+
 ~~~
 !@CoreTaas
 conf t
@@ -622,7 +656,7 @@ conf t
 ---
 &nbsp;
 
-### 4. VLAN Creation & VLAN Management
+### ⚙️ 4. VLAN Creation & VLAN Management
 *Ports must be placed in the correct VLANs.*
 
 *How to check what ports belong to what VLAN? __SVB - `show vlan brief`__*
@@ -739,7 +773,7 @@ conf t
 ---
 &nbsp;
 
-## 5. MAC Learning & MAC Reservation
+## ⚙️ 5. MAC Learning & MAC Reservation
 *What does it mean to say Layer 2 in networking?*
 
 How to view the MAC addresses learned by the Switch? __SMAC - `show mac address-table`__
@@ -793,7 +827,7 @@ show ip dhcp bindings
 ---
 &nbsp;
 
-### Ensure Availability through redundancy and loadbalance
+### ⚖️ Ensure Availability through redundancy and loadbalance
 
 ~~~
 !@coreBaba, coreTaas
@@ -947,7 +981,7 @@ conf t
 
 </details>
 
-4.6. Remote Access
+4.6. ⚙️ Remote Access
 Access the CoreSwitches without the serial cable.
 
 @cmd
