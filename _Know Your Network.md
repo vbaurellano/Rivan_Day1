@@ -2053,29 +2053,33 @@ Telnet via SecureCRT
 
 # 🎯 REVIEW
 
-Must know show commands:
-SS = &nbsp;
-SR = &nbsp;
-CRS = &nbsp;
-SIIB = &nbsp;
-SVB = &nbsp;
-SIDB = &nbsp;
-SMAC =  &nbsp;
-SDVS = &nbsp;
-SIP = &nbsp;
-SIR = &nbsp;
-SION = &nbsp;
+Must know show commands: 
+| Abbreviated   | Full Command |
+| ---           | ---          |
+| SS            |              |
+| SR            |              |
+| CRS           |              |
+| SIIB          |              |
+| SVB           |              |
+| SIDB          |              |
+| SMAC          |              |
+| SDVS          |              |
+| SIP           |              |
+| SIR           |              |
+| SION          |              |
 
 &nbsp;
 ---
 &nbsp;
 
 First 5 commands:
-H.
-E.
-S.
-No.
-No.
+| Abbreviated   | Full Command |
+| ---           | ---          |
+| H             |              |
+| E             |              |
+| S             |              |
+| No            |              |
+| No            |              |
 
 &nbsp;
 ---
