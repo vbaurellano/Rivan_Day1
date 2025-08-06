@@ -778,7 +778,7 @@ conf t
 ~~~
 
 &nbsp;
----|
+---
 &nbsp;
 
 Verify DHCP: __SIDB - `show ip dhcp bindings`__
@@ -793,7 +793,7 @@ show ip dhcp bindings
 ---
 &nbsp;
 
-Ensure Availability through redundancy and loadbalance
+### Ensure Availability through redundancy and loadbalance
 
 ~~~
 !@coreBaba, coreTaas
@@ -811,19 +811,22 @@ conf t
 &nbsp;
 
 Review the jobs of a switch:
- 1. 
- 2. 
- 3. 
- 4. 
- 5. 
+ 1. &nbsp;
+ 2. &nbsp;
+ 3. &nbsp;
+ 4. &nbsp;
+ 5. &nbsp;
+ 
+<br>
+<br>
 
+---
+&nbsp;
 
+### Full Script
+<details>
 
-
-
-**********
-Full Script
-
+~~~
 !@coreBaba
 conf t
  hostname coreBaba-#$34T#
@@ -940,8 +943,9 @@ conf t
   host 10.#$34T#.50.8 255.255.255.0
   client-identifier #camera8macadd#
  end
+~~~
 
-
+</details>
 
 4.6. Remote Access
 Access the CoreSwitches without the serial cable.
