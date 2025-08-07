@@ -141,13 +141,6 @@ New-Website -name "rivan#$34T#.com" -hostheader "www.rivan#$34T#.com" -physicalp
 ---
 &nbsp;
 
-### Exercise 03: Configure DNS and Web for bpiph#$34T#.com
-
-  - The zone file must contain records for Web, eMail, CUCM,EDGE, ePhone1 and ePhone2.
-  - Assign the bpi html as its own main page.
-
-
-
 Internet Assigned Numbers Authority
 Authoritative DNS Root Servers 
 
@@ -188,9 +181,6 @@ Remove-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1
 Add-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10, 10.31.1.10, 10.32.1.10, 10.41.1.10, 10.42.1.10,10.51.1.10, 10.52.1.10, 10.61.1.10, 10.62.1.10, 10.71.1.10, 10.72.1.10, 10.81.1.10, 10.82.1.10 -PassThru
 
 
-
-
-
 Verify:
 
 @Cisco
@@ -199,6 +189,16 @@ conf t
  ip name-server 10.#$34T#.1.10
  end
 ping ns.ccna#$34T#.com
+
+
+
+
+
+
+### Exercise 03: Configure DNS and Web for bpiph#$34T#.com
+  - The zone file must contain records for Web, eMail, CUCM,EDGE, ePhone1 and ePhone2.
+  - Assign the bpi html as its own main page.
+
 
 
 
@@ -235,6 +235,7 @@ Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
   User: Support
 
   Pass: C1sc0123
+
 
 
 
