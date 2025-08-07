@@ -1,15 +1,20 @@
-**********
-1. Domain Name System
-"Connect to websites through IP addresses alone"
 
+<!-- Your monitor number = #$34T# -->
+
+
+# 🌐 Domain Name System
+*Connect to websites through IP addresses alone.*
+
+~~~
 @cmd
 ping google.com         ___.___.___.___
-ping cisco.com     
-ping rivanit.com   
+ping cisco.com          ___.___.___.___
+ping rivanit.com        ___.___.___.___
+~~~
 
+&nbsp;
+## 📦 Set up your own DNS Server.
 
-
-Set up your own DNS Server.
  - Create a Zone File for ccna#$34T#.com
    Forward & Reverse
 
@@ -184,3 +189,4 @@ Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
   User: Support
 
   Pass: C1sc0123
+
