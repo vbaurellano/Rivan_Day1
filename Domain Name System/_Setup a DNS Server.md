@@ -13,35 +13,44 @@ ping rivanit.com        ___.___.___.___
 ~~~
 
 &nbsp;
-## 📦 Set up your own DNS Server.
+### 📋 Task 01 - Set up your own DNS Server.
+Create a Zone File for __ccna#$34T#.com__
+  - Forward & Reverse lookup zones
+    - DNS Records
 
- - Create a Zone File for ccna#$34T#.com
-   Forward & Reverse
+<br>
 
- - DNS Records
-
+~~~
 @cmd
-ping ns.google.com      ___.___.___.___
+ping ns.google.com
 ping www
 ping imap
 ping pop
 ping smtp
+~~~
+
+<br>
+<br>
+
+---
+&nbsp;
+
+### 🎯 Exercise 02: Configure DNS records for devices:
+| Device   | Host |
+| ---      | ---  |
+| CoreBABA | cb   |
+| CoreTaas | ct   |
+| CUCM     | cm   |
+| EDGE     | ed   |
+| AP       | ap   |
+| WLC      | wc   |
+| Cam6     | c6   |
+| Cam8     | c8   |
+| Ephone1  | e1   |
+| Ephone2  | e2   |
 
 
-Exercise 02: Configure DNS records for devices:
-  CoreBABA,   cb
-  CoreTaas,   ct
-  CUCM,       cm
-  EDGE,       ed
-  AP,         ap
-  WLC,        wc
-  Cam6,       c6
-  Cam8,       c8
-  Ephone1,    e1
-  Ephone2,    e2
-
-
-Configure a webserver for ccna#$34T#.com
+### 📋 Task 02 - Configure a webserver for ccna#$34T#.com
 
 
 
@@ -189,4 +198,5 @@ Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
   User: Support
 
   Pass: C1sc0123
+
 
