@@ -40,10 +40,8 @@ ping smtp
 <br>
 
 ---
-&nbsp;
 
 ### 🎯 Exercise 01: Configure additional DNS records for the following devices:
-<br>
 
 | Alias |     | Device       | Host |     | Device       | Host |
 | ---   | --- | ---          | ---  | --- | ---          | ---  | 
@@ -57,10 +55,8 @@ ping smtp
 <br>
 
 ---
-&nbsp;
 
 ### 🎯 Exercise 02: Configure DNS for __`itsolutions#$34T#.com`__ with the following DNS records:
-<br>
 
 | Alias |     | Device       | Host     |     | Device       | Host     |
 | ---   | --- | ---          | ---      | --- | ---          | ---      | 
@@ -74,7 +70,6 @@ ping smtp
 <br>
 
 ---
-&nbsp;
 
 ## 📋 Task 02 - Create a website for __rivan#$34T#.com__
 
@@ -84,9 +79,7 @@ ping smtp
 Install-WindowsFeature -name Web-Server -includeManagementTools
 ~~~
 
-&nbsp;
----
-&nbsp;
+<br>
 
 ### 📂 Create the website
 
@@ -98,7 +91,6 @@ Install-WindowsFeature -name Web-Server -includeManagementTools
 <br>
 
 ---
-&nbsp;
 
 ### 🎯 Exercise 03: Configure a website for __`itsolutions#$34T#.com`__ using the web directory, cellbiz
 
@@ -106,50 +98,50 @@ Install-WindowsFeature -name Web-Server -includeManagementTools
 | ---                       | ---           | ---      |
 | __itsolutions#$34T#.com__ | cellbiz       | All:80   |
 
+<br>
+<br>
 
+---
 
+### 📦 Powershell Script for DNS Zones & Records
+~~~powershell
+@powershell
+add-DnsServerPrimaryZone -Name "rivan#$34T#.com" -ZoneFile "rivan#$34T#.com.dns"
 
+﻿add-DnsServerResourceRecord -zonename rivan#$34T#.com -A -name ns -ipv4address 10.#$34T#.1.7
+add-DnsServerResourceRecord -zonename rivan#$34T#.com -Cname -name www -hostname ns.rivan#$34T#.com
+add-DnsServerResourceRecord -zonename rivan#$34T#.com -Cname -name imap -hostname ns.rivan#$34T#.com
+add-DnsServerResourceRecord -zonename rivan#$34T#.com -Cname -name pop -hostname ns.rivan#$34T#.com
+add-DnsServerResourceRecord -zonename rivan#$34T#.com -Cname -name smtp -hostname ns.rivan#$34T#.com
 
+add-DnsServerResourceRecord -zonename rivan#$34T#.com -A -name cb -ipv4address 10.#$34T#.1.4
+add-DnsServerResourceRecord -zonename rivan#$34T#.com -A -name ct -ipv4address 10.#$34T#.1.2
+add-DnsServerResourceRecord -zonename rivan#$34T#.com -A -name cm -ipv4address 10.#$34T#.100.8
+add-DnsServerResourceRecord -zonename rivan#$34T#.com -A -name ed -ipv4address 10.#$34T#.#$34T#.1
+add-DnsServerResourceRecord -zonename rivan#$34T#.com -A -name e1 -ipv4address 10.#$34T#.100.101
+add-DnsServerResourceRecord -zonename rivan#$34T#.com -A -name e2 -ipv4address 10.#$34T#.100.102
+add-DnsServerResourceRecord -zonename rivan#$34T#.com -A -name c6 -ipv4address 10.#$34T#.50.6
+add-DnsServerResourceRecord -zonename rivan#$34T#.com -A -name c8 -ipv4address 10.#$34T#.50.8
+add-DnsServerResourceRecord -zonename rivan#$34T#.com -A -name ap -ipv4address 10.#$34T#.10.3
+~~~
 
+&nbsp;
+---
+&nbsp;
 
+### 📦 Powershell Script for Website configuration
+~~~powershell
+@powershell
+New-Website -name "rivan#$34T#.com" -hostheader "www.rivan#$34T#.com" -physicalpath "d:\webs\officebiz"
+~~~
 
-#########################################################################
-### Powershell Script to install DNS & IIS (Windows Web Server)
+<br>
+<br>
 
-Install-WindowsFeature -name dns -includeManagementTools
-﻿Install-WindowsFeature -name Web-Server -includeManagementTools
+---
+&nbsp;
 
-
-#########################################################################
-### Powershell Script for DNS Zones & Records
-
-add-DnsServerPrimaryZone -Name "ccna#$34T#.com" -ZoneFile "ccna#$34T#.com.dns"
-
-﻿add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ns -ipv4address 10.#$34T#.1.7
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name www -hostname ns.ccna#$34T#.com
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name imap -hostname ns.ccna#$34T#.com
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name pop -hostname ns.ccna#$34T#.com
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -Cname -name smtp -hostname ns.ccna#$34T#.com
-
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name cb -ipv4address 10.#$34T#.1.4
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ct -ipv4address 10.#$34T#.1.2
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name cm -ipv4address 10.#$34T#.100.8
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ed -ipv4address 10.#$34T#.#$34T#.1
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name e1 -ipv4address 10.#$34T#.100.101
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name e2 -ipv4address 10.#$34T#.100.102
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name c6 -ipv4address 10.#$34T#.50.6
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name c8 -ipv4address 10.#$34T#.50.8
-add-DnsServerResourceRecord -zonename ccna#$34T#.com -A -name ap -ipv4address 10.#$34T#.10.3
-
-
-#########################################################################
-### Powershell Script for Website configuration
-
-New-Website -name "ccna#$34T#.com" -hostheader "www.ccna#$34T#.com" -physicalpath "d:\webs\officebiz"
-
-
-
-Exercise 03: Configure DNS and Web for bpiph#$34T#.com
+### Exercise 03: Configure DNS and Web for bpiph#$34T#.com
 
   - The zone file must contain records for Web, eMail, CUCM,EDGE, ePhone1 and ePhone2.
   - Assign the bpi html as its own main page.
@@ -243,6 +235,7 @@ Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
   User: Support
 
   Pass: C1sc0123
+
 
 
 
