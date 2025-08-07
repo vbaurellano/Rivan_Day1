@@ -5,7 +5,7 @@
 # 🌐 Domain Name System
 *Connect to websites through IP addresses alone.*
 
-~~~
+~~~cmd
 @cmd
 ping google.com         ___.___.___.___
 ping cisco.com          ___.___.___.___
@@ -14,13 +14,26 @@ ping rivanit.com        ___.___.___.___
 
 &nbsp;
 ### 📋 Task 01 - Set up your own DNS Server.
-Create a Zone File for __ccna#$34T#.com__
+
+<br>
+
+### 📦 Install Windows DNS Server
+~~~Powershell
+@powershell
+Install-WindowsFeature -name dns -includeManagementTools
+~~~
+
+&nbsp;
+---
+&nbsp;
+
+### 📂 Create a Zone File for __rivan#$34T#.com__
   - Forward & Reverse lookup zones
     - DNS Records
 
 <br>
 
-~~~
+~~~cmd
 @cmd
 ping ns.google.com
 ping www
@@ -35,22 +48,41 @@ ping smtp
 ---
 &nbsp;
 
-### 🎯 Exercise 02: Configure DNS records for devices:
-| Device   | Host |
-| ---      | ---  |
-| CoreBABA | cb   |
-| CoreTaas | ct   |
-| CUCM     | cm   |
-| EDGE     | ed   |
-| AP       | ap   |
-| WLC      | wc   |
-| Cam6     | c6   |
-| Cam8     | c8   |
-| Ephone1  | e1   |
-| Ephone2  | e2   |
+### 🎯 Exercise 02: Configure additional DNS records for the following devices:
+<br>
 
+| Alias |     | Device       | Host |     | Device       | Host |
+| ---   | --- | ---          | ---  | --- | ---          | ---  | 
+| Web   |     | __CoreBABA__ | cb   |     | __WLC__      | wc   |
+| SMTP  |     | __CoreTaas__ | ct   |     | __Cam6__     | c6   |
+| IMAP  |     | __CUCM__     | cm   |     | __Cam8__     | c8   |
+| POP3  |     | __EDGE__     | ed   |     | __Ephone1__  | e1   |
+|       |     | __AP__       | ap   |     | __Ephone2__  | e2   |
 
-### 📋 Task 02 - Configure a webserver for ccna#$34T#.com
+<br>
+<br>
+
+---
+&nbsp;
+
+### 🎯 Exercise 03: Configure DNS for __`itsolutions_#$34T#.com`__ with the following DNS records:
+<br>
+
+| Alias |     | Device       | Host     |     | Device       | Host     |
+| ---   | --- | ---          | ---      | --- | ---          | ---      | 
+| Web   |     | __CoreBABA__ | coreprim |     | __WLC__      | wifictrl |
+| SMTP  |     | __CoreTaas__ | coresec  |     | __Cam6__     | cam6     |
+| IMAP  |     | __CUCM__     | callm    |     | __Cam8__     | cam8     |
+| POP3  |     | __EDGE__     | edge     |     | __Ephone1__  | ep1      |
+|       |     | __AP__       | wifiap   |     | __Ephone2__  | ep2      |
+
+<br>
+<br>
+
+---
+&nbsp;
+
+### 📋 Task 02 - Configure a webserver for __rivan#$34T#.com__
 
 
 
@@ -198,5 +230,6 @@ Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
   User: Support
 
   Pass: C1sc0123
+
 
 
