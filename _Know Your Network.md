@@ -236,9 +236,9 @@ conf t
   end
 ~~~
 
-<br>
-<br>
-
+&nbsp;
+---
+&nbsp;
 
 ### 🎯 Exercise 01: Navigate through the CLI as fast as you can.
 ~~~
