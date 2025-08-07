@@ -13,9 +13,7 @@ ping rivanit.com        ___.___.___.___
 ~~~
 
 &nbsp;
-### 📋 Task 01 - Set up your own DNS Server.
-
-<br>
+## 📋 Task 01 - Set up your own DNS Server.
 
 ### 📦 Install Windows DNS Server
 ~~~Powershell
@@ -23,15 +21,11 @@ ping rivanit.com        ___.___.___.___
 Install-WindowsFeature -name dns -includeManagementTools
 ~~~
 
-&nbsp;
----
-&nbsp;
+<br>
 
 ### 📂 Create a Zone File for __rivan#$34T#.com__
   - Forward & Reverse lookup zones
     - DNS Records
-
-<br>
 
 ~~~cmd
 @cmd
@@ -48,7 +42,7 @@ ping smtp
 ---
 &nbsp;
 
-### 🎯 Exercise 02: Configure additional DNS records for the following devices:
+### 🎯 Exercise 01: Configure additional DNS records for the following devices:
 <br>
 
 | Alias |     | Device       | Host |     | Device       | Host |
@@ -65,7 +59,7 @@ ping smtp
 ---
 &nbsp;
 
-### 🎯 Exercise 03: Configure DNS for __`itsolutions_#$34T#.com`__ with the following DNS records:
+### 🎯 Exercise 02: Configure DNS for __`itsolutions#$34T#.com`__ with the following DNS records:
 <br>
 
 | Alias |     | Device       | Host     |     | Device       | Host     |
@@ -82,16 +76,35 @@ ping smtp
 ---
 &nbsp;
 
-### 📋 Task 02 - Configure a webserver for __rivan#$34T#.com__
+## 📋 Task 02 - Create a website for __rivan#$34T#.com__
 
+### 📦 Install Windows Web Server
+~~~Powershell
+@powershell
+Install-WindowsFeature -name Web-Server -includeManagementTools
+~~~
 
+&nbsp;
+---
+&nbsp;
 
+### 📂 Create the website
 
+| Site name           | Physical path | Bindings |
+| ---                 | ---           | ---      |
+| __rivan#$34T#.com__ | officebiz     | All:80   |
 
+<br>
+<br>
 
+---
+&nbsp;
 
+### 🎯 Exercise 03: Configure a website for __`itsolutions#$34T#.com`__ using the web directory, cellbiz
 
-
+| Site name                 | Physical path | Bindings |
+| ---                       | ---           | ---      |
+| __itsolutions#$34T#.com__ | cellbiz       | All:80   |
 
 
 
@@ -230,6 +243,7 @@ Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
   User: Support
 
   Pass: C1sc0123
+
 
 
 
