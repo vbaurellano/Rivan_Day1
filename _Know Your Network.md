@@ -42,7 +42,7 @@ Import the repositories.
 ## 📂 Create your own folder in the desktop
 ~~~
 @cmd
-cd Users/Administrator/Desktop
+cd Desktop
 mkdir _name-#$34T#
 cd _name-#$34T#
 dir
