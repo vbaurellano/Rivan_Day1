@@ -29,7 +29,7 @@ Install-WindowsFeature -name dns -includeManagementTools
 
 ~~~cmd
 @cmd
-ping ns.google.com
+ping ns.nemsu.com
 ping www
 ping imap
 ping pop
@@ -235,6 +235,7 @@ Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
   User: Support
 
   Pass: C1sc0123
+
 
 
 
