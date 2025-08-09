@@ -141,26 +141,21 @@ New-Website -name "rivan#$34T#.com" -hostheader "www.rivan#$34T#.com" -physicalp
 ---
 &nbsp;
 
-Internet Assigned Numbers Authority
-Authoritative DNS Root Servers 
+## 🌐 Recursive Resolver
+*What happens when a dns server does not know how to map a domain name?*
 
-What happens when a dns server does not know how to map a domain name?
+- DNS stub resolver
+ - Authoritative Root server
+ - TLD
+ - SLD
+ - NS
 
-
+~~~
 @cmd
 nslookup -type=NS com. a.root-servers.net
 nslookup -type=NS rivanit.com d.gtld-servers.net
 nslookup -type=NS rivanit.com ns1.dns-parking.com
-
-
-Root Servers
-  > TLD
-    > SLD
-	  > DNS RECORDS
-
-DNS Forwarders
-Recursive
-
+~~~
 
 
 Lookup nemsu.edu.ph
@@ -235,6 +230,7 @@ Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
   User: Support
 
   Pass: C1sc0123
+
 
 
 
