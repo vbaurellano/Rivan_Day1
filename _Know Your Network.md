@@ -84,7 +84,7 @@ CORE Layer (__CoreTAAS__ & __CoreBABA__) - High Speed and Availability
 Examples:
   | __Protocol__                 | __Supported Devices__    |
   | ---                          | ---                      |
-  | Etherchannel                 | Cisco Catalyst           |
+  | Etherchannel                 | Cisco Catalyst..and more |
   | FlexStack (Master Switch)    | Cisco 2960 & 6500 Series |
   | VSS (Single logical switch)  | NXOS 9k                  |
   | SSO (Stateful Switchover)
