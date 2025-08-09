@@ -52,14 +52,16 @@ py_dictionary['key_list']
 py_dictionary['key_dictionary']['nested'][1]
 
 
-## EXERCISE 01 - From py_dictionary, print the float value 1.0 from key_float.
+## EXERCISE 01 
+# 1. From py_dictionary, print the float value 1.0 from key_float.
 # print(py_dictionary[__])
 
-## EXERCISE 02 - From py_dictionary, print the string value '5' from key_list.
-# print(py_dictionary[__][__])
+# 2. From py_dictionary, store the string value '5', from key_list, in a variable called, sample. Then, print the value of sample.
+# sample = py_dictionary[__][__]
+# print(__)
 
-## EXERCISE 03 - From py_dictionary, print the string 'data' from key_dictionary.
-# print(py_dictionary[__][__][__])
+# 3. From py_dictionary, print the string 'data' from key_dictionary.
+# 
 
 
 # ---------------------------------------------------------- #
@@ -166,3 +168,4 @@ def configureCisco(ip, username, password, secret=None):
 
 if __name__ == '__main__':
     configureCisco(ip, username, password, secret)
+
