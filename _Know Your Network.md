@@ -184,8 +184,14 @@ Cisco Unified Call Manager | [Unified Communications and Collaboration.](https:/
   - SFP (Small Form-factor Pluggable)
 
 <br>
-<br>
 
+  | Copper                                           | Single-mode fiber                    |
+  | ---                                              | ---                                  |
+  | Conductor, Bedding, Sheathing                    | Core, Cladding, Coating              |
+  | Affected by electrical and magnetic interference | Comprised of insulated glass strands |
+
+<br>
+<br>
 
 # 🔧 Configure the Network
 *How can you tell if a device is expensive? It has a __Console Port__*
