@@ -150,6 +150,8 @@ New-Website -name "rivan#$34T#.com" -hostheader "www.rivan#$34T#.com" -physicalp
  - SLD
  - NS
 
+<br>
+
 ~~~
 @cmd
 nslookup -type=NS com. a.root-servers.net
@@ -230,6 +232,7 @@ Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
   User: Support
 
   Pass: C1sc0123
+
 
 
 
