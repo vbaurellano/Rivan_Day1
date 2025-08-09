@@ -14,8 +14,10 @@ m = '#$34T#'
 # py -m pip install netmiko
 # py -m pip install paramiko
 #
+#
+#
 # ---------------------------------------------------------- #
-# DATA TYPES
+# DATA TYPES - (Line 20 - 68)
 #
 # Dictionary
 py_dictionary = {
@@ -34,25 +36,25 @@ py_dictionary = {
 }
 
 # String
-py_dictionary['key_string']
+# py_dictionary['key_string']
 
 # Integer
-py_dictionary['key_int']
+# py_dictionary['key_int']
 
 # Float
-py_dictionary['key_float']
+# py_dictionary['key_float']
 
 # Boolean
-py_dictionary['key_boolean']
+# py_dictionary['key_boolean']
 
 # List
-py_dictionary['key_list']
+# py_dictionary['key_list']
 
 # Nested Data
-py_dictionary['key_dictionary']['nested'][1]
+# py_dictionary['key_dictionary']['nested'][1]
 
 
-## EXERCISE 01 
+## EXERCISE 01 - ex01.py
 # 1. From py_dictionary, print the float value 1.0 from key_float.
 # print(py_dictionary[__])
 
@@ -65,7 +67,7 @@ py_dictionary['key_dictionary']['nested'][1]
 
 
 # ---------------------------------------------------------- #
-# NETMIKO (TELNET)
+# NETMIKO (TELNET) - (Line 70 - 116)
 # import netmiko
 from netmiko import ConnectHandler
 
@@ -97,10 +99,10 @@ accesscli = ConnectHandler(**cbaba)
 
 
 # Send show command/s
-show_ip = accesscli.send_command('show ip interface brief')
-show_vlan = accesscli.send_command('show vlan brief')
-show_mac = accesscli.send_command('show mac address-table')
-show_cdp = accesscli.send_command('show cdp neighbor')
+# show_ip = accesscli.send_command('show ip interface brief')
+# show_vlan = accesscli.send_command('show vlan brief')
+# show_mac = accesscli.send_command('show mac address-table')
+# show_cdp = accesscli.send_command('show cdp neighbor')
 
 
 # Push configurations
@@ -113,7 +115,7 @@ print(cli_output)
 
 
 # ---------------------------------------------------------- #
-# PARAMIKO
+# PARAMIKO - (Line 118 - 174)
 import paramiko
 import time
 
@@ -157,7 +159,7 @@ def configureCisco(ip, username, password, secret=None):
         send_command('ip address 1.1.1.1 255.255.255.0')
         send_command('no shutdown')
 
-        # Exit and save
+        # Exit
         send_command('end')
 
         print("Configuration complete.")
