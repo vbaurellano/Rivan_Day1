@@ -275,4 +275,8 @@ ping 200.0.0.#$34T#
 Pings must be successful
 
 
-### 3. 
+### 3. Install/Add dependencies.
+Now that IP addressing is in place, the Virtual Machine must have access to both the internet and the LAN.
+
+1. Open a browser and go to: https://www.github.com/art-stack/Rivan_Day1
+Download the repository
