@@ -159,23 +159,41 @@ nslookup -type=NS rivanit.com d.gtld-servers.net
 nslookup -type=NS rivanit.com ns1.dns-parking.com
 ~~~
 
+<br>
+<br>
 
-Lookup nemsu.edu.ph
+---
+&nbsp;
 
+### 🎯 Exercise 04: Use NSLookup to determine the DNS servers and record information for __`en.wikipedia.org`__ __`www.facebook.com`__
+
+~~~
 @cmd
-nslookup -type=NS
+nslookup -type=NS ___  ________________
+~~~
 
+<br>
+<br>
 
+---
 
-Configure Forwarders
+### 📦 Powershell Script to Remove DNS Forwarders
+~~~powershell
+Remove-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10, 10.31.1.10, 10.32.1.10, 10.41.1.10, 10.42.1.10,10.51.1.10, 10.52.1.10, 10.61.1.10, 10.62.1.10, 10.71.1.10, 10.72.1.10, 10.81.1.10, 10.82.1.10, 10.91.1.10, 10.92.1.10 -PassThru
+~~~
 
-#########################################################################
-### Powershell Script for DNS Forwarders
+<br>
+<br>
 
-! You do not forward things yourself
+### 📦 Powershell Script to Add DNS Forwarders
+~~~powershell
+Add-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10, 10.31.1.10, 10.32.1.10, 10.41.1.10, 10.42.1.10,10.51.1.10, 10.52.1.10, 10.61.1.10, 10.62.1.10, 10.71.1.10, 10.72.1.10, 10.81.1.10, 10.82.1.10, 10.91.1.10, 10.92.1.10 -PassThru
+~~~
 
-Remove-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10, 10.31.1.10, 10.32.1.10, 10.41.1.10, 10.42.1.10,10.51.1.10, 10.52.1.10, 10.61.1.10, 10.62.1.10, 10.71.1.10, 10.72.1.10, 10.81.1.10, 10.82.1.10 -PassThru
-Add-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10, 10.31.1.10, 10.32.1.10, 10.41.1.10, 10.42.1.10,10.51.1.10, 10.52.1.10, 10.61.1.10, 10.62.1.10, 10.71.1.10, 10.72.1.10, 10.81.1.10, 10.82.1.10 -PassThru
+<br>
+
+>[!NOTE]
+>You do not forward queries to yourself
 
 
 Verify:
@@ -232,6 +250,7 @@ Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
   User: Support
 
   Pass: C1sc0123
+
 
 
 
