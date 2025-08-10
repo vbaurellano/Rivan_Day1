@@ -225,37 +225,42 @@ ping ns.ccna#$34T#.com
 ---
 &nbsp;
 
-# 📧 Mail Exchanger
-
-
-
-
-
-
-# 📋 Task 03 - File Transfer
-
+## 📋 File Transfer
 Upload configurations to FTP Server. (CoreTaas, CoreBaba, CUCM, EDGE)
 
 @Cisco
-copy run ftp://ccna#$34T#.com
-
+copy run ftp:10.#$34T#1.8
 
 How to copy the current IOS of a Cisco Switch
 
 @Cisco
 archive upload-sw ftp://ccna#$34T#.com
 
+<br>
+<br>
 
+---
+&nbsp;
 
-__________
-**********
-3. Mail Exchanger
+# 📧 Mail Server System Design
+*How are emails recieved and sent? __IMAP__, __POP3__, __SMTP__*
 
 Create an MX record on the Zone file.
 	Install .NET Framework 3.5 Features
+ 
+
+### Vulnerabilities of Hosting Mail Servers
+
+### Secure Mail Server
+DMARC
+SSL Certificate
 
 
-Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
+
+
+
+
+### Exercise - Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
 
   User1: ac
   Pass: C1sc0123
@@ -263,6 +268,7 @@ Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
   User: Support
 
   Pass: C1sc0123
+
 
 
 
