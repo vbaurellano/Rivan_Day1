@@ -208,7 +208,7 @@ Add-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10
 ---
 &nbsp;
 
-### 🔢 Set a DNS server for Windows & Cisco
+### 🔢 Set a DNS server for Windows, Linux, & Cisco
 
 ~~~
 @Cisco
@@ -219,6 +219,14 @@ conf t
 ping ns.ccna#$34T#.com
 ~~~
 
+~~~
+@Linux
+nano /etc/resolve.conf
+
+10.#$34T#.1.10
+
+ping ns.ccna#$34T#.com
+~~~
 <br>
 <br>
 
@@ -268,6 +276,7 @@ SSL Certificate
   User: Support
 
   Pass: C1sc0123
+
 
 
 
