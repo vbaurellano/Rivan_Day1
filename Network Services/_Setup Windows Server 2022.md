@@ -85,6 +85,10 @@
 10. __Add__ Hardware. Then, select __Hard Disk__.
 <img width="2366" height="2019" alt="image" src="https://github.com/user-attachments/assets/9d9701a5-bace-4a13-9904-1e2973aa3e81" />
 
+&nbsp;
+---
+&nbsp;
+
 11. Select the following settings:
   - Disk Type: __NVMe__
   - Select a Disk: __Create a new virtual disk__
@@ -97,3 +101,56 @@ Simply repeat this process to add 3 more hard disks with the following sizes: __
 Expected output:
 
 <img width="2344" height="2016" alt="image" src="https://github.com/user-attachments/assets/4a46cc72-711a-405a-86bc-75e40a8bff8b" />
+
+&nbsp;
+---
+&nbsp;
+
+12. Finally, we can __Power On__ the virtual machine.
+> [!Warning]
+> Once the virtual machine is powered on, you __MUST__ click on the __Center__ of the VM. Then, press __Enter__ otherwise you will have to restart the VM.
+
+<img width="1767" height="1441" alt="image" src="https://github.com/user-attachments/assets/eac9925e-0fcb-4761-b69d-4189f5c05ef7" />
+
+&nbsp;
+---
+&nbsp;
+
+13. When booted successfully, leave the language to default. Then, select __Next__ and __Install Now__
+<img width="2143" height="1950" alt="image" src="https://github.com/user-attachments/assets/e059b1cf-9f44-4253-b11e-d1a0b45c85f6" />
+
+&nbsp;
+---
+&nbsp;
+
+14. For Operationg system, select the 2nd option __Windows Server 2022 Standard Evaluation (Desktop Experience)__
+<img width="2139" height="1954" alt="image" src="https://github.com/user-attachments/assets/595aa7c9-cf57-4907-983b-ccf05b4f53f2" />
+
+&nbsp;
+---
+&nbsp;
+
+15. __Accept__ the license terms.
+<img width="2139" height="1967" alt="image" src="https://github.com/user-attachments/assets/789fda49-a2d5-4c22-8baa-380c7ae7f266" />
+
+&nbsp;
+---
+&nbsp;
+
+16. Choose __Custom Install__
+<img width="2142" height="1956" alt="image" src="https://github.com/user-attachments/assets/bb0fe5d8-73fe-491c-b1af-75aa2855aa40" />
+
+&nbsp;
+---
+&nbsp;
+
+17. Select __Drive 0__. Then, simply wait for the installation to finish.
+<img width="2142" height="1950" alt="image" src="https://github.com/user-attachments/assets/e7746340-516d-4695-baf4-12f53b77a615" />
+
+&nbsp;
+---
+&nbsp;
+
+18. 
+
+
