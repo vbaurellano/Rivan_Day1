@@ -302,6 +302,12 @@ Security 101: *DO NOT name your servers based on their purpose.*
 rename-computer snoopy#$34T#
 ~~~
 
+Then restart the VM to apply the changes.
+
+~~~powershell
+restart-computer
+~~~
+
 <br>
 <br>
 <br>
