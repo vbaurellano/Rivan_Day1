@@ -274,9 +274,36 @@ ping 200.0.0.#$34T#
 
 Pings must be successful
 
+&nbsp;
+---
+&nbsp;
 
-### 3. Install/Add dependencies.
+### 3. Download  necessary files
 Now that IP addressing is in place, the Virtual Machine must have access to both the internet and the LAN.
 
 1. Open a browser and go to: https://www.github.com/art-stack/Rivan_Day1
 Download the repository
+<img width="2118" height="1933" alt="image" src="https://github.com/user-attachments/assets/337cc1ba-f7c2-4bb9-96ed-c34b0ff0e370" />
+
+After download, you __MUST__ move the repository to the __C: Drive__ then __extract__. 
+
+> [!Note]
+> This is to avoid permission errors with the web server later.
+
+2. Next, search and download the following apps:
+  - [Hmail Server](https://www.hmailserver.com/)
+  - [Thunderbird](https://www.thunderbird.net/en-US)
+
+
+### 4. Rename the Windows Server 2022 Virtual Machine
+Security 101: *DO NOT name your servers based on their purpose.*
+
+~~~powershell
+rename-computer snoopy#$34T#
+~~~
+
+<br>
+<br>
+<br>
+
+That's about it. Your Windows Server 2022 Virtual Machine is now ready for labbing.
