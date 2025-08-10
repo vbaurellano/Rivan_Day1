@@ -40,6 +40,7 @@ ping smtp
 <br>
 
 ---
+&nbsp;
 
 ### 🎯 Exercise 01: Configure additional DNS records for the following devices:
 
@@ -55,6 +56,7 @@ ping smtp
 <br>
 
 ---
+&nbsp;
 
 ### 🎯 Exercise 02: Configure DNS for __`itsolutions#$34T#.com`__ with the following DNS records:
 
@@ -70,6 +72,7 @@ ping smtp
 <br>
 
 ---
+&nbsp;
 
 ## 📋 Task 02 - Create a website for __rivan#$34T#.com__
 
@@ -91,6 +94,7 @@ Install-WindowsFeature -name Web-Server -includeManagementTools
 <br>
 
 ---
+&nbsp;
 
 ### 🎯 Exercise 03: Configure a website for __`itsolutions#$34T#.com`__ using the web directory, cellbiz
 
@@ -102,6 +106,7 @@ Install-WindowsFeature -name Web-Server -includeManagementTools
 <br>
 
 ---
+&nbsp;
 
 ### 📦 Powershell Script for DNS Zones & Records
 ~~~powershell
@@ -176,14 +181,16 @@ nslookup -type=NS ___  ________________
 <br>
 
 ---
+&nbsp;
 
 ### 📦 Powershell Script to Remove DNS Forwarders
 ~~~powershell
 Remove-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10, 10.31.1.10, 10.32.1.10, 10.41.1.10, 10.42.1.10,10.51.1.10, 10.52.1.10, 10.61.1.10, 10.62.1.10, 10.71.1.10, 10.72.1.10, 10.81.1.10, 10.82.1.10, 10.91.1.10, 10.92.1.10 -PassThru
 ~~~
 
-<br>
-<br>
+&nbsp;
+---
+&nbsp;
 
 ### 📦 Powershell Script to Add DNS Forwarders
 ~~~powershell
@@ -195,31 +202,37 @@ Add-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10
 >[!NOTE]
 >You do not forward queries to yourself
 
+<br>
+<br>
 
-Verify:
+---
+&nbsp;
 
+### 🔢 Set a DNS server for Windows & Cisco
+
+~~~
 @Cisco
 conf t
  ip domain lookup
  ip name-server 10.#$34T#.1.10
  end
 ping ns.ccna#$34T#.com
+~~~
+
+<br>
+<br>
+
+---
+&nbsp;
+
+# 📧 Mail Exchanger
 
 
 
 
 
 
-### Exercise 03: Configure DNS and Web for bpiph#$34T#.com
-  - The zone file must contain records for Web, eMail, CUCM,EDGE, ePhone1 and ePhone2.
-  - Assign the bpi html as its own main page.
-
-
-
-
-__________
-**********
-2. File Transfer
+# 📋 Task 03 - File Transfer
 
 Upload configurations to FTP Server. (CoreTaas, CoreBaba, CUCM, EDGE)
 
@@ -250,6 +263,7 @@ Create users and emails for ccna#$34T#.com and bpiph#$34T#.com
   User: Support
 
   Pass: C1sc0123
+
 
 
 
