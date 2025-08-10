@@ -216,7 +216,63 @@ For the sake of convenience, rename the network adapter as follows:
 Expected output:
 <img width="2137" height="1963" alt="image" src="https://github.com/user-attachments/assets/92f6adc1-12e4-40d2-9d6d-0bb939e62fd2" />
 
+<br>
+<br>
 
+Now that we know which Network Adapter is which, we need to set a static IP address on __TunayNaLAN__
+
+1. Right click __TunayNaLan__ and select __Properties__.
+<img width="1612" height="1304" alt="image" src="https://github.com/user-attachments/assets/529b28b1-dfc2-4fbe-a24e-3c25dcdaa2ea" />
+
+<br>
+<br>
+
+2. Select __Internet Protocol Veriosn 4 (TCP/IPv4)__, then __Properties__.
+Set the following settings:
+  - __Use the following IP address:__
+    - IP address: __10.#$34T#.1.8__
+    - Subnet Mask: __255.255.255.0__
+    - Default Gateway: __Leave this blank__
+
+  - __Use the following DNS server address:__
+    - Preffered DNS Server: __127.0.0.1__
+    - Alternate DNS Server: __Leave this blank__
+<img width="1719" height="1237" alt="image" src="https://github.com/user-attachments/assets/b1eee086-389f-4b97-bd77-f73222f32ab3" />
+
+3. Next, select __Advanced__ then choose the __DNS__ tab.
+  - Under DNS Suffix for this connection: __azure#$34T#.com__
+  - Then, under Append these DNS suffixes (in order), select __Add__.
+    - Simply add the exact DNS Suffix that was previously assigned: __azure#$34T#.com__
+
+Expected output:
+<img width="1735" height="1253" alt="image" src="https://github.com/user-attachments/assets/c2916f29-1fb5-4430-84e6-3276a2e0aa73" />
+
+Confirm the changes by selecting __Ok__ on each open window.
+
+4. Next, we need to set static routes so that the virtual machine can connect to not only the LAN, but including other classmate's network.
+~~~cmd
+@cmd
+ip route 10.0.0.0 mask 255.0.0.0 10.#$34T#.1.4
+ip route 200.0.0.0 mask 255.255.255.0 10.#$34T#.1.4
+~~~
+
+5. Verification - To ensure that everything was done correctly.
+~~~cmd
+@cmd
+ipconfig
+~~~
+
+The assigned domain name __azure#$34T#.com__ must appear on the network adapters.
+
+~~~cmd
+@cmd
+ping 10.#$34T#.1.4
+ping 10.#$34T#.1.2
+ping 10.#$34T#.100.8
+ping 200.0.0.#$34T#
+~~~
+
+Pings must be successful
 
 
 ### 3. 
