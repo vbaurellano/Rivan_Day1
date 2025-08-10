@@ -2,7 +2,7 @@
 
 ![CISCO_CLI](https://github.com/user-attachments/assets/77811e35-cd01-4b96-85ea-cbfe7e887829)
 
-![CORE_3560](https://github.com/user-attachments/assets/423d1bd0-c660-4246-a68c-8046e7b9bfe6)
+![CORE_3560](https://github.com/user-attachments/assets/b70b6a0d-c8d4-4027-9833-b7a0deb5030b)
 
 ![CUCM_1800_](https://github.com/user-attachments/assets/c6437b83-22d3-4b99-bdf7-39f655704429)
 
