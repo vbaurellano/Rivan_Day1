@@ -1,4 +1,4 @@
-add-DnsServerPrimaryZone -Name "NGCP12.com" -ZoneFile "NGCP12.com.dns"
+add-DnsServerPrimaryZone -Name "ngcpM.ph" -ZoneFile "NGCP12.com.dns"
 add-DnsServerResourceRecord -zonename ngcpM.ph -A -name ns  -ipv4address 10.m.1.7
 
 add-DnsServerResourceRecord -zonename ngcpM.ph -Cname -name www -hostname ns.ngcpM.ph
