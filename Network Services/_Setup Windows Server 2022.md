@@ -145,12 +145,78 @@ Expected output:
 &nbsp;
 
 17. Select __Drive 0__. Then, simply wait for the installation to finish.
+> [!Note]
+> The system will restart after installation.
+
 <img width="2142" height="1950" alt="image" src="https://github.com/user-attachments/assets/e7746340-516d-4695-baf4-12f53b77a615" />
+<img width="2136" height="1959" alt="image" src="https://github.com/user-attachments/assets/55e0f869-4e28-474b-8b30-4fbc4116214c" />
 
 &nbsp;
 ---
 &nbsp;
 
-18. 
+18. Set a password for the Administrator account. __C1sc0123__
+<img width="2138" height="1953" alt="image" src="https://github.com/user-attachments/assets/fdc6f705-d1fe-407a-8f19-ee3236350b5b" />
+
+&nbsp;
+---
+&nbsp;
+
+19. Use CTRL + ALT + INSERT to login to the VM
+
+<br>
+<br>
+
+---
+&nbsp;
+
+## Setup Winserver 2022 for network services.
+### 1. Turn off the firewall
+
+~~~powershell
+@powershell
+set-netfirewallprofile -name public,private,domain -enabled false
+~~~
+
+Verify:
+
+~~~powershell
+@powershell
+get-netfirewallprofile
+~~~
+
+&nbsp;
+---
+&nbsp;
+
+### 2. Set proper IP addressing.
+Open the __Run__ window by pressing `Windows + R` button. Then enter `ncpa.cpl`
+<img width="2137" height="1943" alt="image" src="https://github.com/user-attachments/assets/6b691204-97bb-482f-a63e-d192fdfcc728" />
+
+<br>
+
+First off, we need to verify which Network Adapter is connected to __NAT__, and which one is connected to __Bridge__.
+To achieve this, __right click__ on one of the LAN Cards of the virtual machine. Then, select __Disconnect__.
+<img width="2149" height="2014" alt="image" src="https://github.com/user-attachments/assets/4f3473a0-ff27-403b-b33c-eb8733f75000" />
+
+When disconnected, one of the Network Adapters within the Virtual Machine will be __unplugged__
+<img width="2132" height="1946" alt="image" src="https://github.com/user-attachments/assets/2d9520cf-c5cc-4129-b31b-77fba6fc72bf" />
+
+That means, the LAN card we disconnected is the one that's connected to the VMs network adapter. In this example, the __Bridged LAN__ was disconnected, which means the __Ethernet0__ is the bridged connection.
+
+For the sake of convenience, rename the network adapter as follows:
+| LAN Card | WinServer Network Adapter |
+| ---      | ---                       |
+| Bridged  | TunayNaLAN                |
+| NAT      | TunayNaWIFI               |
+
+> [!Note]
+> Don't forget to reconnect the LAN Card
+
+Expected output:
+<img width="2137" height="1963" alt="image" src="https://github.com/user-attachments/assets/92f6adc1-12e4-40d2-9d6d-0bb939e62fd2" />
 
 
+
+
+### 3. 
