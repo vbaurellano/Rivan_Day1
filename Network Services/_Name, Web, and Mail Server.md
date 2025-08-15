@@ -53,6 +53,10 @@ ping smtp
 |       |     | __AP__       | ap   |     | __Ephone2__  | e2   |
 
 <br>
+
+<img width="791" height="572" alt="image" src="https://github.com/user-attachments/assets/cb06cdca-2878-4640-9d28-2f5af0732dc4" />
+
+<br>
 <br>
 
 ---
@@ -67,6 +71,11 @@ ping smtp
 | IMAP  |     | __CUCM__     | callm    |     | __Cam8__     | cam8     |
 | POP3  |     | __EDGE__     | edge     |     | __Ephone1__  | ep1      |
 |       |     | __AP__       | wifiap   |     | __Ephone2__  | ep2      |
+
+<br>
+
+<img width="790" height="568" alt="image" src="https://github.com/user-attachments/assets/78d9b21d-4692-4e98-adeb-23a68419b62c" />
+
 
 <br>
 <br>
@@ -276,6 +285,7 @@ SSL Certificate
   User: Support
 
   Pass: C1sc0123
+
 
 
 
