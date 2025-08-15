@@ -54,7 +54,9 @@ ping smtp
 
 <br>
 
+<details>
 <img width="791" height="572" alt="image" src="https://github.com/user-attachments/assets/cb06cdca-2878-4640-9d28-2f5af0732dc4" />
+</details>
 
 <br>
 <br>
@@ -74,8 +76,9 @@ ping smtp
 
 <br>
 
-<img width="790" height="568" alt="image" src="https://github.com/user-attachments/assets/78d9b21d-4692-4e98-adeb-23a68419b62c" />
-
+<details>
+  <img width="790" height="568" alt="image" src="https://github.com/user-attachments/assets/78d9b21d-4692-4e98-adeb-23a68419b62c" />
+</details>
 
 <br>
 <br>
@@ -98,6 +101,10 @@ Install-WindowsFeature -name Web-Server -includeManagementTools
 | Site name           | Physical path | Bindings |
 | ---                 | ---           | ---      |
 | __rivan#$34T#.com__ | officebiz     | All:80   |
+
+<details>
+  <img width="1080" height="772" alt="image" src="https://github.com/user-attachments/assets/c1a6cef6-e9c2-4af8-9cef-6b08ab497958" />
+</details>
 
 <br>
 <br>
@@ -285,6 +292,7 @@ SSL Certificate
   User: Support
 
   Pass: C1sc0123
+
 
 
 
