@@ -102,6 +102,8 @@ Install-WindowsFeature -name Web-Server -includeManagementTools
 | ---                 | ---           | ---      |
 | __rivan#$34T#.com__ | officebiz     | All:80   |
 
+<br>
+
 <details>
   <img width="1080" height="772" alt="image" src="https://github.com/user-attachments/assets/c1a6cef6-e9c2-4af8-9cef-6b08ab497958" />
 </details>
@@ -117,6 +119,12 @@ Install-WindowsFeature -name Web-Server -includeManagementTools
 | Site name                 | Physical path | Bindings |
 | ---                       | ---           | ---      |
 | __itsolutions#$34T#.com__ | cellbiz       | All:80   |
+
+<br>
+
+<details>
+  <img width="1073" height="769" alt="image" src="https://github.com/user-attachments/assets/1e27136e-490c-472d-9c42-c0099cb1c7a7" />
+</details>
 
 <br>
 <br>
@@ -292,6 +300,7 @@ SSL Certificate
   User: Support
 
   Pass: C1sc0123
+
 
 
 
