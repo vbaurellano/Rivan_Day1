@@ -260,14 +260,19 @@ ping ns.ccna#$34T#.com
 ## 📋 File Transfer
 Upload configurations to FTP Server. (CoreTaas, CoreBaba, CUCM, EDGE)
 
+~~~
 @Cisco
 copy run ftp:10.#$34T#1.8
+~~~
 
-How to copy the current IOS of a Cisco Switch
+<br>
 
+How to copy the current IOS of a Cisco Switch for backup.
+
+~~~
 @Cisco
 archive upload-sw ftp://ccna#$34T#.com
-
+~~~
 <br>
 <br>
 
@@ -300,6 +305,7 @@ SSL Certificate
   User: Support
 
   Pass: C1sc0123
+
 
 
 
