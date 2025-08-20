@@ -209,7 +209,7 @@ Serial Cable
 
 <br>
 
-<img width="1400" height="850" alt="Day1-Modes-100" src="https://github.com/user-attachments/assets/2647c258-2a03-449f-b5bb-323a822f16eb" />
+![CISCO CLI](https://github.com/user-attachments/assets/e3b87918-70e3-4769-bc7d-451c9c50a880)
 
 <br>
 <br>
