@@ -666,7 +666,7 @@ DHCP (Dynamic Host Configuration Protocol)
 ---
 &nbsp;
 
-### 🎯 Exercise 04: Configure CoreBABA as a DHCP server for IP Cameras.
+### 🎯 Exercise 04: Configure CoreBABA as a DHCP server for VoIP Devices.
 
 Task:
 1. CoreBABA must act as a DHCP Server for devices in VLAN 100 with the following settings
