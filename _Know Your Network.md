@@ -1121,7 +1121,7 @@ conf t
 ---
 &nbsp;
 
-### Know the jobs of a Layer 3 Switch
+### Know the jobs of a Call Manager
 
 ## ⚙️ 1. Analog Phones
 *Why do companies still use Analog phones? Mobile vs Analog*
