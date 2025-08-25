@@ -204,9 +204,6 @@ Serial Cable
 <br>
 <br>
 
----
-&nbsp;
-
 ~~~
 !@Switch
 conf t
@@ -225,6 +222,11 @@ conf t
   end
 ~~~
 
+<br>
+<br>
+
+---
+&nbsp;
 
 # 📤 IT Service Management
 Before any decisions, modifications, or configurations are made, it all needs to go through a process.
