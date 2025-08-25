@@ -122,11 +122,9 @@ Security Operations Center & Incident Response
 
 
 ## Threat Hunting
-
-
 # 💻 Build your network. 
 
-<img width="1169" height="827" alt="Day1-100v1" src="https://github.com/user-attachments/assets/8bfefc96-abb1-4675-9c73-60f73ec90fab" />
+![Day1](img/Day1_100.png)
 
 <br>
 <br>
@@ -281,7 +279,38 @@ Serial Cable
 
 <br>
 
-<img width="1400" height="850" alt="Day1-Modes-100" src="https://github.com/user-attachments/assets/2647c258-2a03-449f-b5bb-323a822f16eb" />
+![CISCO CLI](img/CiscoCLI_100.png)
+
+<br>
+<br>
+
+---
+&nbsp;
+
+~~~
+!@Switch
+conf t
+ int fa0/1
+  exit
+ int g0/1
+  exit
+ line cons 0
+  exit
+ router eigrp day1
+  a ipv4 u a 100
+   net 10.0.0.0
+   net 20.0.0.0
+   exit
+  exit
+ exit
+!
+!
+conf t
+ int fa0/1
+  shutdown
+  no shutdown
+  end
+~~~
 
 &nbsp;
 ---
@@ -304,12 +333,33 @@ conf t
 <br>
 
 
-### View the existing configurations.
+### View then remove the configurations.
 Use the __`show run`__ command.
 ~~~
 !@Switch
 show run
 ~~~
+
+<br>
+
+Then, erase the configurations.
+~~~
+!@Switch
+conf t
+ router eigrp day1
+  a ipv4 u a 100
+   no network 10.0.0.0
+   end
+   !
+!or
+!
+conf t
+ no router eigrp day1
+ end
+~~~
+
+<br>
+<br>
 
 
 ## 🔧 Configure CoreTAAS
@@ -460,6 +510,7 @@ conf t
 
 ### ANSWER
 <details>
+<summary>Show Answer</summary>
 	
 ~~~
 !@CoreTaas
@@ -468,14 +519,17 @@ conf t
   ip add 10.#$34T#.1.2 255.255.255.0
   description DEFAULT-VLAN
   no shut
+  exit
  int vlan 10
   ip add 10.#$34T#.10.2 255.255.255.0
   description WIFI-VLAN
   no shut
+  exit
  int vlan 50
   ip add 10.#$34T#.50.2 255.255.255.0
   description CCTV-VLAN
   no shut
+  exit
  int vlan 100
   ip add 10.#$34T#.100.2 255.255.255.0
   description VOICE-VLAN
@@ -490,7 +544,8 @@ conf t
 
 ### 📃 Full Script
 <details>
-
+<summary>Show Script</summary>
+	
 ~~~
 !@CoreTaas
 conf t
@@ -655,6 +710,7 @@ conf t
   default-router 10.#$34T#.10.4
   domain-name WIFIDATA.COM
   dns-server 10.#$34T#.1.10
+  option 43 ip 10.#$34T#.10.#$34T#
  ip dhcp pool POOLCCTV
   network 10.#$34T#.50.0 255.255.255.0
   default-router 10.#$34T#.50.4
@@ -676,6 +732,7 @@ DHCP (Dynamic Host Configuration Protocol)
 | Default Gateway     |      3      |
 | DNS Server          |      6      |
 | Domain Name         |     15      |
+| Domain Controller   |     43      |
 | Lease Time          |     51      |
 | Client Identifier   |     61      |
 | TFTP Server         |    150      |
@@ -686,7 +743,7 @@ DHCP (Dynamic Host Configuration Protocol)
 ---
 &nbsp;
 
-### 🎯 Exercise 04: Configure CoreBABA as a DHCP server for IP Cameras.
+### 🎯 Exercise 04: Configure CoreBABA as a DHCP server for VoIP Devices.
 
 Task:
 1. CoreBABA must act as a DHCP Server for devices in VLAN 100 with the following settings
@@ -718,7 +775,8 @@ conf t
 
 ### ANSWER
 <details>
-
+<summary>Show Answer</summary>
+	
 ~~~
 !@CoreBABA
 conf t
@@ -837,6 +895,7 @@ conf t
  
 ### ANSWERS
 <details>
+<summary>Show Answer</summary>
 
 ~~~
 !@CoreBABA
@@ -951,7 +1010,8 @@ Review the jobs of a switch:
 
 ### 📃 Full Script
 <details>
-
+<summary>Show Script</summary>
+	
 ~~~
 !@coreBaba
 conf t
@@ -1007,6 +1067,7 @@ conf t
   default-router 10.#$34T#.10.4
   domain-name WIFIDATA.COM
   dns-server 10.#$34T#.1.10
+  option 43 ip 10.#$34T#.10.#$34T#
   exit
  ip dhcp pool POOLCCTV
   network 10.#$34T#.50.0 255.255.255.0
@@ -1141,7 +1202,7 @@ conf t
 ---
 &nbsp;
 
-### Know the jobs of a Layer 3 Switch
+### Know the jobs of a Call Manager
 
 ## ⚙️ 1. Analog Phones
 *Why do companies still use Analog phones? Mobile vs Analog*
@@ -1494,7 +1555,8 @@ Review the jobs of a call manager:
 ### 📃 Full Script
 
 <details>
-
+<summary>Show Script</summary>
+	
 ~~~
 !@CUCM
 conf t
@@ -1811,7 +1873,8 @@ conf t
 ### ANSWERS
 
 <details>
-
+<summary>Show Answer</summary>
+	
 ~~~
 !@EDGE
 conf t
@@ -1875,7 +1938,8 @@ conf t
 ## ANSWERS
 
 <details>
-
+<summary>Show Answer</summary>
+	
 ~~~
 !@EDGE
 conf t
@@ -2093,6 +2157,7 @@ Must know show commands:
 | SIP           |              |
 | SIR           |              |
 | SION          |              |
+| SIRO          |              |
 
 &nbsp;
 ---
@@ -2178,6 +2243,3 @@ What are the jobs of a router?
  3. &nbsp;
  4. &nbsp;
  5. &nbsp;
-
-
-
