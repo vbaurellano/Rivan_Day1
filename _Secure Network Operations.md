@@ -43,7 +43,7 @@ dir
 <br>
 
 2. VM Login information:
-> Username: root
+> Username: root  
 > Password: C1sc0123
 
 <br>
@@ -79,22 +79,22 @@ ping rivan.cloudsoc.com
 
 <br>
 
-## ITSM Process | Implementing Cybersecurity best practices
-### Upper Management
+## 🔄 ITSM Process | Implementing Cybersecurity best practices
+### 👤 Upper Management
 http://rivan.cloudsoc.com:8069  
 > Username: itil@rivanschool.com  
 > Password: C1sc0123
 
 <br>
 
-### Service Delivery Team
+### 🏃 Service Delivery Team
 http://rivan.cloudsoc.com/otrs/index.pl  
 > Username: root@localhost  
 > Password: C1sc0123
 
 <br>
 
-### Service Desk
+### 🙇 Service Desk
 http://rivan.cloudsoc.com/otrs/customer.pl  
 > Username: user1  
 > Password: C1sc0123
