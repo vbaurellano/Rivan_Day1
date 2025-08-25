@@ -32,17 +32,6 @@ dir
 <br>
 <br>
 
-&nbsp;
----
-&nbsp;
-
-## CSEC+ Exam Topics List
-CompTIA Security+ Certification Exam Objectives  
-EXAM NUMBER: __SY0-701__  
-
-<br>
-<br>
-
 ---
 &nbsp;
 
