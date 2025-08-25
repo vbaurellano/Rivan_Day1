@@ -449,14 +449,17 @@ conf t
   ip add 10.#$34T#.1.2 255.255.255.0
   description DEFAULT-VLAN
   no shut
+  exit
  int vlan 10
   ip add 10.#$34T#.10.2 255.255.255.0
   description WIFI-VLAN
   no shut
+  exit
  int vlan 50
   ip add 10.#$34T#.50.2 255.255.255.0
   description CCTV-VLAN
   no shut
+  exit
  int vlan 100
   ip add 10.#$34T#.100.2 255.255.255.0
   description VOICE-VLAN
