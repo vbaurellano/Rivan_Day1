@@ -258,6 +258,20 @@ http://rivan.cloudsoc.com/otrs/customer.pl
 &nbsp;
 
 ## Asset Inventory Management
+*How easy is it to take home items from your company?*
+
+Register the following devices to your company's inventory.
+- Windows Server 2025
+- CoreTAAS
+- CoreBABA
+- CallManager
+- EdgeRouter
+- Ephone 1
+- Ephone 2
+- Analog Phone 1
+- Analog Phone 2
+- Camera 6
+- Camera 8
 
 
 
