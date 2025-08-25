@@ -9,7 +9,6 @@
 &nbsp;
 ## 📋 Prove what you are doing.
  - Create a Github account: https://github.com/
- - Create a Postman account: https://www.postman.com/
 
 Import the repositories.
  - Rivan_Day1 : https://github.com/art-stacks/Rivan_Day1
@@ -42,20 +41,88 @@ CompTIA Security+ Certification Exam Objectives
 EXAM NUMBER: __SY0-701__  
 
 <br>
-
-| Domain | Percentage of Exam                        |
-| ---    | ---                                       |
-| 1.0    | General Security Concepts                 |
-| 2.0    | Threats, Vulnerabilities, and Mitigations |
-| 3.0    | Security Architecture                     |
-| 4.0    | Security Operations                       |
-| 5.0    | Security Program Management and Oversight |
-
-<br>
 <br>
 
 ---
 &nbsp;
+
+# 📤 IT Service Management
+
+### Lab Setup
+1. Run the __SOC-IR__ virtual machine.  
+
+<br>
+
+2. VM Login information:
+> Username: root
+> Password: C1sc0123
+
+<br>
+
+3. Get the IP address of the VM.
+Enter the command inside the VM,
+~~~bash
+ip addr
+~~~
+
+<br>
+
+4. Add a hostname mapping.
+
+Access the hosts file located on `c:\Windows\System32\drivers\etc`
+then, enter add the following mapping to the hosts file:
+~~~
+rivan.cloudsoc.com  208.8.8.144
+~~~
+
+<br>
+
+> [!Note]
+> __208.8.8.144__ must be your virtual machine IP address.
+
+<br>
+
+5. Ping to verify setup for the virtual machine.
+
+~~~
+ping rivan.cloudsoc.com
+~~~
+
+<br>
+
+## ITSM Process
+### Upper Management
+http://rivan.cloudsoc.com:8069  
+> Username: itil@rivanschool.com  
+> Password: C1sc0123
+
+### Service Delivery Team
+http://rivan.cloudsoc.com/otrs/index.pl  
+> Username: root@localhost  
+> Password: C1sc0123
+
+### Service Desk
+http://rivan.cloudsoc.com/otrs/customer.pl  
+> Username: user1  
+> Password: C1sc0123
+
+
+
+
+
+
+
+
+
+# Cybersecurity Mission Control
+Security Operations Center & Incident Response
+ - Detection & Response
+
+
+
+
+## Threat Hunting
+
 
 # 💻 Build your network. 
 
