@@ -54,7 +54,7 @@ dir
 
 # 💻 Build your network. 
 
-<img width="1169" height="827" alt="Day1-100v1" src="img/Day1_100.png" />
+![Day1](img/Day1_100.png)
 
 <br>
 <br>
@@ -209,7 +209,7 @@ Serial Cable
 
 <br>
 
-![CISCO CLI](https://github.com/user-attachments/assets/e3b87918-70e3-4769-bc7d-451c9c50a880)
+![CISCO CLI](img/CiscoCLI_100.png)
 
 <br>
 <br>
