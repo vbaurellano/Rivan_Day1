@@ -440,6 +440,7 @@ conf t
 
 ### ANSWER
 <details>
+<summary>Show Answer</summary>
 	
 ~~~
 !@CoreTaas
@@ -470,7 +471,8 @@ conf t
 
 ### 📃 Full Script
 <details>
-
+<summary>Show Script</summary>
+	
 ~~~
 !@CoreTaas
 conf t
@@ -698,7 +700,8 @@ conf t
 
 ### ANSWER
 <details>
-
+<summary>Show Answer</summary>
+	
 ~~~
 !@CoreBABA
 conf t
@@ -817,6 +820,7 @@ conf t
  
 ### ANSWERS
 <details>
+<summary>Show Answer</summary>
 
 ~~~
 !@CoreBABA
@@ -931,7 +935,8 @@ Review the jobs of a switch:
 
 ### 📃 Full Script
 <details>
-
+<summary>Show Script</summary>
+	
 ~~~
 !@coreBaba
 conf t
@@ -1474,7 +1479,8 @@ Review the jobs of a call manager:
 ### 📃 Full Script
 
 <details>
-
+<summary>Show Script</summary>
+	
 ~~~
 !@CUCM
 conf t
@@ -1791,7 +1797,8 @@ conf t
 ### ANSWERS
 
 <details>
-
+<summary>Show Answer</summary>
+	
 ~~~
 !@EDGE
 conf t
@@ -1855,7 +1862,8 @@ conf t
 ## ANSWERS
 
 <details>
-
+<summary>Show Answer</summary>
+	
 ~~~
 !@EDGE
 conf t
