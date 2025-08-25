@@ -2087,6 +2087,7 @@ Must know show commands:
 | SIP           |              |
 | SIR           |              |
 | SION          |              |
+| SIRO          |              |
 
 &nbsp;
 ---
