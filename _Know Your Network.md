@@ -54,7 +54,7 @@ dir
 
 # 💻 Build your network. 
 
-<img width="1169" height="827" alt="Day1-100v1" src="https://github.com/user-attachments/assets/8bfefc96-abb1-4675-9c73-60f73ec90fab" />
+<img width="1169" height="827" alt="Day1-100v1" src="img/Day1_100.png" />
 
 <br>
 <br>
