@@ -257,11 +257,13 @@ http://rivan.cloudsoc.com/otrs/customer.pl
 ---
 &nbsp;
 
-## Asset Inventory Management
+## 📦 Asset Inventory Management
 *How easy is it to take home items from your company?*
 
+Register Windows Server 2025 to your company's inventory.
+
+
 Register the following devices to your company's inventory.
-- Windows Server 2025
 - CoreTAAS
 - CoreBABA
 - CallManager
