@@ -640,6 +640,7 @@ conf t
   default-router 10.#$34T#.10.4
   domain-name WIFIDATA.COM
   dns-server 10.#$34T#.1.10
+  option 43 ip 10.#$34T#.10.#$34T#
  ip dhcp pool POOLCCTV
   network 10.#$34T#.50.0 255.255.255.0
   default-router 10.#$34T#.50.4
@@ -661,6 +662,7 @@ DHCP (Dynamic Host Configuration Protocol)
 | Default Gateway     |      3      |
 | DNS Server          |      6      |
 | Domain Name         |     15      |
+| Domain Controller   |     43      |
 | Lease Time          |     51      |
 | Client Identifier   |     61      |
 | TFTP Server         |    150      |
@@ -995,6 +997,7 @@ conf t
   default-router 10.#$34T#.10.4
   domain-name WIFIDATA.COM
   dns-server 10.#$34T#.1.10
+  option 43 ip 10.#$34T#.10.#$34T#
   exit
  ip dhcp pool POOLCCTV
   network 10.#$34T#.50.0 255.255.255.0
