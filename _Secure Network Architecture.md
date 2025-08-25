@@ -7,24 +7,6 @@
 
 
 &nbsp;
-## 💡 Approach to Network Programmability
-*"A new era for Cisco Certifications"*
-
-Cisco Certified Network Automation
-
-- Powershell, Bash
-- Python, Ruby, TCL
-- JSON, YAML
-- REST APIs
-- Ansible, Terraform, Chef, Puppet, etc.
-- Collaboration Platforms (GitHub)
-
-<br>
-<br>
-
----
-&nbsp;
-
 ## 📋 Prove what you are doing.
  - Create a Github account: https://github.com/
  - Create a Postman account: https://www.postman.com/
@@ -51,6 +33,29 @@ dir
 <br>
 <br>
 
+&nbsp;
+---
+&nbsp;
+
+## CSEC+ Exam Topics List
+CompTIA Security+ Certification Exam Objectives  
+EXAM NUMBER: __SY0-701__  
+
+<br>
+
+| Domain | Percentage of Exam                        |
+| ---    | ---                                       |
+| 1.0    | General Security Concepts                 |
+| 2.0    | Threats, Vulnerabilities, and Mitigations |
+| 3.0    | Security Architecture                     |
+| 4.0    | Security Operations                       |
+| 5.0    | Security Program Management and Oversight |
+
+<br>
+<br>
+
+---
+&nbsp;
 
 # 💻 Build your network. 
 
@@ -211,37 +216,6 @@ Serial Cable
 
 <img width="1400" height="850" alt="Day1-Modes-100" src="https://github.com/user-attachments/assets/2647c258-2a03-449f-b5bb-323a822f16eb" />
 
-<br>
-<br>
-
----
-&nbsp;
-
-~~~
-!@Switch
-conf t
- int fa0/1
-  exit
- int g0/1
-  exit
- line cons 0
-  exit
- router eigrp day1
-  a ipv4 u a 100
-   net 10.0.0.0
-   net 20.0.0.0
-   exit
-  exit
- exit
-!
-!
-conf t
- int fa0/1
-  shutdown
-  no shutdown
-  end
-~~~
-
 &nbsp;
 ---
 &nbsp;
@@ -263,33 +237,12 @@ conf t
 <br>
 
 
-### View then remove the configurations.
+### View the existing configurations.
 Use the __`show run`__ command.
 ~~~
 !@Switch
 show run
 ~~~
-
-<br>
-
-Then, erase the configurations.
-~~~
-!@Switch
-conf t
- router eigrp day1
-  a ipv4 u a 100
-   no network 10.0.0.0
-   end
-   !
-!or
-!
-conf t
- no router eigrp day1
- end
-~~~
-
-<br>
-<br>
 
 
 ## 🔧 Configure CoreTAAS
