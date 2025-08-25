@@ -30,8 +30,8 @@ Cisco Certified Network Automation
  - Create a Postman account: https://www.postman.com/
 
 Import the repositories.
- - [Rivan_Day1](https://github.com/art-stacks/Rivan_Day1)
- - [RivanCorp_CCNA2](https://github.com/rivancorp/ccna2)
+ - Rivan_Day1 : https://github.com/art-stacks/Rivan_Day1
+ - RivanCorp_CCNA2 : https://github.com/rivancorp/ccna2
 
 <br>
 <br>
