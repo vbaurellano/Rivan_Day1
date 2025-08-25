@@ -175,8 +175,56 @@ Cisco Unified Call Manager | [Unified Communications and Collaboration.](https:/
 
 <br>
 <br>
+
 ---
 &nbsp;
+
+# 🔧 Access the CLI
+*How can you tell if a device is expensive? It has a __Console Port__*
+
+<br>
+
+Serial Cable
+  - VGA, USB
+  - Ugreen
+
+<br>
+<br>
+
+---
+&nbsp;
+
+## ⌨️ Master the Command Line Interface (CLI)
+*How to know if someone has less than 1 year experience?*
+
+<br>
+
+![CISCO CLI](img/CiscoCLI_100.png)
+
+<br>
+<br>
+
+---
+&nbsp;
+
+~~~
+!@Switch
+conf t
+ int fa0/1
+  exit
+ int g0/1
+  exit
+ line cons 0
+  exit
+!
+!
+conf t
+ int fa0/1
+  shutdown
+  no shutdown
+  end
+~~~
+
 
 # 📤 IT Service Management
 Before any decisions, modifications, or configurations are made, it all needs to go through a process.
@@ -257,324 +305,24 @@ http://rivan.cloudsoc.com/otrs/customer.pl
 ---
 &nbsp;
 
-## 📦 Asset Inventory Management
+## 📦 Operational Support System
 *How easy is it to take home items from your company?*
 
-Register Windows Server 2025 to your company's inventory.
+- AMS (Asset Management System)
+- IMS (Inventory Management System)
+- CMDB (Configuration Management Databases)
 
-
-Register the following devices to your company's inventory.
-- CoreTAAS
-- CoreBABA
-- CallManager
-- EdgeRouter
-- Ephone 1
-- Ephone 2
-- Analog Phone 1
-- Analog Phone 2
-- Camera 6
-- Camera 8
-
-
-
-
-
-
-
-# Cybersecurity Mission Control
-Security Operations Center & Incident Response
- - Detection & Response
-
-
-
-
-## Threat Hunting
-
-
-
-# 🔧 Configure the Network
-*How can you tell if a device is expensive? It has a __Console Port__*
-
-<br>
-
-Serial Cable
-  - VGA, USB
-  - Ugreen
-
-<br>
-
-## ⌨️ Master the Command Line Interface (CLI)
-*How to know if someone has less than 1 year experience?*
-
-<br>
-
-![CISCO CLI](img/CiscoCLI_100.png)
+### 🎯 Exercise 01: Register Windows Server 2025 to your company's database.
 
 <br>
 <br>
 
 ---
 &nbsp;
-
-~~~
-!@Switch
-conf t
- int fa0/1
-  exit
- int g0/1
-  exit
- line cons 0
-  exit
- router eigrp day1
-  a ipv4 u a 100
-   net 10.0.0.0
-   net 20.0.0.0
-   exit
-  exit
- exit
-!
-!
-conf t
- int fa0/1
-  shutdown
-  no shutdown
-  end
-~~~
-
-&nbsp;
----
-&nbsp;
-
-### 🎯 Exercise 01: Navigate through the CLI as fast as you can.
-~~~
-!@Switch
-conf t
- int fa0/1
-  shut
-  end
-conf t
- int fa0/1
-  no shut
-  end
-~~~
-
-<br>
-<br>
-
-
-### View then remove the configurations.
-Use the __`show run`__ command.
-~~~
-!@Switch
-show run
-~~~
-
-<br>
-
-Then, erase the configurations.
-~~~
-!@Switch
-conf t
- router eigrp day1
-  a ipv4 u a 100
-   no network 10.0.0.0
-   end
-   !
-!or
-!
-conf t
- no router eigrp day1
- end
-~~~
-
-<br>
-<br>
-
 
 ## 🔧 Configure CoreTAAS
-### ⚙️ 1. Initial configurations
+### ⚙️ 1. Register CoreTAAS to your company's database, including a *Workorder* to configure the devices.
 
-__First 5 - H.E.S.No__
-
-~~~
-!@CoreTAAS
-conf t
- Hostname CoreTAAS-#$34T#
- Enable secret pass
- Service password-encryption
- No logging console
- No ip domain lookup
- end
-~~~
-
-&nbsp;
----
-&nbsp;
-
-### ⚙️ 2. Protect Console & Remote Access
-~~~
-!@CoreTAAS
-conf t
- line cons 0
-  password pass
-  login
-  exec-timeout 0 0
- line vty 0 14
-  password pass
-  login
-  exec-timeout 0 0
-  end
-~~~
-
-&nbsp;
----
-&nbsp;
-
-### ⚙️ 3. Create SVI (Switch Virtual Interface)
-~~~
-!@CoreTAAS
-conf t
- int vlan 1
-  ip add 10.#$34T#.1.2 255.255.255.0
-  description DEFAULT-VLAN
-  end
-~~~
-
-<br>
-
-Verify: How to check IP addresses? __SIIB - `show ip interface brief`__
-~~~
-!@CoreTAAS
-show ip int brief
-~~~
-
-<br>
-
-By default, 
-  Switchports = On 
-  SVIs = off
-  
-<br>
-<br>
-
----
-&nbsp;
-
-### 🎯 Exercise 02: Turn on VLAN 1
-
-~~~
-!@CoreTAAS
-conf t
- int vlan 1
-  no shut
-  end
-show ip int br
-~~~
-
-<br>
-<br>
-
----
-&nbsp;
-
-### 🎯 Exercise 03: Add the other SVIs
-
-Task:
- 1. CoreTAAS must have the following SVIs
-   - VLAN 1
-       - IP address: 10.#$34T#.1.2
-       - Description: DEFAULT-VLAN
-       - Status: UP
-
-   - VLAN 10
-     - IP address: 10.#$34T#.10.2
-     - Description: WIFI-VLAN
-     - Status: UP
-
-   - VLAN 50
-     - IP address: 10.#$34T#.50.2
-     - Description: CCTV-VLAN
-     - Status: UP
-
-   - VLAN 100
-     - IP address: 10.#$34T#.100.2
-     - Description: VOICE-VLAN
-     - Status: UP
-
-<br>
-
-~~~
-!@CoreTAAS
-conf t
- int vlan 1
-  ip add 10.#$34T#.1.2 255.255.255.0
-  description DEFAULT-VLAN
-  no shut
-  exit
- int vlan __
-  ip add __.__.__.__ 255.255.255.0
-  __  __
-  __  __
-  exit
- int vlan __
-  ip add __.__.__.__ 255.255.255.0
-  __  __
-  __  __
-  exit
- int vlan __
-  ip add __.__.__.__ 255.255.255.0
-  __  __
-  __  __
-  exit
- int vlan __
-  ip add __.__.__.__ 255.255.255.0
-  __  __
-  __  __
-  end
-~~~
-
-&nbsp;
----
-&nbsp;
-
-### ANSWER
-<details>
-<summary>Show Answer</summary>
-	
-~~~
-!@CoreTaas
-conf t
- int vlan 1
-  ip add 10.#$34T#.1.2 255.255.255.0
-  description DEFAULT-VLAN
-  no shut
-  exit
- int vlan 10
-  ip add 10.#$34T#.10.2 255.255.255.0
-  description WIFI-VLAN
-  no shut
-  exit
- int vlan 50
-  ip add 10.#$34T#.50.2 255.255.255.0
-  description CCTV-VLAN
-  no shut
-  exit
- int vlan 100
-  ip add 10.#$34T#.100.2 255.255.255.0
-  description VOICE-VLAN
-  no shut
- end
-~~~
-</details>
-
-&nbsp;
----
-&nbsp;
-
-### 📃 Full Script
-<details>
-<summary>Show Script</summary>
-	
 ~~~
 !@CoreTaas
 conf t
@@ -609,13 +357,56 @@ conf t
   desc VOICE-VLAN
  end
 ~~~
-</details>
 
 <br>
 <br>
 
 ---
 &nbsp;
+
+Register the following devices to your company's inventory.
+- CoreTAAS
+- CoreBABA
+- CallManager
+- EdgeRouter
+- Ephone 1
+- Ephone 2
+- Analog Phone 1
+- Analog Phone 2
+- Camera 6
+- Camera 8
+
+
+
+
+
+
+
+# Cybersecurity Mission Control
+Security Operations Center & Incident Response
+ - Detection & Response
+
+
+## Threat Hunting
+
+
+<br>
+<br>
+
+---
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 🔧 Configure CoreBABA
 Know the jobs of a Layer 3 Switch
