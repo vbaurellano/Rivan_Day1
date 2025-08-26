@@ -357,6 +357,14 @@ dxdiag
 
 <br>
 
+Or view __System Information__  
+~~~
+@WinServer [Win + R]
+msinfo32
+~~~
+
+<br>
+
 Identify Serial number
 ~~~powershell
 @powershell
