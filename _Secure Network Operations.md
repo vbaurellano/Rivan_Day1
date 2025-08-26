@@ -1957,7 +1957,7 @@ conf t
 
 ## Know the jobs of a Switch
 ### ⚙️ 1. __POE__
-*Are there switches that don't support POE? __Yes__. Buy one from [Temu](https://www.temu.com)*
+*Are there switches that don't support POE? __Yes__.*
 > [!NOTE]
 > If you need PoE functionality on a non-PoE switch, use a PoE injector.
 
@@ -1969,16 +1969,20 @@ conf t
 | 802.3at (PoE+)  |     25.5W    |
 | 802.3bt (PoE++) |     71.3W    |
 
-&nbsp;
----
-&nbsp;
+<br>
 
 Which device consumes the most power? __SPI - `show power inline`__
-
 ~~~
 !@CoreBABA
 show power inline
 ~~~
+
+<br>
+
+> __ITSM__  
+> Title: 1st Job of a Switch - PoE 
+> Description: Purchase switches with PoE - 802.3af,at,bt 
+> Justification: Switches need to supply the right amount of power depending on the needs of end devices.
 
 <br>
 <br>
@@ -1987,6 +1991,14 @@ show power inline
 &nbsp;
 
 ### ⚙️ 2. SVI (Switch Virtual Interface)
+*Why segment network traffic? __WireShark__*
+
+> __ITSM__  
+> Title: 2nd Job of a Switch - SVI 
+> Description: Best Practice is to separate/segment network traffic.
+> Justification: Switches need to supply the right amount of power depending on the needs of end devices.
+
+
 ~~~
 !@CoreBABA
 conf t
@@ -2025,6 +2037,13 @@ conf t
   desc VOICE-VLAN
  end
 ~~~
+
+Although unsecure, why do some companies still utilize a Flat Network? *Simple and low cost*  
+__BUT__  
+*You get what you pay for*
+- Performance Bottlenecks | Slow network traffic
+- Succeptible to attacks | Security Risks
+- Single point of failure.
 
 &nbsp;
 ---
@@ -2081,7 +2100,6 @@ conf t
   default-router 10.#$34T#.50.4
   domain-name CCTVDATA.COM
   dns-server 10.#$34T#.1.10
-  exit
  ip dhcp pool POOLVOICE
   network 10.#$34T#.100.0 255.255.255.0
   default-router 10.#$34T#.100.4
