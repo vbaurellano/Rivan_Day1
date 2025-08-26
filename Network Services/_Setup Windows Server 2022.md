@@ -14,6 +14,9 @@
 
 ## Setup the Virtual Machine (VMware Workstation)
 1. Select __New Virtual Machine__
+
+<br>
+
 ![wInstall_01](../img/01_Win2022.png)
 
 &nbsp;
@@ -21,6 +24,9 @@
 &nbsp;
 
 2. For the type of configuration, choose __Typical (recommended)__
+
+<br>
+
 ![wInstall_02](../img/02_Win2022.png)
 
 &nbsp;
@@ -28,6 +34,9 @@
 &nbsp;
 
 3. For guest operating system installation, choose __I will install the operating system later.__
+
+<br>
+
 ![wInstall_03](../img/03_Win2022.png)
 
 &nbsp;
@@ -35,12 +44,18 @@
 &nbsp;
 
 4. The guest operating system will be __Microsoft Windows__ version __Windows Server 2022__
+
+<br>
+
 ![wInstall_04](../img/04_Win2022.png)
 
 &nbsp;
 ---
 
 5. Keep the Disk Capacity to __60 GB__. Then, make sure to select __Split virtual disk into multiple files.__
+
+<br>
+
 ![wInstall_05](../img/05_Win2022.png)
 
 &nbsp;
@@ -48,6 +63,9 @@
 &nbsp;
 
 6. Select __Customize Hardware..__
+
+<br>
+
 ![wInstall_06](../img/06_Win2022.png)
 
 &nbsp;
@@ -62,6 +80,9 @@
     - Add an additional Network Adapter:
       - __Network Adapter 2: NAT__
   Then select __Close__
+
+<br>
+
 ![wInstall_07](../img/07_Win2022.png)
 
 &nbsp;
@@ -69,6 +90,9 @@
 &nbsp;
 
 8. Finally, __Finish__ the setup
+
+<br>
+
 ![wInstall_08](../img/08_Win2022.png)
 
 &nbsp;
@@ -76,6 +100,9 @@
 &nbsp;
 
 9. Before we can start the VM, we will __add 4 additional Hard Disks__ for another lab. Select __Edit Virtual Machine Settings__
+
+<br>
+
 ![wInstall_09](../img/09_Win2022.png)
 
 &nbsp;
@@ -83,6 +110,9 @@
 &nbsp;
 
 10. __Add__ Hardware. Then, select __Hard Disk__.
+
+<br>
+
 ![wInstall_10](../img/10_Win2022.png)
 
 &nbsp;
@@ -100,6 +130,8 @@ Simply repeat this process to add 3 more hard disks with the following sizes: __
 
 Expected output:
 
+<br>
+
 ![wInstall_11](../img/11_Win2022.png)
 
 &nbsp;
@@ -110,6 +142,8 @@ Expected output:
 > [!Warning]
 > Once the virtual machine is powered on, you __MUST__ click on the __Center__ of the VM. Then, press __Enter__ otherwise you will have to restart the VM.
 
+<br>
+
 ![wInstall_12](../img/12_Win2022.png)
 
 &nbsp;
@@ -117,6 +151,9 @@ Expected output:
 &nbsp;
 
 13. When booted successfully, leave the language to default. Then, select __Next__ and __Install Now__
+
+<br>
+
 ![wInstall_13](../img/13_Win2022.png)
 
 &nbsp;
@@ -124,6 +161,9 @@ Expected output:
 &nbsp;
 
 14. For Operationg system, select the 2nd option __Windows Server 2022 Standard Evaluation (Desktop Experience)__
+
+<br>
+
 ![wInstall_14](../img/14_Win2022.png)
 
 &nbsp;
@@ -131,6 +171,9 @@ Expected output:
 &nbsp;
 
 15. __Accept__ the license terms.
+
+<br>
+
 ![wInstall_15](../img/15_Win2022.png)
 
 &nbsp;
@@ -138,6 +181,9 @@ Expected output:
 &nbsp;
 
 16. Choose __Custom Install__
+
+<br>
+
 ![wInstall_16](../img/16_Win2022.png)
 
 &nbsp;
@@ -148,6 +194,8 @@ Expected output:
 > [!Note]
 > The system will restart after installation.
 
+<br>
+
 ![wInstall_17](../img/17_Win2022.png)
 ![wInstall_18](../img/18_Win2022.png)
 
@@ -156,6 +204,9 @@ Expected output:
 &nbsp;
 
 18. Set a password for the Administrator account. __C1sc0123__
+
+<br>
+
 ![wInstall_19](../img/19_Win2022.png)
 
 &nbsp;
@@ -191,15 +242,24 @@ get-netfirewallprofile
 
 ### 2. Set proper IP addressing.
 Open the __Run__ window by pressing `Windows + R` button. Then enter `ncpa.cpl`
+
+<br>
+
 ![wInstall_20](../img/20_Win2022.png)
 
 <br>
 
 First off, we need to verify which Network Adapter is connected to __NAT__, and which one is connected to __Bridge__.
 To achieve this, __right click__ on one of the LAN Cards of the virtual machine. Then, select __Disconnect__.
+
+<br>
+
 ![wInstall_21](../img/21_Win2022.png)
 
 When disconnected, one of the Network Adapters within the Virtual Machine will be __unplugged__
+
+<br>
+
 ![wInstall_22](../img/22_Win2022.png)
 
 That means, the LAN card we disconnected is the one that's connected to the VMs network adapter. In this example, the __Bridged LAN__ was disconnected, which means the __Ethernet0__ is the bridged connection.
@@ -214,6 +274,9 @@ For the sake of convenience, rename the network adapter as follows:
 > Don't forget to reconnect the LAN Card
 
 Expected output:
+
+<br>
+
 ![wInstall_23](../img/23_Win2022.png)
 
 <br>
@@ -222,6 +285,9 @@ Expected output:
 Now that we know which Network Adapter is which, we need to set a static IP address on __TunayNaLAN__
 
 1. Right click __TunayNaLan__ and select __Properties__.
+
+<br>
+
 ![wInstall_24](../img/24_Win2022.png)
 
 <br>
@@ -237,6 +303,9 @@ Set the following settings:
   - __Use the following DNS server address:__
     - Preffered DNS Server: __127.0.0.1__
     - Alternate DNS Server: __Leave this blank__
+
+<br>
+
 ![wInstall_25](../img/25_Win2022.png)
 
 3. Next, select __Advanced__ then choose the __DNS__ tab.
@@ -245,6 +314,9 @@ Set the following settings:
     - Simply add the exact DNS Suffix that was previously assigned: __azure#$34T#.com__
 
 Expected output:
+
+<br>
+
 ![wInstall_26](../img/26_Win2022.png)
 
 Confirm the changes by selecting __Ok__ on each open window.
@@ -283,6 +355,9 @@ Now that IP addressing is in place, the Virtual Machine must have access to both
 
 1. Open a browser and go to: https://www.github.com/art-stack/Rivan_Day1
 Download the repository
+
+<br>
+
 ![wInstall_27](../img/27_Win2022.png)
 
 After download, you __MUST__ move the repository to the __C: Drive__ then __extract__. 
