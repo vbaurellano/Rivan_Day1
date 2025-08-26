@@ -314,7 +314,45 @@ http://rivan.cloudsoc.com/otrs/customer.pl
 - IMS (Inventory Management System)
 - CMDB (Configuration Management Databases)
 
+<br>
+
 ### 🎯 Exercise 01: Register Windows Server 2025 to your company's database.
+
+1. Access CMDB
+
+
+
+<br>
+
+2. Select the appropriate Item Class
+
+
+
+
+<br>
+
+3. 
+
+<br>
+
+
+
+
+View System specs using __DirectX Diagnostic Tool__
+~~~
+@WinServer [Win + R]
+dxdiag
+~~~
+
+<br>
+
+
+
+OTRS [index.pl]
+CMDB : Add Config Item
+- Class: Computer
+
+
 
 <br>
 <br>
