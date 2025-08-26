@@ -1993,11 +1993,14 @@ show power inline
 ### ⚙️ 2. SVI (Switch Virtual Interface)
 *Why segment network traffic? __WireShark__*
 
+<br>
+
 > __ITSM__  
 > Title: 2nd Job of a Switch - SVI 
 > Description: Best Practice is to separate/segment network traffic.
-> Justification: Switches need to supply the right amount of power depending on the needs of end devices.
+> Justification: Segment network traffic to reduce security risks and network traffic congestion.
 
+<br>
 
 ~~~
 !@CoreBABA
@@ -2038,16 +2041,7 @@ conf t
  end
 ~~~
 
-Although unsecure, why do some companies still utilize a Flat Network? *Simple and low cost*  
-__BUT__  
-*You get what you pay for*
-- Performance Bottlenecks | Slow network traffic
-- Succeptible to attacks | Security Risks
-- Single point of failure.
-
-&nbsp;
----
-&nbsp;
+<br>
 
 Verify Connectivity: 
 
@@ -2055,6 +2049,17 @@ Verify Connectivity:
 !@cmd
 ping 10.#$34T#.1.4
 ~~~
+
+<br>
+
+Although unsecure, why do some companies still utilize a Flat Network? *Simple and low cost*  
+__BUT__  
+*You get what you pay for*
+- __Slow network traffic__ | Performance Bottlenecks
+- __Security Risks__ | Succeptible to attacks 
+- __Single point of failure__
+
+
 
 <br>
 <br>
@@ -2075,7 +2080,12 @@ ping 10.#$34T#.1.4
 
 <br>
 
-Can Windows be a DHCP Server? Yes, Server Manager.
+> __ITSM__  
+> Title: 3rd Job of a Switch - DHCP 
+> Description: Provide IP addresses, and more, to end devices.
+> Justification: Devices needs IP address to communicate within a network.
+
+<br>
 
 ~~~
 !@CoreBABA
