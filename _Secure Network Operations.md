@@ -231,14 +231,14 @@ conf t
 &nbsp;
 
 # 📤 IT Service Management
-*Before any decisions, modifications, or configurations are made, it all needs to go through various management.*
+*If it is not documented, it never existed.*
 - ITSM
 - CMDB
 
 <br>
 
 ### Lab Setup
-__1. Run the __SOC-IR__ virtual machine.__  
+__1. Run the *SOC-IR* virtual machine.__  
 
 <br>
 
@@ -249,7 +249,7 @@ __2. VM Login information:__
 <br>
 
 __3. Get the IP address of the VM.__  
-Enter the command inside the VM,
+Enter the command inside the VM
 ~~~bash
 @SOC-IR
 ip addr
@@ -258,7 +258,7 @@ ip addr
 <br>
 
 __4. Add a hostname mapping.__  
-Access the hosts file located on `c:\Windows\System32\drivers\etc`  
+Access the __hosts__ file located on `c:\Windows\System32\drivers\etc`  
 Then, enter add the following mapping to the hosts file:
 ~~~
 rivan.cloudsoc.com  208.8.8.144
@@ -316,14 +316,12 @@ http://rivan.cloudsoc.com/otrs/customer.pl
 
 ![otrs_customer](img/oss_customer.JPG)
 
-<br>
-<br>
-
+&nbsp;
 ---
 &nbsp;
 
 ## 📦 Operational Support System
-*How easy is it to take home items from your company?*
+*How easy is it to bring home items from your company?*
 
 - AMS (Asset Management System)
 - IMS (Inventory Management System)
@@ -1952,8 +1950,12 @@ conf t
 
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
 
-## Know the jobs of a Layer 3 Switch
+## Know the jobs of a Switch
 ### ⚙️ 1. __POE__
 *Are there switches that don't support POE? __Yes__. Buy one from [Temu](https://www.temu.com)*
 > [!NOTE]
@@ -1985,146 +1987,6 @@ show power inline
 &nbsp;
 
 ### ⚙️ 2. SVI (Switch Virtual Interface)
-~~~
-!@CoreBABA
-conf t
- hostname coreBaba-#$34T#
- enable secret pass
- service password-encryption
- no logging console
- no ip domain-lookup
- line cons 0
-  password pass
-  login
-  exec-timeout 0 0
- line vty 0 14
-  password pass
-  login
-  exec-timeout 0 0
- int gi 0/1
-  no shut
-  no switchport
-  ip add 10.#$34T#.#$34T#.4 255.255.255.0
- int vlan 1
-  no shut
-  ip add 10.#$34T#.1.4 255.255.255.0
-  desc DEFAULT-VLAN
- int vlan 10
-  no shut
-  ip add 10.#$34T#.10.4 255.255.255.0
-  desc WIFI-VLAN
- int vlan 50
-  no shut
-  ip add 10.#$34T#.50.4 255.255.255.0
-  desc CCTV-VLAN
- int vlan 100
-  no shut
-  ip add 10.#$34T#.100.4 255.255.255.0
-  desc VOICE-VLAN
- end
-~~~
-
-&nbsp;
----
-&nbsp;
-
-Verify Connectivity: 
-
-~~~
-!@cmd
-ping 10.#$34T#.1.4
-~~~
-
-<br>
-<br>
-
----
-&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Cybersecurity Mission Control
-Security Operations Center & Incident Response
- - Detection & Response
-
-
-## Threat Hunting
-
-
-<br>
-<br>
-
----
-&nbsp;
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 🔧 Configure CoreBABA
-Know the jobs of a Layer 3 Switch
-
-### ⚙️ 1. __POE__
-*Are there switches that don't support POE? __Yes__. Buy one from [Temu](https://www.temu.com)*
-> [!NOTE]
-> If you need PoE functionality on a non-PoE switch, use a PoE injector.
-
-<br>
-
-| IEEE Standards  | Power Output |
-| ---             |     ---      |
-| 802.3af (PoE)   |     15.4W    |
-| 802.3at (PoE+)  |     25.5W    |
-| 802.3bt (PoE++) |     71.3W    |
-
-&nbsp;
----
-&nbsp;
-
-Which device consumes the most power? __SPI - `show power inline`__
-
-~~~
-!@CoreBABA
-show power inline
-~~~
-
-<br>
-<br>
-
----
-&nbsp;
-
-### ⚙️ 2. SVI (Switch Virtual Interface)
-
 ~~~
 !@CoreBABA
 conf t
@@ -2202,6 +2064,7 @@ conf t
  ip dhcp excluded-address 10.#$34T#.1.1 10.#$34T#.1.100
  ip dhcp excluded-address 10.#$34T#.10.1 10.#$34T#.10.100
  ip dhcp excluded-address 10.#$34T#.50.1 10.#$34T#.50.100
+ ip dhcp excluded-address 10.#$34T#.100.1 10.#$34T#.100.100
  ip dhcp pool POOLDATA
   network 10.#$34T#.1.0 255.255.255.0
   default-router 10.#$34T#.1.4
@@ -2219,6 +2082,14 @@ conf t
   domain-name CCTVDATA.COM
   dns-server 10.#$34T#.1.10
   exit
+ ip dhcp pool POOLVOICE
+  network 10.#$34T#.100.0 255.255.255.0
+  default-router 10.#$34T#.100.4
+  domain-name VOICEDATA.COM
+  dns-server 10.#$34T#.1.10
+  option 150 ip 10.#$34T#.100.8
+  lease 5 0 0
+  end
 ~~~
 
 &nbsp;
@@ -2238,62 +2109,6 @@ DHCP (Dynamic Host Configuration Protocol)
 | Lease Time          |     51      |
 | Client Identifier   |     61      |
 | TFTP Server         |    150      |
-
-<br>
-<br>
-
----
-&nbsp;
-
-### 🎯 Exercise 04: Configure CoreBABA as a DHCP server for VoIP Devices.
-
-Task:
-1. CoreBABA must act as a DHCP Server for devices in VLAN 100 with the following settings
-    - The first 100 IPs must be reserved.
-    - The DHCP pool name must be 'POOLVOICE'
-    - The default gateway must be CoreBABA.
-    - The domain name must be 'VOICEDATA.COM'
-    - The DNS Server must be your Windows Server.
-    - Set CUCM as the TFTP server for DHCP clients.
-    - Set a lease time of 5 days.
-
-~~~
-!@CoreBABA
-conf t
- ip dhcp excluded-address __.__.__.__  __.__.__.__
- ip dhcp pool ______
-  network 10.#$34T#.50.0 255.255.255.0
-  default-______  ______
-  ______  ______
-  ______  
-  option ___  ip 10.#$34T#.__.__
-  lease 5 0 0
-  end
-~~~
-
-&nbsp;
----
-&nbsp;
-
-### ANSWER
-<details>
-<summary>Show Answer</summary>
-	
-~~~
-!@CoreBABA
-conf t
- ip dhcp excluded-address 10.#$34T#.100.1 10.#$34T#.100.100
- ip dhcp pool POOLVOICE
-  network 10.#$34T#.100.0 255.255.255.0
-  default-router 10.#$34T#.100.4
-  domain-name VOICEDATA.COM
-  dns-server 10.#$34T#.1.10
-  option 150 ip 10.#$34T#.100.8
-  lease 5 0 0
-  end
-~~~
-
-</details>
 
 <br>
 <br>
@@ -2326,6 +2141,8 @@ conf t
   name MGMTVLAN
  vlan 10
   name WIFIVLAN
+ vlan 50
+  name CCTVVLAN
  vlan 100
   name VOICEVLAN
   end
@@ -2355,56 +2172,6 @@ conf t
   switchport voice vlan 100
   switchport access vlan 1
   mls qos trust device cisco-phone
- int fa 0/7
-  switchport mode access
-  switchport voice vlan 100
-  switchport access vlan 1
-  mls qos trust device cisco-phone
- end
-~~~
-
-<br>
-<br>
-
----
-&nbsp;
-
-### 🎯 Exercise 05: Place Cameras to their correct VLANs based on the topology.
-
-Task:
- 1. Create VLAN 50 and name it 'CCTVLAN'
- 2. Place IP cameras to their correct VLAN.
-
-~~~
-!@CoreBABA
-conf t
- vlan ____
-  ____  ____
-  exit
- int ____
-  ____  ____  access
-  ____  access ____  ____
-  exit
- int ____
-  ____  ____  access
-  ____  access ____  ____
-  end
-~~~
-
-&nbsp;
----
-&nbsp;
- 
-### ANSWERS
-<details>
-<summary>Show Answer</summary>
-
-~~~
-!@CoreBABA
-conf t
- vlan 50
-  name CCTVVLAN
-  exit
  int fa0/6
   switchport mode access
   switchport access vlan 50
@@ -2413,9 +2180,13 @@ conf t
   switchport mode access
   switchport access vlan 50
   end
+ int fa 0/7
+  switchport mode access
+  switchport voice vlan 100
+  switchport access vlan 1
+  mls qos trust device cisco-phone
+ end
 ~~~
-
-</details>
 
 <br>
 <br>
@@ -2479,6 +2250,72 @@ show ip dhcp bindings
 
 ---
 &nbsp;
+
+### ⚖️ Ensure Availability through redundancy and loadbalance
+~~~
+!@coreBaba, coreTaas
+conf t
+ int range fa0/10-12
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  channel-group 1 mode active
+  channel-protocol lacp
+  end
+~~~
+
+&nbsp;
+---
+&nbsp;
+
+Review the jobs of a switch:
+ 1. &nbsp;
+ 2. &nbsp;
+ 3. &nbsp;
+ 4. &nbsp;
+ 5. &nbsp;
+ 
+<br>
+<br>
+
+---
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Cybersecurity Mission Control
+Security Operations Center & Incident Response
+ - Detection & Response
+
+
+## Threat Hunting
+
+
+<br>
+<br>
+
+---
+&nbsp;
+
+
+
+
 
 ### ⚖️ Ensure Availability through redundancy and loadbalance
 
