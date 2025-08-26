@@ -236,17 +236,17 @@ conf t
 <br>
 
 ### Lab Setup
-1. Run the __SOC-IR__ virtual machine.  
+__1. Run the __SOC-IR__ virtual machine.__  
 
 <br>
 
-2. VM Login information:
+__2. VM Login information:__
 > Username: root  
 > Password: C1sc0123
 
 <br>
 
-3. Get the IP address of the VM.  
+__3. Get the IP address of the VM.__  
 Enter the command inside the VM,
 ~~~bash
 @SOC-IR
@@ -255,7 +255,7 @@ ip addr
 
 <br>
 
-4. Add a hostname mapping.  
+__4. Add a hostname mapping.__  
 Access the hosts file located on `c:\Windows\System32\drivers\etc`  
 Then, enter add the following mapping to the hosts file:
 ~~~
@@ -267,7 +267,7 @@ rivan.cloudsoc.com  208.8.8.144
 
 <br>
 
-5. Ping to verify setup for the virtual machine.
+__5. Ping to verify setup for the virtual machine.__
 ~~~
 ping rivan.cloudsoc.com
 ~~~
@@ -331,8 +331,7 @@ http://rivan.cloudsoc.com/otrs/customer.pl
 
 ### 🎯 Exercise 01: Register Windows Server 2025 to your company's database.
 
-1. Access CMDB
-
+__1. Access CMDB__  
 <br>
 
 ![cmdb](img/oss_01.JPG)
@@ -340,8 +339,7 @@ http://rivan.cloudsoc.com/otrs/customer.pl
 <br>
 
 
-2. Select the appropriate Item Class
-
+__2. Select the appropriate Item Class__  
 <br>
 
 ![item_class](img/oss_02.JPG)
@@ -349,9 +347,9 @@ http://rivan.cloudsoc.com/otrs/customer.pl
 <br>
 
 
-3. Register Windows Server 2025.
-
-View System specs using __DirectX Diagnostic Tool__
+__3. Register Windows Server 2025.__  
+  
+View System specs using __DirectX Diagnostic Tool__  
 ~~~
 @WinServer [Win + R]
 dxdiag
