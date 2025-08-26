@@ -255,7 +255,7 @@ ip addr
 
 <br>
 
-4. Add a hostname mapping.
+4. Add a hostname mapping.  
 Access the hosts file located on `c:\Windows\System32\drivers\etc`  
 Then, enter add the following mapping to the hosts file:
 ~~~
