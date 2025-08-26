@@ -356,12 +356,14 @@ dxdiag
 ~~~
 
 <br>
+
 Identify Serial number
 ~~~powershell
 @powershell
 Get-WmiObject win32_bios | select Serialnumber
 ~~~
 
+<br>
 
 <details>
 <summary>Example Diagnostic</summary>
