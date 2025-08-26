@@ -1980,9 +1980,9 @@ show power inline
 <br>
 
 > __ITSM__  
-> Title: 1st Job of a Switch - PoE 
-> Description: Purchase switches with PoE - 802.3af,at,bt 
-> Justification: Switches need to supply the right amount of power depending on the needs of end devices.
+> Title: 1st Job of a Switch - PoE  
+> Description: Purchase switches with PoE - 802.3af,at,bt  
+> Justification: Switches need to supply the right amount of power depending on the needs of end devices.  
 
 <br>
 <br>
@@ -1996,9 +1996,9 @@ show power inline
 <br>
 
 > __ITSM__  
-> Title: 2nd Job of a Switch - SVI 
-> Description: Best Practice is to separate/segment network traffic.
-> Justification: Segment network traffic to reduce security risks and network traffic congestion.
+> Title: 2nd Job of a Switch - SVI  
+> Description: Configure IP addresses on switches  
+> Justification: Segment network traffic to reduce security risks and network traffic congestion.  
 
 <br>
 
@@ -2081,9 +2081,9 @@ __BUT__
 <br>
 
 > __ITSM__  
-> Title: 3rd Job of a Switch - DHCP 
-> Description: Provide IP addresses, and more, to end devices.
-> Justification: Devices needs IP address to communicate within a network.
+> Title: 3rd Job of a Switch - DHCP  
+> Description: Provide IP addresses, and more, to end devices.  
+> Justification: Devices needs IP address to communicate within a network.  
 
 <br>
 
@@ -2162,6 +2162,15 @@ show vlan brief
 
 Just because there's an SVI doesn't mean there's a VLAN.
 
+<br>
+
+> __ITSM__  
+> Title: 4th Job of a Switch - VLAN Creation & VLAN Management  
+> Description: Create VLANs and assign switchports to a specific VLAN.  
+> Justification: By default, all switchports belong to VLAN 1.  
+
+<br>
+
 ~~~
 !@CoreBABA
 conf t
@@ -2217,18 +2226,46 @@ conf t
 ~~~
 
 <br>
+
+*What happens when a device is connected to a VLAN that does not exist? __Orphan-ports__*
+
+<br>
 <br>
 
 ---
 &nbsp;
 
 ## ⚙️ 5. MAC Learning & MAC Reservation
-*What does it mean to say Layer 2 in networking?*
+*What is in a MAC Address?*
+- OUI (Organizationally Unique Identifier)
+- UI
+
+<br>
+
+How many MAC address does a single device have?  
+
+<br>
+
+Identify MAC Addresses across various vendors.
+
+~~~
+@cmd
+ipconfig /all
+~~~
+
+~~~
+@Linux
+ifconfig
+~~~
+
+~~~
+@CoreBABA
+show interface fa0/1
+~~~
 
 <br>
 
 How to view the MAC addresses learned by the Switch? __SMAC - `show mac address-table`__
-
 ~~~
 !@CoreBABA
 show mac address-table
@@ -2307,6 +2344,9 @@ Review the jobs of a switch:
 
 ---
 &nbsp;
+
+
+
 
 
 
