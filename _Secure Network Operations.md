@@ -1901,8 +1901,8 @@ P10:
 ---
 &nbsp;
 
-## 🔧 Configure CoreTAAS
-### ⚙️ 1. Register CoreTAAS to your company's database, including a *Workorder* to configure the devices.
+## 🚀 Deploy CoreTAAS
+### ⭐ 1. Register CoreTAAS to your company's database, including a *Workorder* to configure the devices.
 
 ~~~
 !@CoreTaas
@@ -1945,17 +1945,116 @@ conf t
 ---
 &nbsp;
 
-Register the following devices to your company's inventory.
-- CoreTAAS
-- CoreBABA
-- CallManager
-- EdgeRouter
-- Ephone 1
-- Ephone 2
-- Analog Phone 1
-- Analog Phone 2
-- Camera 6
-- Camera 8
+## 🚀 Deploy CoreBABA
+### 🎯 Exercies 01: Register CoreBABA to your company's database.
+
+<br>
+<br>
+
+## Know the jobs of a Layer 3 Switch
+### ⚙️ 1. __POE__
+*Are there switches that don't support POE? __Yes__. Buy one from [Temu](https://www.temu.com)*
+> [!NOTE]
+> If you need PoE functionality on a non-PoE switch, use a PoE injector.
+
+<br>
+
+| IEEE Standards  | Power Output |
+| ---             |     ---      |
+| 802.3af (PoE)   |     15.4W    |
+| 802.3at (PoE+)  |     25.5W    |
+| 802.3bt (PoE++) |     71.3W    |
+
+&nbsp;
+---
+&nbsp;
+
+Which device consumes the most power? __SPI - `show power inline`__
+
+~~~
+!@CoreBABA
+show power inline
+~~~
+
+<br>
+<br>
+
+---
+&nbsp;
+
+### ⚙️ 2. SVI (Switch Virtual Interface)
+~~~
+!@CoreBABA
+conf t
+ hostname coreBaba-#$34T#
+ enable secret pass
+ service password-encryption
+ no logging console
+ no ip domain-lookup
+ line cons 0
+  password pass
+  login
+  exec-timeout 0 0
+ line vty 0 14
+  password pass
+  login
+  exec-timeout 0 0
+ int gi 0/1
+  no shut
+  no switchport
+  ip add 10.#$34T#.#$34T#.4 255.255.255.0
+ int vlan 1
+  no shut
+  ip add 10.#$34T#.1.4 255.255.255.0
+  desc DEFAULT-VLAN
+ int vlan 10
+  no shut
+  ip add 10.#$34T#.10.4 255.255.255.0
+  desc WIFI-VLAN
+ int vlan 50
+  no shut
+  ip add 10.#$34T#.50.4 255.255.255.0
+  desc CCTV-VLAN
+ int vlan 100
+  no shut
+  ip add 10.#$34T#.100.4 255.255.255.0
+  desc VOICE-VLAN
+ end
+~~~
+
+&nbsp;
+---
+&nbsp;
+
+Verify Connectivity: 
+
+~~~
+!@cmd
+ping 10.#$34T#.1.4
+~~~
+
+<br>
+<br>
+
+---
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
