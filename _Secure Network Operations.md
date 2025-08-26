@@ -337,7 +337,7 @@ __1. Access CMDB__
 ![cmdb](img/oss_01.JPG)
 
 <br>
-
+<br>
 
 __2. Select the appropriate Item Class__  
 <br>
@@ -345,7 +345,7 @@ __2. Select the appropriate Item Class__
 ![item_class](img/oss_02.JPG)
 
 <br>
-
+<br>
 
 __3. Register Windows Server 2025.__  
   
@@ -354,6 +354,14 @@ View System specs using __DirectX Diagnostic Tool__
 @WinServer [Win + R]
 dxdiag
 ~~~
+
+<br>
+Identify Serial number
+~~~powershell
+@powershell
+Get-WmiObject win32_bios | select Serialnumber
+~~~
+
 
 <details>
 <summary>Example Diagnostic</summary>
