@@ -14,7 +14,7 @@
 
 ## Setup the Virtual Machine (VMware Workstation)
 1. Select __New Virtual Machine__
-[!wInstall_01](../img/01_Win2022.png)
+![wInstall_01](img/01_Win2022.png)
 
 &nbsp;
 ---
