@@ -314,7 +314,6 @@ http://rivan.cloudsoc.com/otrs/customer.pl
 
 ![otrs_customer](img/oss_customer.JPG)
 
-
 <br>
 <br>
 
@@ -333,18 +332,22 @@ http://rivan.cloudsoc.com/otrs/customer.pl
 ### 🎯 Exercise 01: Register Windows Server 2025 to your company's database.
 
 1. Access CMDB
+
+<br>
+
 ![cmdb](img/oss_01.JPG)
 
-
-
 <br>
+
 
 2. Select the appropriate Item Class
-![item_class](img/oss_02.JPG)
-
-
 
 <br>
+
+![item_class](img/oss_02.JPG)
+
+<br>
+
 
 3. Register Windows Server 2025.
 
