@@ -283,6 +283,11 @@ http://rivan.cloudsoc.com:8069
 > Username: itil@rivanschool.com  
 > Password: C1sc0123
 
+<br>
+
+![otrs_odoo](img/oss_odoo.JPG)
+
+
 &nbsp;
 ---
 &nbsp;
@@ -292,6 +297,11 @@ http://rivan.cloudsoc.com/otrs/index.pl
 > Username: root@localhost  
 > Password: C1sc0123
 
+<br>
+
+![otrs_index](img/oss_index.JPG)
+
+
 &nbsp;
 ---
 &nbsp;
@@ -300,6 +310,11 @@ http://rivan.cloudsoc.com/otrs/index.pl
 http://rivan.cloudsoc.com/otrs/customer.pl  
 > Username: user1  
 > Password: C1sc0123
+
+<br>
+
+![otrs_customer](img/oss_customer.JPG)
+
 
 <br>
 <br>
