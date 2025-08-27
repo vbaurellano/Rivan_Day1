@@ -271,6 +271,7 @@ rivan.cloudsoc.com  208.8.8.144
 
 __5. Ping to verify setup for the virtual machine.__
 ~~~
+@cmd
 ping rivan.cloudsoc.com
 ~~~
 
@@ -2201,6 +2202,12 @@ conf t
  int fa 0/4
   switchport mode access
   switchport access vlan 10
+ int fa0/6
+  switchport mode access
+  switchport access vlan 50
+ int fa0/8
+  switchport mode access
+  switchport access vlan 50
  int fa 0/3
   switchport mode access
   switchport access vlan 100
@@ -2209,14 +2216,6 @@ conf t
   switchport voice vlan 100
   switchport access vlan 1
   mls qos trust device cisco-phone
- int fa0/6
-  switchport mode access
-  switchport access vlan 50
-  exit
- int fa0/8
-  switchport mode access
-  switchport access vlan 50
-  end
  int fa 0/7
   switchport mode access
   switchport voice vlan 100
@@ -2239,10 +2238,6 @@ conf t
 *What is in a MAC Address?*
 - OUI (Organizationally Unique Identifier)
 - UI
-
-<br>
-
-How many MAC address does a single device have?  
 
 <br>
 
@@ -2271,18 +2266,14 @@ How to view the MAC addresses learned by the Switch? __SMAC - `show mac address-
 show mac address-table
 ~~~
 
-&nbsp;
----
-&nbsp;
+<br>
 
 | Camera         | MAC Address      |
 | ---            | ---              |
 | Camera fa0/6   | #camera6macadd#  |
 | Camera fa0/8   | #camera8macadd#  |
 
-&nbsp;
----
-&nbsp;
+<br>
 
 Assign a specific IP address to a device.
 
@@ -2299,9 +2290,7 @@ conf t
  end
 ~~~
 
-&nbsp;
----
-&nbsp;
+<br>
 
 Verify DHCP: __SIDB - `show ip dhcp bindings`__
 
