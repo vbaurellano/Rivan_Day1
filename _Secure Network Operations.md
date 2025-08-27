@@ -2432,11 +2432,19 @@ sudo yersinia -G
 
 4. Perform various Attacks.
 
+Verify:
+~~~
+!@CoreBABA
+show process cpu | inc uti
+~~~
+
 <br>
 
-Protect the most important switch in your office: 
-- RootBridge = CoreTAAS : Primary
-- 2ndRootBridge = CoreBABA : Secondary
+> __ITSM__  
+> Title: Protect the most important switch in your office
+> Description: - RootBridge = CoreTAAS : Primary
+>              - 2ndRootBridge = CoreBABA : Secondary
+> Justification: To protect the network from layer 2 attacks.
 
 ~~~
 !@CoreTAAS       32786 --> 24576
@@ -2456,7 +2464,9 @@ config t
 sh spanning-tree vlan 1
 ~~~
 
-
+&nbsp;
+---
+&nbsp;
 
 ### ⚖️ Ensure Availability through redundancy and loadbalance
 ~~~
@@ -2468,6 +2478,8 @@ conf t
   channel-group 1 mode active
   channel-protocol lacp
   end
+show etherchannel summary
+show interface po1 | inc BW
 ~~~
 
 
