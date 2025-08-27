@@ -2277,6 +2277,11 @@ show mac address-table
 
 Assign a specific IP address to a device.
 
+> __ITSM__  
+> Title: 5th Job of a Switch - MAC Learning & MAC Reservation  
+> Description: Reserve IP addresses for Cameras  
+> Justification: To maintain reliable network access.  
+
 ~~~
 !@CoreBABA
 conf t
@@ -2299,24 +2304,6 @@ Verify DHCP: __SIDB - `show ip dhcp bindings`__
 show ip dhcp bindings
 ~~~
 
-<br>
-<br>
-
----
-&nbsp;
-
-### ⚖️ Ensure Availability through redundancy and loadbalance
-~~~
-!@coreBaba, coreTaas
-conf t
- int range fa0/10-12
-  switchport trunk encapsulation dot1q
-  switchport mode trunk
-  channel-group 1 mode active
-  channel-protocol lacp
-  end
-~~~
-
 &nbsp;
 ---
 &nbsp;
@@ -2333,6 +2320,129 @@ Review the jobs of a switch:
 
 ---
 &nbsp;
+
+## Secure Layer 2 Network
+*Why should you buy an expensive switch?*
+
+1. MAC Address Learning
+2. MAC Address Filtering
+3. MAC Address Forwarding
+4. Layer 2 Loop Avoidance
+
+<br>
+
+### PortSec
+*Ensure your devices don't get swapped.*
+Guard the switchports so that it can't be replaced by hacking devices.
+
+<br>
+
+~~~
+!@BABA
+config t
+ int fa0/6
+  switchport mode access
+  switchport port-security
+  switchport port-security mac-address Sticky
+  switchport port-security maximum 1
+  switchport port-security violation shutdown
+ int fa0/8
+  switchport mode access
+  switchport port-security
+  switchport port-security mac-address Sticky
+  switchport port-security maximum 1
+  switchport port-security violation shutdown
+  end
+show port-security address
+show int status err-disable
+~~~
+
+<br>
+
+Make ports work again.
+
+~~~
+@CoreBABA
+config t
+ int fa0/6
+  no switchport port-security
+  shut
+  no shut
+ int fa0/8
+  no switchport port-security
+  shut
+  no shut
+  end
+show int status err-disable
+~~~
+
+
+### Spanning Tree
+How to spot a healthy switch.
+ - Lights are green - Super Healthy
+ - Lights are amber - You are protected
+
+<br>
+
+How to get fired immediately.
+~~~
+!@CoreTAAS & CoreBABA
+config t
+ no spanning-tree vlan 1-999
+ end
+ping 10.#$34T#.255.255
+~~~
+
+<br>
+
+Save your network.
+~~~
+config t
+ spanning-tree vlan 1-999
+ end
+~~~
+
+<br>
+
+Spanning-Tree Protocol - __802.1D__
+| BLK | LIS | LRN | FWD |        |
+| --- | --- | --- | --- | ---    |
+|    15s    |    15s    | = 30s  |
+
+<br>
+
+Wireshark
+Bridge priority: 32768
+
+Protect the most important switch in your office: 
+- RootBridge = BABA : Primary
+- 2ndRootBridge = CoreTAAS : Secondary
+
+TAAS:/d1       32786 --> 24576
+Config t
+spanning-tree mode pvst
+spanning-tree vlan 1-100 root Primary
+do sh spanning-tree vlan 1
+BABA:/d2         32768->   28672
+Config t              
+spanning-tree mode pvst
+spanning-tree vlan 1-100 root Secondary
+do sh spanning-tree vlan 1
+
+
+
+
+### ⚖️ Ensure Availability through redundancy and loadbalance
+~~~
+!@coreBaba, coreTaas
+conf t
+ int range fa0/10-12
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  channel-group 1 mode active
+  channel-protocol lacp
+  end
+~~~
 
 
 
