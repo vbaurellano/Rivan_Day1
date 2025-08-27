@@ -2482,70 +2482,6 @@ show etherchannel summary
 show interface po1 | inc BW
 ~~~
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Cybersecurity Mission Control
-Security Operations Center & Incident Response
- - Detection & Response
-
-
-## Threat Hunting
-
-
-<br>
-<br>
-
----
-&nbsp;
-
-
-
-
-
-### ⚖️ Ensure Availability through redundancy and loadbalance
-
-~~~
-!@coreBaba, coreTaas
-conf t
- int range fa0/10-12
-  switchport trunk encapsulation dot1q
-  switchport mode trunk
-  channel-group 1 mode active
-  channel-protocol lacp
-  end
-~~~
-
-&nbsp;
----
-&nbsp;
-
-Review the jobs of a switch:
- 1. &nbsp;
- 2. &nbsp;
- 3. &nbsp;
- 4. &nbsp;
- 5. &nbsp;
- 
 <br>
 <br>
 
@@ -2747,9 +2683,13 @@ conf t
 &nbsp;
 
 ### Know the jobs of a Call Manager
+## ⚙️ 1. Analog Phones (RJ11)
+*Why do companies still use Analog phones?*
 
-## ⚙️ 1. Analog Phones
-*Why do companies still use Analog phones? Mobile vs Analog*
+> __ITSM__  
+> Title: 1st Job of a Call Manager/Voice Gateway - Analog Phones  
+> Description: Analog Phone technology is still in use for its ease of use and durability.  
+> Justification: Have a simple and reliable means of communication.
 
 <br>
 
@@ -2801,8 +2741,13 @@ conf t
 ---
 &nbsp;
 
-## ⚙️ 2. IP Phones - Cisco Skinny Client Control Protocol (SCCP)
+## ⚙️ 2. IP Phones (RJ45) - Cisco Skinny Client Control Protocol (SCCP)
 *What kind of phones do enterprise use?*
+
+> __ITSM__  
+> Title: 2nd Job of a Call Manager/Voice Gateway - IP Phones  
+> Description: Compared to Analog, IP Phones have more advance features like, video conferencing, Call information logs, etc.  
+> Justification: Important calls can be recorded and provide more information. *Metadata*
 
 <br>
 
@@ -2897,6 +2842,11 @@ conf t
 
 ## ⚙️ 3. Video Calls
 
+> __ITSM__  
+> Title: 3rd Job of a Call Manager/Voice Gateway - Video Calls  
+> Description: More than voice, IP phones support video calls.  
+> Justification: Enable Video call feature.
+
 ~~~
 !@CUCM
 conf t
@@ -2920,6 +2870,11 @@ end
 &nbsp;
 
 ## ⚙️ 4. Allow Incoming & Outgoing Calls
+
+> __ITSM__  
+> Title: 4th Job of a Call Manager/Voice Gateway - Incoming & Outgoing Calls  
+> Description: Configure Calls  
+> Justification: Allow communication within the department
 
 ~~~
 !@CUCM
@@ -3018,6 +2973,11 @@ conf t
 
 ## ⚙️ 5. Interactive Voice Response System (IVRS)
 *How do large call centers handle numerous calls?*
+
+> __ITSM__  
+> Title: 5th Job of a Call Manager/Voice Gateway - IVRS  
+> Description: Manage numerous calls  
+> Justification: Forward calls to specific departments.
 
 ~~~
 !@CUCM
@@ -3325,6 +3285,44 @@ Is the device pingable?
 @cmd
 10.#$34T#.100.8
 ~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Cybersecurity Mission Control
+Security Operations Center & Incident Response
+ - Detection & Response
+
+
+## Threat Hunting
+
+
+
+
+
 
 <br>
 <br>
