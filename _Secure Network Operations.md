@@ -3286,44 +3286,6 @@ Is the device pingable?
 10.#$34T#.100.8
 ~~~
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Cybersecurity Mission Control
-Security Operations Center & Incident Response
- - Detection & Response
-
-
-## Threat Hunting
-
-
-
-
-
-
 <br>
 <br>
 
@@ -3384,39 +3346,6 @@ show cdp neighbor
 ---
 &nbsp;
 
-### 🎯 Exercise 07: Review of First 5 (HESNo)
-Task:
- 1. Set the hostname to EDGE-#$34T#
- 2. Protect access to the global configuration mode using a password that is hashed with md5 encryption. 
-    The password must be 'pass'
- 3. Make sure any plain text passwords are encrypted in the configuration file.
- 4. The device must not be allowed to send logs on the console.
- 5. The device must not assume non-cisco commands are domain names.
-
-<br>
-
-~~~
-!@EDGE
-conf t
- ____  ____
- enable  ____  ____
- service  ____
- no ____  ____  ____
- no ip ____  ____
- end
-~~~
- 
-<br>
-<br>
-
----
-&nbsp;
-
-### ANSWERS
-
-<details>
-<summary>Show Answer</summary>
-	
 ~~~
 !@EDGE
 conf t
@@ -3425,88 +3354,23 @@ conf t
  service password-encryption
  no logging cons
  no ip domain lookup
- end
-~~~
-
-</details>
-
-<br>
-<br>
-
-&nbsp;
----
-&nbsp;
-
-### 🎯 Exercise 08: Review of Protecting the console and terminal.
-
-Task:
-Protect Console
- 1. Set a password on the console.
-    The password must be 'pass'
- 2. When connecting to the console, the device must require only a password.
- 3. If a user is inactive for 30 minutes and 30 seconds, the session must end.
-
-<br>
-
-Protect Remote Access
- 1. Set a password on the first 15 virtual teletype lines.
-    The password must be 'pass'
- 2. When connecting to the console, the device must require only a password.
- 3. If a user is inactive for 12 hours, the session must end.
-
-<br>
-
-~~~
-!@EDGE
-conf t
- line ____  __
-  ____  ____
-  ____
-  ____  __  __
-  exit
- line ____  __
-  ____  ____
-  ____
-  ____  __  __
-  end
-~~~
-
-<br>
-<br>
-
----
-&nbsp;
-
-## ANSWERS
-
-<details>
-<summary>Show Answer</summary>
-	
-~~~
-!@EDGE
-conf t
  line cons 0
   password pass
   login
-  exec-timeout 30 30
+  exec-timeout 0 0
   exit
  line vty 0 14
   password pass
   login
-  exec-timeout 720 0
+  exec-timeout 0 0
   end
 ~~~
-
-</details>
 
 <br>
 <br>
 
 ---
 &nbsp;
-
-
-
 
 ### ⚙️ Configure routing protocols
 What are the jobs of a router?
@@ -3519,6 +3383,17 @@ What are the jobs of a router?
 
 <br>
 <br>
+
+> __ITSM__  
+> Title: Job of an EDGE Router  
+> Description: Provide connection between branches through:  
+> 2. Routing via Static  
+> 3. Routing via OSPF  
+> 4. Routing via EIGRP  
+> 5. Routing via BGP  
+> 6. Routing via VPN  
+>   
+> Justification: Establish connectivity.  
 
 ---
 &nbsp;
@@ -3684,78 +3559,6 @@ Telnet via SecureCRT
 &nbsp;
 
 # 🎯 REVIEW
-
-Must know show commands: 
-| Abbreviated   | Full Command |
-| ---           | ---          |
-| SS            |              |
-| SR            |              |
-| CRS           |              |
-| SIIB          |              |
-| SVB           |              |
-| SIDB          |              |
-| SMAC          |              |
-| SDVS          |              |
-| SIP           |              |
-| SIR           |              |
-| SION          |              |
-| SIRO          |              |
-
-&nbsp;
----
-&nbsp;
-
-First 5 commands:
-| Abbreviated   | Full Command |
-| ---           | ---          |
-| H             |              |
-| E             |              |
-| S             |              |
-| No            |              |
-| No            |              |
-
-&nbsp;
----
-&nbsp;
-
-Commands to protect console, in order:
-
-~~~
-!@Cisco
-config t
-~~~
-
-&nbsp;
----
-&nbsp;
-
-Commands to protect remote access, in order:
-
-~~~
-!@Cisco
-config t
-~~~
-
-&nbsp;
----
-&nbsp;
-
-Commands to configure DHCP, in order:
-
-~~~
-!@Cisco
-config t
- ip dhcp excluded-address 10.0.1.1 10.0.0.100
- __ ____ ____ mypool
-  ____ 10.0.1.0 255.255.255.0
-  ____ 10.0.1.1
-  ____ mypool.com
-  ____ 10.0.1.10
-~~~
-
-&nbsp;
----
-&nbsp;
 
 What are the jobs of a switch?
  1. &nbsp;
