@@ -2407,28 +2407,54 @@ config t
 Spanning-Tree Protocol - __802.1D__
 | BLK | LIS | LRN | FWD |        |
 | --- | --- | --- | --- | ---    |
-|    15s    |    15s    | = 30s  |
+|     | 15s |     | 15s | = 30s  |
 
 <br>
 
-Wireshark
+@Wireshark
 Bridge priority: 32768
 
+That is very Hackable
+
+### RED Team
+Hack your LAN to better protect it.
+1. Run __\_D3PentestVM__
+2. Login to the VM
+> Username: kali
+> Password: kali
+
+3. Run yersinia
+
+~~~
+@Kali
+sudo yersinia -G
+~~~
+
+4. Perform various Attacks.
+
+<br>
+
 Protect the most important switch in your office: 
-- RootBridge = BABA : Primary
-- 2ndRootBridge = CoreTAAS : Secondary
+- RootBridge = CoreTAAS : Primary
+- 2ndRootBridge = CoreBABA : Secondary
 
-TAAS:/d1       32786 --> 24576
-Config t
-spanning-tree mode pvst
-spanning-tree vlan 1-100 root Primary
-do sh spanning-tree vlan 1
-BABA:/d2         32768->   28672
-Config t              
-spanning-tree mode pvst
-spanning-tree vlan 1-100 root Secondary
-do sh spanning-tree vlan 1
+~~~
+!@CoreTAAS       32786 --> 24576
+config t
+ spanning-tree mode pvst
+ spanning-tree vlan 1-100 root Primary
+ end
+sh spanning-tree vlan 1
+~~~
 
+~~~
+!@CoreBABA       32768->   28672
+config t              
+ spanning-tree mode pvst
+ spanning-tree vlan 1-100 root Secondary
+ end
+sh spanning-tree vlan 1
+~~~
 
 
 
