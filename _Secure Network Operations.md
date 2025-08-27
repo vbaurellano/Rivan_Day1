@@ -2772,8 +2772,8 @@ conf t
 ---
 &nbsp;
 
-Ephone 1 MAC: #ephone1macadd#
-Ephone 2 MAC: #ephone1macadd#
+Ephone 1 MAC: #ephone1macadd#  
+Ephone 2 MAC: #ephone1macadd#  
 
 &nbsp;
 ---
@@ -3379,7 +3379,6 @@ What are the jobs of a router?
  3. &nbsp;
  4. &nbsp;
  5. &nbsp;
- 6. &nbsp;
 
 <br>
 <br>
@@ -3387,11 +3386,11 @@ What are the jobs of a router?
 > __ITSM__  
 > Title: Job of an EDGE Router  
 > Description: Provide connection between branches through:  
-> 2. Routing via Static  
-> 3. Routing via OSPF  
-> 4. Routing via EIGRP  
-> 5. Routing via BGP  
-> 6. Routing via VPN  
+> 1. Routing via Static  
+> 2. Routing via OSPF  
+> 3. Routing via EIGRP  
+> 4. Routing via BGP  
+> 5. Routing via VPN  
 >   
 > Justification: Establish connectivity.  
 
