@@ -2331,6 +2331,10 @@ Review the jobs of a switch:
 
 <br>
 
+&nbsp;
+---
+&nbsp;
+
 ### PortSec
 *Ensure your devices don't get swapped.*
 Guard the switchports so that it can't be replaced by hacking devices.
@@ -2376,6 +2380,9 @@ config t
 show int status err-disable
 ~~~
 
+&nbsp;
+---
+&nbsp;
 
 ### Spanning Tree
 How to spot a healthy switch.
@@ -2411,17 +2418,21 @@ Spanning-Tree Protocol - __802.1D__
 
 <br>
 
+~~~
 @Wireshark
 Bridge priority: 32768
+~~~
 
-That is very Hackable
+&nbsp;
+---
+&nbsp;
 
 ### RED Team
 Hack your LAN to better protect it.
 1. Run __\_D3PentestVM__
 2. Login to the VM
-> Username: kali
-> Password: kali
+> Username: kali  
+> Password: kali  
 
 3. Run yersinia
 
@@ -2429,6 +2440,8 @@ Hack your LAN to better protect it.
 @Kali
 sudo yersinia -G
 ~~~
+
+<br>
 
 4. Perform various Attacks.
 
@@ -2445,6 +2458,9 @@ show process cpu | inc uti
 > Description: - RootBridge = CoreTAAS : Primary
 >              - 2ndRootBridge = CoreBABA : Secondary
 > Justification: To protect the network from layer 2 attacks.
+
+<br>
+<br>
 
 ~~~
 !@CoreTAAS       32786 --> 24576
@@ -2683,8 +2699,13 @@ conf t
 &nbsp;
 
 ### Know the jobs of a Call Manager
+
+<br>
+
 ## ⚙️ 1. Analog Phones (RJ11)
 *Why do companies still use Analog phones?*
+
+<br>
 
 > __ITSM__  
 > Title: 1st Job of a Call Manager/Voice Gateway - Analog Phones  
@@ -2744,6 +2765,8 @@ conf t
 ## ⚙️ 2. IP Phones (RJ45) - Cisco Skinny Client Control Protocol (SCCP)
 *What kind of phones do enterprise use?*
 
+<br>
+
 > __ITSM__  
 > Title: 2nd Job of a Call Manager/Voice Gateway - IP Phones  
 > Description: Compared to Analog, IP Phones have more advance features like, video conferencing, Call information logs, etc.  
@@ -2768,9 +2791,7 @@ conf t
 
 *Why 10.#$34T#.100.8? __TFTP__*
 
-&nbsp;
----
-&nbsp;
+<br>
 
 Ephone 1 MAC: #ephone1macadd#  
 Ephone 2 MAC: #ephone1macadd#  
@@ -2830,6 +2851,8 @@ conf t
   restart
   end
 ~~~
+
+<br>
 
 > [!NOTE]
 > Depending on the ephone, __`create cnf-files`__ will need to be pasted twice.
