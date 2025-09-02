@@ -21,7 +21,7 @@ route add 200.0.0.0 mask 255.255.255.0 10.#$34T#.1.4
 
 =====| STEP 2 - Add ip address and routing to device
 
-@coreTaas
+!@coreTaas
 conf t
  int vlan 1
   no shut
@@ -36,7 +36,7 @@ conf t
   exec-timeout 0 0
   end
 
-@coreBaba
+!@coreBaba
 conf t
  int vlan 1
   no shut
@@ -70,7 +70,7 @@ conf t
   exec-timeout 0 0
   end
 
-@cucm
+!@cucm
 conf t
  int fa0/0
   no shut
@@ -86,7 +86,7 @@ conf t
   exec-timeout 0 0
   end
 
-@edge
+!@edge
 conf t
  int gi 0/0/0
   ip add 10.#$34T#.#$34T#.1 255.255.255.0
@@ -115,7 +115,7 @@ On SecureCRT:
 
 =====| Step 4 - Note MAC Addresses
 
-@CoreBaba
+!@CoreBaba
 sh mac address-table
 
 Camera 6 MAC Address (fa0/6):   replaceMe
@@ -143,7 +143,7 @@ Extra lines
 
 
 
-@coreTaas
+!@coreTaas
 conf t
  hostname coreTaas-#$34T#
  service password-encryption
@@ -162,7 +162,7 @@ conf t
  end
  
  
-@coreBaba
+!@coreBaba
 conf t
  hostname coreBaba-#$34T#
  service password-encryption
@@ -181,7 +181,7 @@ conf t
  end
  
 
-@cucm
+!@cucm
 conf t
  hostname cucm-#$34T#
  service password-encryption
@@ -198,7 +198,7 @@ conf t
  ip ssh version 2
  end
 
-@edge
+!@edge
 conf t
  hostname edge-#$34T#
  service password-encryption
@@ -218,3 +218,4 @@ conf t
 
 
 =====| Step 4 - Run main.py
+
