@@ -232,6 +232,18 @@ Add-DnsServerForwarder -ipAddress 10.11.1.10, 10.12.1.10, 10.21.1.10, 10.22.1.10
 ---
 &nbsp;
 
+### Secondary Zone & Zone Transfer
+1. Create Secondary Zone for each local DNS Server
+  - Specify the Primary zone that will be used for Zone transfer
+
+2. Right click the Primary Zone you wish to share to other DNS Servers and Allow Zone Transfer to any server. Make sure it also notifies the IPs for updates.
+
+<br>
+<br>
+
+---
+&nbsp;
+
 ### 🔢 Set a DNS server for Windows, Linux, & Cisco
 
 ~~~
@@ -305,6 +317,7 @@ SSL Certificate
   User: Support
 
   Pass: C1sc0123
+
 
 
 
