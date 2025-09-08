@@ -171,12 +171,12 @@ Cisco Unified Call Manager | [Unified Communications and Collaboration.](https:/
 
 [IEEE Ethernet Standards](https://www.ccnaacademy.com/2018/09/ieee-ethernet-standards_16.html)
 
-  | Name            | Speed | IEEE  |
-  | ---             |  ---  |  ---  |
-  | Ethernet        |       |       |
-  | FastEthernet    |       |       |
-  | GigEthernet     |       |       |
-  | TenGigEthernet  |       |       |
+  | Name            | Speed   | F - IEEE - U |
+  | ---             |  ---    |  ---         |
+  | Ethernet        | 10Mbps  | 802.3i       |
+  | FastEthernet    | 100Mbps | 802.3u       |
+  | GigEthernet     | 1Gbps   | .3z / .3ab   |
+  | TenGigEthernet  | 10Gbps  | .ae / .an    |
 
 <br>
 
