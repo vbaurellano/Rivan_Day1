@@ -3,8 +3,8 @@ FIND AND REPLACE THE FOLLOWING - From # to #
 ! Monitor Num:      41
 ! Cam6 Mac Add:     #camera6macadd#
 ! Cam8 Mac Add:     #camera8macadd#
-! Ephone 1 Mac: 	#ephone1macadd#
-! Ephone 2 Mac: 	#ephone2macadd#
+! Ephone 1 Mac: 	8478.aced.5889
+! Ephone 2 Mac: 	ccd8.c1fa.ee43
 ! YourPhone Mac:	#mym0bilemac#
 ! OtherPhone Mac:	#othm0bilemac#
 
@@ -257,12 +257,12 @@ conf t
  ephone-dn 8
   number 4188
  ephone 1
-  mac-address #ephone1macadd#
+  mac-address 8478.aced.5889
   type 8945
   button 1:1 2:2 3:3 4:4
   restart
  ephone 2
-  mac-address #ephone2macadd#
+  mac-address ccd8.c1fa.ee43
   type 8945
   button 1:5 2:6 3:7 4:8
   restart
@@ -583,4 +583,5 @@ conf t
 conf t
  class-map voip
   match ip dscp  ?
+
 
